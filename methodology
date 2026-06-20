@@ -1,0 +1,29 @@
+<h1>Methodology</h1>
+
+<h2>Gap Identification</h2>
+
+<p>
+Information about Rome districts is scattered across multiple
+sources and is difficult to explore as a unified knowledge base.
+</p>
+
+<h2>Methodological Workflow</h2>
+
+<ol>
+    <li>Domain Analysis</li>
+    <li>Ontology Design</li>
+    <li>Data Collection</li>
+    <li>Knowledge Extraction</li>
+    <li>RDF Creation</li>
+    <li>SPARQL Queries</li>
+</ol>
+
+<h2>Tools</h2>
+
+<ul>
+    <li>Wikidata</li>
+    <li>DBpedia</li>
+    <li>Protégé</li>
+    <li>GraphDB</li>
+    <li>SPARQL</li>
+</ul>
