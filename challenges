@@ -1,0 +1,19 @@
+<h1>Challenges</h1>
+
+<h2>Data Integration</h2>
+
+<p>
+Different sources used different naming conventions.
+</p>
+
+<h2>Entity Matching</h2>
+
+<p>
+Several monuments appeared with different identifiers.
+</p>
+
+<h2>Solution</h2>
+
+<p>
+Wikidata identifiers were adopted as reference entities.
+</p>
