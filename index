@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<title>Roma-Semantica</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roma semantica</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<h1>Welcome to ROMA</h1>
-<p>daje</p>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="topic.html">Topic</a></li>
+        <li><a href="methodology.html">Metodologia</a></li>
+        <li><a href="data.html">Data Collection</a></li>
+        <li><a href="sparql.html">SPARQL</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+        <li><a href="report.html">Report</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Roma semantica</h1>
+    <h2>A Knowledge Graph of Rome Districts</h2>
+</header>
+
+<section>
+
+    <h3>Abstract</h3>
+
+    <p>
+        Roma semantica e' un progetto che si concentra su 10 quartieri di Roma. 
+        L'obiettivo e' colmare un gap semantico riguardante informazioni che identificano i quartieri di Roma.
+    </p>
+
+</section>
+
+<section>
+
+    <h3>Membri del team</h3>
+
+    <ul>
+        <li>Angelica Ponchio</li>
+        <li>Caterina Ghiani</li>
+        <li>Ginevra Severino</li>
+        <li>Sara Scopel</li>
+    </ul>
+
+</section>
+
 </body>
 </html>
