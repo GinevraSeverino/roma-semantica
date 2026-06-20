@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Topic</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <!-- stesso menu -->
+</nav>
+
+<h1>Project Topic</h1>
+
+<p>
+The project explores ten districts of Rome through a Knowledge Graph.
+The goal is to integrate cultural, historical and urban information
+into a connected semantic structure.
+</p>
+
+<h2>Selected Districts</h2>
+
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/Trastevere">Trastevere</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Testaccio">Testaccio</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Garbatella">Garbatella</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/EUR,_Rome">EUR</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Monti_(rione_of_Rome)">Monti</a></li>
+</ul>
+
+</body>
+</html>
