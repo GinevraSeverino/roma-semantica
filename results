@@ -1,0 +1,14 @@
+<h1>Results</h1>
+
+<p>
+The resulting Knowledge Graph contains:
+</p>
+
+<ul>
+<li>10 districts</li>
+<li>50 monuments</li>
+<li>20 transportation nodes</li>
+<li>100+ semantic relations</li>
+</ul>
+
+<img src="images/graph.png" alt="Knowledge Graph">
