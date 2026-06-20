@@ -1,0 +1,15 @@
+<h1>SPARQL Queries</h1>
+
+<h2>Query 1</h2>
+
+<pre>
+SELECT ?monument
+WHERE {
+ ?district ex:contains ?monument .
+ FILTER(?district = ex:Trastevere)
+}
+</pre>
+
+<p>
+This query retrieves monuments located in Trastevere.
+</p>
