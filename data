@@ -1,0 +1,40 @@
+<h1>Data Collection</h1>
+
+<table>
+
+<tr>
+<th>Source</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.wikidata.org">
+Wikidata
+</a>
+</td>
+
+<td>Monuments and districts</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://dbpedia.org">
+DBpedia
+</a>
+</td>
+
+<td>Historical information</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.openstreetmap.org">
+OpenStreetMap
+</a>
+</td>
+
+<td>Transportation and services</td>
+</tr>
+
+</table>
