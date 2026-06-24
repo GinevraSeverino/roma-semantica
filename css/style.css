@@ -104,9 +104,10 @@ td {
 
     position: relative;
 
-    width: 900px;
-    height: 900px;
+    width: 100%;
+    max-width: 900px;
 
+    aspect-ratio: 1 / 1;
     margin: 40px auto;
 
     /* TEST: bordo rosso per verificare che il contenitore esista */
@@ -122,12 +123,14 @@ td {
 
     position: absolute;
 
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 
     border-radius: 50%;
 
-    background: rgba(255, 0, 0, 0.3);
+    background: rgba(255,0,0,0.35);
+
+    transform: translate(-50%, -50%);
 
     transition: all 0.3s ease;
 
@@ -136,9 +139,9 @@ td {
 
 .district:hover {
 
-    transform: scale(1.3);
+    background: rgba(255,0,0,0.8);
 
-    background: rgba(255, 0, 0, 0.7);
+    transform: translate(-50%, -50%) scale(1.3);
 }
 
 .district span {
@@ -148,7 +151,7 @@ td {
     position: absolute;
 
     top: -35px;
-    left: -15px;
+    left: -20px;
 
     background: white;
 
@@ -168,23 +171,28 @@ td {
 /* Posizioni dei quartieri */
 
 .trastevere {
-    left: 320px;
-    top: 380px;
+    left: 40%;
+    top: 48%;
 }
 
 .testaccio {
-    left: 420px;
-    top: 470px;
+    left: 48%;
+    top: 57%;
 }
 
 .monti {
-    left: 500px;
-    top: 350px;
+    left: 56%;
+    top: 40%;
 }
 
 .garbatella {
-    left: 550px;
-    top: 620px;
+    left: 64%;
+    top: 75%;
+}
+
+.eur {
+    left: 58%;
+    top: 92%;
 }
 
 .eur {
