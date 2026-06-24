@@ -170,32 +170,32 @@ td {
 
 /* Posizioni dei quartieri */
 
+/* Trastevere */
 .trastevere {
     left: 40%;
     top: 48%;
 }
 
+/* Testaccio - leggermente più a sinistra */
 .testaccio {
-    left: 48%;
-    top: 57%;
+    left: 45%;
+    top: 56%;
 }
 
+/* Monti - decisamente più a sinistra */
 .monti {
-    left: 56%;
-    top: 40%;
+    left: 42%;
+    top: 38%;
 }
 
+/* Garbatella - nel Q.X */
 .garbatella {
-    left: 64%;
-    top: 75%;
+    left: 49%;
+    top: 67%;
 }
 
+/* EUR - nel Q.XXXII */
 .eur {
-    left: 58%;
-    top: 92%;
-}
-
-.eur {
-    left: 500px;
-    top: 760px;
+    left: 44%;
+    top: 86%;
 }
