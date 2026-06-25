@@ -1,6 +1,6 @@
 body {
     font-family: "Georgia", serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 
     margin: 0;
     padding: 0;
@@ -41,7 +41,7 @@ body {
 }
 
 .nav-links a {
-    font-size: 1.55rem;
+    font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 1px;
     color: white;
@@ -235,14 +235,14 @@ td {
 }
 
 .gallery-section h3 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
 .gallery-text {
-    text-align: center;
+    text-align: justify;
     max-width: 900px;
-    margin: 0 auto 30px auto;
+    margin-bottom: 30px;
 }
 
 .gallery {
