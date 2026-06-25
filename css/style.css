@@ -240,8 +240,9 @@ td {
 }
 
 .gallery-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
     text-align: justify;
-    margin-bottom: 30px;
 }
 
 .gallery {
