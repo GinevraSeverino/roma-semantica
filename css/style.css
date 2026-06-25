@@ -111,6 +111,15 @@ p {
     text-align: justify;
 }
 
+ul {
+    font-size: 1.25rem;
+    line-height: 1.65;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
