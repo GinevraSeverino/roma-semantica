@@ -30,17 +30,23 @@
 
 <h1>Challenges</h1>
 
-<h2>Data Integration</h2>
-
+<h2>Inconsistenza nella modellazione di DBpedia</h2>
 <p>
-Different sources used different naming conventions.
+DBpedia non dispone di una T-Box esplicita e coerente per i quartieri romani. Le proprietà usate variano da risorsa a risorsa — alcune entità usano dbo:subdivision, altre dbo:isPartOf, altre ancora proprietà custom — rendendo impossibile interrogare l'intero insieme con una singola query affidabile.
 </p>
-
-<h2>Entity Matching</h2>
-
+    
+<h2>Eterogeneità nella tipizzazione delle entità</h2>
 <p>
-Several monuments appeared with different identifiers.
+I quartieri di Roma non condividono una classe comune in DBpedia. Alcuni sono tipizzati come dbo:Settlement, altri come dbo:AdministrativeRegion, altri come dbo:PopulatedPlace o addirittura senza tipo esplicito. 
+Questo riflette la complessità amministrativa reale di Roma (rioni storici, quartieri, municipi, suburbi) ma rende la raccolta dati frammentata.
 </p>
+    
+<h2>Assenza di una definizione condivisa di "quartiere"</h2> 
+Roma ha una stratificazione amministrativa e storica unica: i rioni (centri storici), i quartieri (espansione novecentesca), i municipi (suddivisioni amministrative attuali) e le zone urbanistiche coesistono senza una gerarchia chiara in DBpedia.
+
+<h2>Qualità e completezza dei dati</h2>   
+<p>Molte risorse hanno label solo in inglese, proprietà mancanti o valori non normalizzati, rendendo necessaria una pulizia manuale dei dati prima dell'arricchimento semantico.</p>
+
 
 <h2>Solution</h2>
 
