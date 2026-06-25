@@ -96,6 +96,32 @@
 
 </section>
 </div>
+
+<script>
+let index = 0;
+
+function updateCarousel() {
+    const track = document.getElementById("track");
+    track.style.transform = `translateX(-${index * 25}%)`;
+}
+
+function moveRight() {
+    const track = document.getElementById("track");
+    const max = track.children.length - 4;
+
+    if (index < max) {
+        index++;
+        updateCarousel();
+    }
+}
+
+function moveLeft() {
+    if (index > 0) {
+        index--;
+        updateCarousel();
+    }
+}
+</script>
     
 </body>
 </html>
