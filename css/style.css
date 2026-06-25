@@ -76,6 +76,15 @@ body{
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+.container-home {
+    max-width: 1400px;   /* più largo di 1000px */
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 h1, h2 {
     text-align: center;
 }
