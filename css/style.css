@@ -516,34 +516,49 @@ font-weight:500;}
     margin-top: 24px;
 }
 
+/* ===================== */
 /* ONTOLOGY STICKY LAYOUT */
+/* ===================== */
 
 .ontology-sticky-layout {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-    margin-top: 40px;
-}
-
-.ontology-text-scroll {
-    flex: 1.1;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 35px;
+    align-items: start;
 }
 
 .ontology-text-scroll section {
-    margin-bottom: 70px;
+    margin-bottom: 55px;
+}
+
+.ontology-text-scroll h2 {
+    text-align: left;
+    font-size: 1.6rem;
 }
 
 .ontology-sticky-image {
-    flex: 0.9;
     position: sticky;
     top: 130px;
+    align-self: start;
 }
 
 .ontology-sticky-image img {
     width: 100%;
-    max-width: 520px;
+    max-width: 560px;
+    max-height: 70vh;
+    object-fit: contain;
     background: white;
-    padding: 15px;
+    padding: 12px;
     border-radius: 10px;
     box-shadow: 0 3px 12px rgba(0,0,0,.2);
+}
+
+@media (max-width: 900px) {
+    .ontology-sticky-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ontology-sticky-image {
+        position: static;
+    }
 }
