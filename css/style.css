@@ -185,7 +185,6 @@ td {
     max-width: 900px;
     aspect-ratio: 1 / 1;
     margin: 40px auto;
-    border: 3px solid red;
     background-image: url("../mappa_roma.png");
     background-size: contain;
     background-repeat: no-repeat;
