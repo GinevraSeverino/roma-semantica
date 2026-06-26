@@ -237,15 +237,15 @@ SELECT DISTINCT ?resource ?type
 WHERE {
   VALUES ?resource {
     dbr:Trastevere
-    &lthttp://dbpedia.org/resource/Trevi_(rione_of_Rome)&gt
+    &lt;http://dbpedia.org/resource/Trevi_(rione_of_Rome)&gt;
     dbr:Prati
     dbr:Testaccio
     dbr:Parioli
-    &lthttp://dbpedia.org/resource/San_Lorenzo_(Rome)&gt
+    &lt;http://dbpedia.org/resource/San_Lorenzo_(Rome)&gt;
     dbr:Nomentano
     dbr:Ardeatino
-    &lthttp://dbpedia.org/resource/San_Basilio_(Rome)&gt
-    &lthttp://dbpedia.org/resource/EUR,_Rome&gt
+    &lt;http://dbpedia.org/resource/San_Basilio_(Rome)&gt;
+    &lt;http://dbpedia.org/resource/EUR,_Rome&gt;
   }
 
   ?resource rdf:type ?type .
@@ -263,5 +263,72 @@ ORDER BY ?resource ?type
         </p>
 
         <img src="query/query6.png" alt="Output della Query 6" class="query-output">
+    </section>
+
+    <section class="query-section">
+        <h2>Query 7 - Categorizzazioni delle entità</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+
+SELECT DISTINCT ?resource ?category
+WHERE {
+  VALUES ?resource {
+    dbr:Trastevere
+    &lt;http://dbpedia.org/resource/Trevi_(rione_of_Rome)&gt;
+    dbr:Prati
+    dbr:Testaccio
+    dbr:Parioli
+    &lt;http://dbpedia.org/resource/San_Lorenzo_(Rome)&gt;
+    dbr:Nomentano
+    dbr:Ardeatino
+    &lt;http://dbpedia.org/resource/San_Basilio_(Rome)&gt;
+    &lt;http://dbpedia.org/resource/EUR,_Rome&gt;
+  }
+
+  ?resource dct:subject ?category .
+}
+ORDER BY ?resource ?category
+        </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: questa query mostra l'associazione delle entità anche a delle Category di DBpedia.
+        </p>
+        <p>
+            <i>Output</i>: le categorie non sono classi ontologiche, ma sono sempre derivate da categorie concettuali di Wikipedia.
+            Si nota che molte risorse sono associate a categorie che rappresentano suddivisioni urbane romane.
+        </p>
+        <img src="query/query7.png" alt="Output della Query 7" class="query-output">
+    </section>
+
+     <section class="query-section">
+        <h2>Query 8 - Verifica dell'effettiva assenza delle nuove proprietà</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
+PREFIX dbp: &lt;http://dbpedia.org/property/&gt;
+
+SELECT DISTINCT ?property (COUNT(?entita) AS ?conteggio)
+WHERE {
+  ?entita a dbo:CityDistrict .
+  ?entita ?property ?valore .
+  FILTER REGEX(
+    STR(?property),
+    "safety|perceived|identity|urban.*identity|transformation|gentrific|nightlife|studentesco|commerciale|residenziale",
+    "i"
+  )
+}
+GROUP BY ?property
+ORDER BY DESC(?conteggio)
+    </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: la query verifica che le proprietà che si andranno a proporre nei risultati non siano in alcun modo
+            già formalizzate in DBpedia.
+        </p>
+        <p>
+            <i>Output</i>: la query conferma l'assenza di queste proprietà.
+        </p>
     </section>
 </div>
