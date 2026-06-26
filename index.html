@@ -1,117 +1,45 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roma semantica</title>
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<nav class="navbar">
-    <div class="logo">
-    <img src="gallery/colosseo.png" alt="Logo">
-    <span>Roma Semantica</span>
-</div>
-
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="topic.html">Topic</a></li>
-        <li><a href="methodology.html">Metodologia</a></li>
-        <li><a href="Ontology_extension.html">Ontologia</a></li>
-        <li><a href="sparql.html">SPARQL</a></li>
-        <li><a href="LLM.html">LLM</a></li>
-        <li><a href="results.html">Results</a></li>
-        <li><a href="challenges.html">Challenges</a></li>
-
-    </ul>
-</nav>
-
-<div class="container-home">
-    
-<header>
-    <h1>Roma semantica</h1>
-    <h2>A Knowledge Graph of Rome Districts</h2>
-</header>
-
 <section>
 
-    <h3>Abstract</h3>
+    <h3>Il progetto</h3>
 
     <p>
-        Le città non sono soltanto insiemi di dati geografici e amministrativi,
-        ma luoghi caratterizzati da identità sociali, culturali e simboliche che
-        contribuiscono a definirne la percezione. Questo progetto esplora la rappresentazione
-        dei quartieri di Roma all'interno di DBpedia e propone un arricchimento semantico
-        con l'obiettivo di descriverne l'identità urbana. 
-    </p>    
-    
+        Roma non è soltanto una città composta da suddivisioni amministrative,
+        ma da luoghi caratterizzati da identità sociali, culturali e simboliche
+        che contribuiscono a definirne la percezione.
+        Questo progetto esplora la rappresentazione dei quartieri di Roma
+        all'interno di DBpedia e propone un arricchimento semantico
+        con l'obiettivo di descriverne l'identità urbana.
+    </p>
+
 </section>
+
 
 <section class="gallery-section">
 
     <h3>Roma attraverso i nostri occhi</h3>
 
-    <p class="gallery-text">
-        Le seguenti fotografie rappresentano alcuni scorci famosi e
-        significativi della città e dei quartieri analizzati. Questa galleria
-        offre una prospettiva visiva che affianca la rappresentazione semantica
-        proposta dal Knowledge Graph.
-    </p>
+    <div class="gallery-container">
 
-    <div class="carousel">
+        <button class="arrow left" onclick="moveLeft()">&#10094;</button>
 
-    <button class="arrow left" onclick="moveLeft()">&#10094;</button>
+        <div class="gallery" id="gallery">
+            <img src="gallery/roma1.jpg">
+            <img src="gallery/roma2.jpg">
+            <img src="gallery/roma3.jpg">
+            <img src="gallery/roma4.jpg">
+            <img src="gallery/roma5.jpg">
+            <img src="gallery/roma6.jpg">
+            <img src="gallery/roma7.jpg">
+            <img src="gallery/roma8.jpg">
+        </div>
 
-    <div class="carousel-track" id="track">
-
-        <img src="gallery/roma1.jpg">
-        <img src="gallery/roma2.jpg">
-        <img src="gallery/roma3.jpg">
-        <img src="gallery/roma4.jpg">
-        <img src="gallery/roma5.jpg">
-        <img src="gallery/roma6.jpg">
-        <img src="gallery/roma7.jpg">
-        <img src="gallery/roma8.jpg">
+        <button class="arrow right" onclick="moveRight()">&#10095;</button>
 
     </div>
-<div
-    <button class="arrow right" onclick="moveRight()">&#10095;</button>
 
-</div>
-
-    
 </section>
-</div>
 
-<script>
-let index = 0;
 
-function updateCarousel() {
-    const track = document.getElementById("track");
-    track.style.transform = `translateX(-${index * 25}%)`;
-}
-
-function moveRight() {
-    const track = document.getElementById("track");
-    const max = track.children.length - 4;
-
-    if (index < max) {
-        index++;
-        updateCarousel();
-    }
-}
-
-function moveLeft() {
-    if (index > 0) {
-        index--;
-        updateCarousel();
-    }
-}
-</script>
-    
 <section>
 
     <h3>Membri del team</h3>
@@ -124,6 +52,26 @@ function moveLeft() {
     </ul>
 
 </section>
-    
+
+</div>
+
+<script>
+const gallery = document.getElementById("gallery");
+
+function moveLeft() {
+    gallery.scrollBy({
+        left: -350,
+        behavior: "smooth"
+    });
+}
+
+function moveRight() {
+    gallery.scrollBy({
+        left: 350,
+        behavior: "smooth"
+    });
+}
+</script>
+
 </body>
 </html>
