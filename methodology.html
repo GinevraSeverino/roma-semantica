@@ -54,12 +54,16 @@ Per ciascuna entità sono stati raccolti i dati già presenti in DBpedia tramite
 
 <h2>3&deg; Fase: Ontology Design</h2>
 <p>
-Una volta identificato il gap semantico e selezionate le zone urbane, abbiamo progettato un'estensione dell'ontologia formale dell'ontologia di DBpedia. 
-Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale, abbiamo introdotto una nuova classe centralizzata denominata <code>ruo:RomanUrbanArea</code>, definita come sottoclasse di <code>dbo:CityDistrict</code>, identificato come il concetto ontologico esistente più affine all'idea di quartiere urbano. Il prefisso di progetto scelto è <code>ruo:</code> (<em>&lt;http://example.org/rome-urban-ontology/&gt;</em>). 
-È stato definito un namespace specifico per il progetto e sono state introdotte nuove classi e proprietà in grado di modellare aspetti non presenti nell'ontologia originale.
-
-In particolare, sono state introdotte tre dimensioni semantiche principali: l'identità urbana dominante del quartiere, il suo stato di trasformazione urbana e il livello di sicurezza percepita. 
-Questi elementi costituiscono il nucleo dell'arricchimento semantico proposto.
+Una volta identificato il gap semantico e selezionate le zone urbane, abbiamo progettato un'estensione dell'ontologia formale dell'ontologia di DBpedia (vedi la sezione<a href=Ontology_extension.html>Ontologia</a>). 
+Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale, abbiamo introdotto una nuova classe denominata <code>ruo:RomanUrbanArea</code>, definita come sottoclasse di 
+<code>dbo:CityDistrict</code>, identificato come il concetto ontologico esistente più affine all'idea di quartiere/rione urbano. 
+Il prefisso di progetto scelto è <code>ruo:</code> (<em>&lt;http://example.org/rome-urban-ontology/&gt;</em>). 
+Inoltre, sono state introdotte tre dimensioni semantiche principali: 
+<ul>
+    <li><strong>Identità Urbana Dominante:</strong> Modellata tramite la Object Property <code>ruo:hasDominantUrbanIdentity</code>, la quale punta alla classe <code>ruo:DominantUrbanIdentity</code>. Gli individui ammessi (istanze) includono concetti quali <em>Studentesco, Residenziale, Business, Commerciale, Creativo, Nightlife</em>.</li>
+    <li><strong>Stato di Trasformazione Urbana:</strong> Modellato tramite la Object Property <code>ruo:hasUrbanTransformation</code>, avente come range la classe <code>ruo:UrbanTransformation</code>, le cui istanze descrivono le dinamiche socio-economiche del tessuto (<em>Stabile, Riqualificazione, Gentrificazione</em>).</li>
+    <li><strong>Sicurezza Percepita:</strong> Modellata in modo snello tramite la Datatype Property <code>ruo:hasPerceivedSafety</code>, che associa direttamente alla risorsa un valore testuale letterale (<code>rdfs:Literal</code>) indicante il livello emerso (es. <em>"high"</em>, <em>"medium"</em>, <em>"low"</em>).</li>
+</ul>
 </p>
 
 <h2>4&deg; Fase: LLM</h2>
@@ -69,7 +73,7 @@ Questi elementi costituiscono il nucleo dell'arricchimento semantico proposto.
 
 <h2>5&deg; Fase: Triple RDF</h2>
 <p>
-    inserire testo
+L'ultima fase del flusso di lavoro ha riguardato la costruzione delle triple RDF in formato Turtle tramite l'impiego degli LLM scelti in precedenza. 
 </p> 
 
 <h2>Tools</h2>
