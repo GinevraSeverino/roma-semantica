@@ -28,18 +28,37 @@
 </nav>
     
 <div class="container">
-<h1>SPARQL Queries</h1>
+    <h1>SPARQL Queries</h1>
 
-<h2>Query 1</h2>
+    <section class="query-section">
+        <h2>Query 1 - Modellazione dell'entità "Roma"</h2>
 
-<pre>
-SELECT ?monument
+        <pre class="query-box"><code>
+PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
+
+SELECT DISTINCT ?type
 WHERE {
- ?district ex:contains ?monument .
- FILTER(?district = ex:Trastevere)
+    dbr:Rome a ?type .
 }
-</pre>
+ORDER BY ?type
+            
+        </code></pre>
 
-<p>
-This query retrieves monuments located in Trastevere.
-</p>
+        <p>
+            <i>Obiettivo</i>: questa query verifica come l'entità "Roma" è modellata nell'ontologia di DBpedia. 
+            La variabile ?type recupera tutte le classi associate a "Roma", evitando i duplicati e ordinando l'output in ordine alfabetico.
+        </p>
+        <p>
+            Output: le classi associate a "Roma" sono principalmente 
+            <ul>
+                <li>City</li>
+                <li>Location</li>
+                <li>Place</li>
+                <li>PopulatedPlace</li>
+                <li>Settlement</li>
+            </ul>
+        </p>
+
+        
+    </section>
+</div>
