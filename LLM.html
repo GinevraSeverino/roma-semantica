@@ -51,62 +51,137 @@
 <section class="analysis-section">
 
     <h2>dominantUrbanIdentity</h2>
+
     <p>
         La prima dimensione riguarda la categorizzazione funzionale dei quartieri in sei classi:
-        <b>Residenziale</b>, <b>Commerciale</b>, <b>Studentesco</b>, <b>Business</b>, <b>Creativo</b>, <b>Nightlife</b>
-        
-        I modelli mostrano una forte convergenza sulle categorie urbane più “stabili semanticamente”:
-        <ul>
-            <li>Trastevere come Nightlife</li>
-            <li>EUR come Business</li>
-            <li>Parioli come Residenziale</li>
-            <li>San Lorenzo come Studentesco</li>
-            <li>San Basilio come Residenziale</li>
-        </ul>
-        
-        Emergono poi delle divergenze per quanto riguarda quartieri "ibridi", come Prati, Testaccio e Nomentano.
-        <b>Prati</b>: evidente tensione tra funzione abitativa e commerciale/direzionale.
-        <ul>
-            <li>ChatGPT: residenziale</li>
-            <li>Mistral: commerciale</li>
-            <li>Gemini: commerciale</li>
-        </ul>
-
-        <b>Nomentano</b>: il ruolo della Sapienza genera ambiguità tra identità studentesca e residenzialità consolidata.
-        <ul>
-            <li>ChatGPT e Gemini: studentesco/residenziale</li>
-            <li>Mistral: residenziale</li>
-        </ul>    
-
+        <b>Residenziale</b>, <b>Commerciale</b>, <b>Studentesco</b>,
+        <b>Business</b>, <b>Creativo</b> e <b>Nightlife</b>.
     </p>
 
+    <p>
+        I tre modelli mostrano una forte convergenza sulle categorie urbane più consolidate:
+    </p>
+
+    <ul>
+        <li>Trastevere → Nightlife</li>
+        <li>EUR → Business</li>
+        <li>Parioli → Residenziale</li>
+        <li>San Lorenzo → Studentesco</li>
+        <li>San Basilio → Residenziale</li>
+    </ul>
+
+    <p>
+        Le principali differenze emergono nei quartieri caratterizzati da identità più ibride.
+    </p>
+
+    <p><b>Prati</b>: tensione tra funzione residenziale e commerciale.</p>
+
+    <ul>
+        <li>ChatGPT → Residenziale</li>
+        <li>Mistral → Commerciale</li>
+        <li>Gemini → Commerciale</li>
+    </ul>
+
+    <p><b>Nomentano</b>: ambiguità tra vocazione universitaria e residenziale.</p>
+
+    <ul>
+        <li>ChatGPT → Studentesco</li>
+        <li>Mistral → Residenziale</li>
+        <li>Gemini → Residenziale</li>
+    </ul>
+
     <div class="insight-box">
-        <strong>Insight:</strong> la rappresentazione urbana è fortemente guidata da archetipi consolidati,
-        con ambiguità solo nei quartieri a identità multipla.
+        <strong>Insight.</strong> I modelli condividono una rappresentazione urbana basata su archetipi consolidati, mentre le divergenze emergono nei quartieri caratterizzati da funzioni multiple o identità in evoluzione.
     </div>
+
+
 
     <h2>UrbanTransformation</h2>
+
     <p>
-        Le risposte evidenziano un’elevata convergenza sui casi estremi (gentrificazione nei quartieri centrali,
-        stabilità nei quartieri alto-borghesi), mentre risultano più variabili le interpretazioni di quartieri
-        come Testaccio e San Lorenzo.
+        La seconda dimensione riguarda lo stato di trasformazione urbana dei quartieri,
+        classificato nelle categorie <b>Stabile</b>, <b>Riqualificazione</b> e
+        <b>Gentrificazione</b>.
     </p>
 
+    <p>
+        Anche in questo caso si osserva una notevole convergenza nei casi più evidenti:
+    </p>
+
+    <ul>
+        <li>Trastevere → Gentrificazione</li>
+        <li>Trevi → Gentrificazione</li>
+        <li>Parioli → Stabile</li>
+    </ul>
+
+    <p>
+        Le differenze riguardano soprattutto i quartieri interessati sia da interventi
+        urbanistici sia da cambiamenti sociali.
+    </p>
+
+    <p><b>Testaccio</b>: interpretato come esempio di gentrificazione oppure di riqualificazione.</p>
+
+    <ul>
+        <li>ChatGPT → Gentrificazione</li>
+        <li>Mistral → Riqualificazione</li>
+        <li>Gemini → Gentrificazione</li>
+    </ul>
+
+    <p><b>San Lorenzo</b>: quartiere in cui convivono rigenerazione urbana e trasformazione sociale.</p>
+
+    <ul>
+        <li>ChatGPT → Gentrificazione</li>
+        <li>Mistral → Gentrificazione</li>
+        <li>Gemini → Riqualificazione</li>
+    </ul>
+
     <div class="insight-box">
-        <strong>Insight:</strong> i modelli distinguono tra “gentrificazione” e “riqualificazione”
-        in modo non sempre coerente, suggerendo una sovrapposizione tra trasformazione sociale e intervento urbanistico.
+        <strong>Insight.</strong> La distinzione tra gentrificazione e riqualificazione non è sempre condivisa dai modelli, evidenziando una sovrapposizione tra trasformazioni sociali e interventi urbanistici.
     </div>
 
+
+
     <h2>PerceivedSafety</h2>
+
     <p>
-        La sicurezza percepita è la dimensione più variabile tra i modelli.
-        Tuttavia emergono pattern ricorrenti: centro storico e quartieri benestanti più sicuri,
-        periferie più critiche e San Lorenzo associato a bassa sicurezza.
+        L'ultima dimensione riguarda la sicurezza percepita, classificata nei livelli
+        <b>Alto</b>, <b>Medio</b> e <b>Basso</b>.
     </p>
 
+    <p>
+        I modelli concordano soprattutto nei quartieri caratterizzati da una percezione
+        particolarmente elevata o particolarmente bassa:
+    </p>
+
+    <ul>
+        <li>Parioli → Alto</li>
+        <li>Prati → Alto (quasi unanime)</li>
+        <li>San Basilio → Basso</li>
+    </ul>
+
+    <p>
+        Le maggiori differenze emergono nei quartieri in cui la percezione varia in base
+        alla presenza di turismo, movida o funzioni direzionali.
+    </p>
+
+    <p><b>EUR</b>: sicurezza elevata durante il giorno ma interpretazioni differenti nelle ore serali.</p>
+
+    <ul>
+        <li>ChatGPT → Medio</li>
+        <li>Mistral → Alto</li>
+        <li>Gemini → Medio</li>
+    </ul>
+
+    <p><b>Ardeatino</b>: quartiere residenziale con percezioni differenti tra i modelli.</p>
+
+    <ul>
+        <li>ChatGPT → Medio</li>
+        <li>Mistral → Medio</li>
+        <li>Gemini → Alto</li>
+    </ul>
+
     <div class="insight-box">
-        <strong>Insight:</strong> la sicurezza percepita è fortemente correlata a status socioeconomico,
-        presenza turistica e attività notturna.
+        <strong>Insight.</strong> La sicurezza percepita viene associata principalmente a tre fattori ricorrenti: status socioeconomico, intensità dei flussi turistici e presenza di attività notturne.
     </div>
 
 </section>
