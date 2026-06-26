@@ -225,11 +225,57 @@ td {
 }
 
 /* Posizioni dei quartieri */
-.trastevere { left: 40%; top: 48%; }
-.testaccio  { left: 45%; top: 56%; }
-.monti      { left: 42%; top: 38%; }
-.garbatella { left: 49%; top: 67%; }
-.eur        { left: 44%; top: 86%; }
+/* Posizioni dei quartieri analizzati */
+
+.trastevere {
+    left: 36%;
+    top: 41%;
+}
+
+.prati {
+    left: 46%;
+    top: 23%;
+}
+
+.trevi {
+    left: 48%;
+    top: 44%;
+}
+
+.testaccio {
+    left: 44%;
+    top: 53%;
+}
+
+.sanlorenzo {
+    left: 57%;
+    top: 41%;
+}
+
+.parioli {
+    left: 63%;
+    top: 30%;
+}
+
+.eur {
+    left: 52%;
+    top: 76%;
+}
+
+.sanbasilio {
+    left: 78%;
+    top: 22%;
+}
+
+.nomentano {
+    left: 58%;
+    top: 34%;
+}
+
+.ardeatino {
+    left: 50%;
+    top: 63%;
+}
 
 /* Carosello di foto */
 .carousel {
