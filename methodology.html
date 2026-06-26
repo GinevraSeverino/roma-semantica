@@ -34,32 +34,28 @@
 <h2>1&deg; Fase: Esplorazione e Gap Identification</h2>
 
 <p>
- La prima fase del progetto è consistita nell'esplorazione e individuazione di potenziali gap semantici all'interno di DBpedia; in totale ne sono stati trovati 4:
+La prima fase del progetto è consistita nell'esplorazione di DBpedia attraverso query SPARQL tramite'<a href="https://dbpedia.org/sparql#">endpoint ufficiale</a>, con l'obiettivo primario di comprendere 
+innanzitutto come i quartieri e i rioni di Roma fossero modellati nel Knowledge Graph e, succesivamente, di individuare dei potenziali gap semantici esistenti. 
+In totale, abbiamo identificato 4 gap nell'ontologia:
     <ul>
-        <li>Nesssun legame diretto tra le entità dei quartieri e dei rioni e l'entità Roma </li>
-        <li>Assenza di proprietà che descrivano l'identità urbana dei quartieri</li>
-        <li>Risorse inotilizzate, senza proprietà</li>
-        <li>Risorse dei quartieri e rioni descritte con proprietà diverse e in maniera incompleta</li>
+        <li>Assenza di un legame diretto tra l'entità Roma e i suoi quartieri/rioni </li> 
+        <li>Mancanza di proprietà in grado di descrivere l'identità urbana delle aree</li>
+        <li>Presenza di risorse prive di proprietà significative</li>
+        <li>Forte disomogeneità nella modellazione delle entità dei quartieri e rioni</li>
     </ul>
-
-Da una prima indagine esplorativa del KG (vedi <a href="sparql.html">Query</a>) è emerso come 
- siano presenti numerose informazioni sui quartieri di Roma, come dati geografici, amministrativi, storici e demografici, ma c'è un'assenza totale per quanto riguarda la rappresentazione di aspetti
-che contribuiscono all'identità urbana e alla percezione sociale della città. 
 </p>
-<p>
-Infatti, come dimostrato dalle nostre query esplorative, le principali proprietà dei quartieri e rioni romani riguardano suddivisioni amministartive e territoriali, mentre è completamente trascurata 
-Questa frammentazione rende complessa l’esplorazione della citt&agrave; come un’unica base di conoscenza,
-limitando la possibilit&agrave; di ottenere una visione completa e integrata delle caratteristiche e delle peculiarit&agrave; dei vari quartieri.
-</p>
-
+    
 <h2>2&deg; Fase: Data Collection</h2>
 <p>
-    inserire testo
+ Sulla base dell'esplorazione condotta nella fase precedente, sono stati successivamente  selezionati dieci quartieri e rioni di Roma come campione rappresentativo della complessità
+urbana della città: Trastevere, Prati, Trevi, Testaccio, San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino. La selezione include aree storiche, quartieri residenziali, zone universitarie, poli direzionali e aree periferiche.
+Per ciascuna entità sono stati raccolti i dati già presenti in DBpedia tramite query SPARQL dedicate, verificando proprietà, tipi RDF e categorie associate.
 </p>
 
 <h2>3&deg; Fase: Ontology Design</h2>
 <p>
-Una volta identificato il gap semantico, è stata progettata un'estensione dell'ontologia di DBpedia dedicata alla rappresentazione dei quartieri di Roma. 
+Una volta identificato il gap semantico e selezionate le zone urbane, abbiamo progettato un'estensione dell'ontologia formale dell'ontologia di DBpedia. 
+Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale, abbiamo introdotto una nuova classe centralizzata denominata <code>ruo:RomanUrbanArea</code>, definita come sottoclasse di <code>dbo:CityDistrict</code>, identificato come il concetto ontologico esistente più affine all'idea di quartiere urbano. Il prefisso di progetto scelto è <code>ruo:</code> (<em>&lt;http://example.org/rome-urban-ontology/&gt;</em>). 
 È stato definito un namespace specifico per il progetto e sono state introdotte nuove classi e proprietà in grado di modellare aspetti non presenti nell'ontologia originale.
 
 In particolare, sono state introdotte tre dimensioni semantiche principali: l'identità urbana dominante del quartiere, il suo stato di trasformazione urbana e il livello di sicurezza percepita. 
@@ -122,7 +118,7 @@ quartieri di Roma.
 
     
 <footer class="site-footer">
-    © 2025 Roma Semantica · Università di Bologna
+    © 2026 Roma Semantica · Università di Bologna
 </footer>
 </body>
 </html>
