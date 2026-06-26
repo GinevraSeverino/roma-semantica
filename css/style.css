@@ -260,13 +260,13 @@ td {
 /* EUR sopra Q.XXXII */
 .eur {
     left: 52%;
-    top: 75%;
+    top: 90%;
 }
 
 /* San Basilio sopra Q.XXX */
 .sanbasilio {
-    left: 76%;
-    top: 18%;
+    left: 86%;
+    top: 13%;
 }
 
 /* Nomentano su Q.V */
@@ -280,6 +280,7 @@ td {
     left: 52%;
     top: 70%;
 }
+
 
 /* Carosello di foto */
 .carousel {
