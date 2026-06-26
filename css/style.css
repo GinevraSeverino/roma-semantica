@@ -526,7 +526,7 @@ font-weight:500;}
 }
 
 .ontology-text {
-    flex: 1;
+    flex: 0 0 48%;
 }
 
 .ontology-text section {
