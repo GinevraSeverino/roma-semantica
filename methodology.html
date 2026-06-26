@@ -66,15 +66,21 @@ Inoltre, sono state introdotte tre dimensioni semantiche principali:
 </ul>
 </p>
 
-<h2>4&deg; Fase: LLM</h2>
+<h2>4&deg; Fase: LLM Knowledge Extraction e Bias Analysis</h2>
 <p>
-    inserire testo
-</p> 
+Nella seguente fase abbiamo selezionato 3 diversi  modelli LLM :
+</p>
+<ul>
+    <li><strong>OpenAI ChatGPT</strong>: modello di grandi dimensioni, gratuito basato su GPT-4o mini</li>
+    <li><strong>Google Gemini</strong>:modello gratuito basato su Gemini 1.5 Flash e di grandi dimensioni</li>
+    <li><strong>Mistral AI</strong>: tramite la piattaforma ufficiale Le Chat con il modello europeo gratuito e di medie dimensioni Mistral Large</li>
+</ul>
+<p>
+Tramite questi modelli abbiamo realizzato un processo di estrazione della conoscenza, che è avvenuta impostando una tecnica di Prompting Zero-Shot. 
+L'obiettivo centrale di questo approccio multi-modello è stato quello di analizzare sistematicamente i potenziali bias e stereotipi urbani intrinseci negli LLM,
+esaminando i valori assegnati in modo indipendente da ciascuna IA a ogni singolo rione e quartiere per le proprietà <code>ruo:hasDominantUrbanIdentity</code>, <code>ruo:hasUrbanTransformation</code> e <code>ruo:hasPerceivedSafety</code>.
 
-<h2>5&deg; Fase: Triple RDF</h2>
-<p>
-L'ultima fase del flusso di lavoro ha riguardato la costruzione delle triple RDF in formato Turtle tramite l'impiego degli LLM scelti in precedenza. 
-</p> 
+</p>
 
 <h2>Tools</h2>
 <ul class="tools-list">
