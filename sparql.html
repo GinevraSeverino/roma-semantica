@@ -31,7 +31,33 @@
     <h1>SPARQL Queries</h1>
 
     <section class="query-section">
-        <h2>Query 1 - Modellazione dell'entità "Roma"</h2>
+        <h2>Query 0 - Individuazione della risorsa iniziale</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+
+SELECT DISTINCT ?resource
+WHERE {
+?resource rdfs:label "Rome"@en .
+}
+ORDER BY ?resource
+        </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: questa query viene fatta per individuare la risorsa "Roma" in DBpedia attraverso la label in lingua inglese.
+            In questo modo possiamo vedere l'IRI completo della risorsa e risalire al namespace utilizzato per le risorse nel grafo.
+        </p>
+        <p>
+            <i>Output</i>: ci viene mostrato l'IRI completo della risorsa e inoltre l'IRI di una categoria chiamata "Rome". Delle categorie ci 
+            occuperemo in seguito nell'analisi.
+        </p>
+
+        <img src="query/query0.png" alt="Output della Query 0" class="query-output">
+    </section>
+    
+    <section class="query-section">
+        <h2>Query 1 - Tipizzazione dell'entità "Roma"</h2>
 
         <pre class="query-box"><code>
 PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
@@ -125,5 +151,38 @@ ORDER BY ?property
         </p>
 
         <img src="query/query3.png" alt="Output della Query 3" class="query-output">
+    </section>
+    
+    <section class="query-section">
+        <h2>Query 4 - Ricerca delle singole risorse quartieri/rioni</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+
+SELECT DISTINCT ?property ?value
+WHERE {
+    dbr:Trastevere ?property ?value .
+}
+ORDER BY ?property
+LIMIT 200
+        </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: questa query ricerca all'interno del grafo le singole entità scelte per il progetto, adottando un approccio <b>bottom-up</b>.
+            In particolare, si vanno a ricercare tutte le triple che hanno come soggetto la risorsa in questione, cambiando di volta in volta il nome 
+            della risorsa.
+        </p>
+        <p>
+            <strong>Nota</strong> - Eseguendo la query si è nostato che non tutte le risorse ptevano essere individuate semplicemente cambiando il nome
+            dopo il prefisso <i>dbr</i>. Questo avviene perchè alcune delle entità scelte, come ad esempio "Trevi", presentano un nome ambiguo che potrebbe
+            riferirsi anche ad altre risorse. Di conseguenza, prima di proseguire è stato ricostruito un elenco con gli IRI corretti e completi per tutte le
+            risorse ambigue, attraverso il servizio DBpedia Lookup.
+        </p>
+        <p>
+            <i>Output</i>: tra le proprietà mostrate, alcune erano già state individuate per l'entità "Roma", come ad esempio dbo:settlementType. Si 
+            nota sicuramente una forte disomogeneità tra le entità sia per quanto riguarda proprietà ontologiche o proprietà che riconducono a categorie, sia per la ricchezza di proprietà che le descrivono.
+        </p>
+
+        <img src="query/query4_a.png" alt="Output della Query 4" class="query-output">
     </section>
 </div>
