@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Topic</title>
+<title>SPARQL</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -58,7 +58,72 @@ ORDER BY ?type
                 <li>Settlement</li>
             </ul>
         </p>
+        <img src="query/query1.png" alt="Output della Query 1" class="query-output">
+    </section>
 
-        
+    <section class="query-section">
+        <h2>Query 2 - Proprietà associate a "Roma"</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+
+SELECT DISTINCT ?property ?value
+WHERE {
+    dbr:Rome ?property ?value .
+}
+ORDER BY ?property
+LIMIT 200
+        </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: questa query cerca tutte le triple che hanno come soggetto "Roma" all'interno del Knowledge Graph.
+            In questo modo si possono vedere quali informazioni DBpedia collega a Roma, sempre evitando i doppioni e  
+            ordinando l'output.
+        </p>
+        <p>
+            <i>Output</i>: Roma presenta diverse proprietà descrittive di tipo amministrativo/territoriale 
+        </p>
+        <img src="query/query2_a.png" alt="Output della Query 2" class="query-output">
+        <p>
+            Alcune proprietà di tipo storico-politiche
+        </p>
+        <img src="query/query2_b.png" alt="Output della Query 2" class="query-output">
+        <p>
+            E alcune proprietà che la descrivono come suddivisione del Lazio e suddivisione in Città Metropolitana.
+            Tuttavia non sono presenti riferimenti diretti ai suoi quartieri, rioni o zone urbane.
+        </p>
+        <img src="query/query2_c.png" alt="Output della Query 2" class="query-output">
+    </section>
+    
+    <section class="query-section">
+        <h2>Query 3 - Ricerca mirata di alcune proprietà</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+
+SELECT DISTINCT ?property ?value
+WHERE {
+    dbr:Trastevere ?property ?value .
+FILTER REGEX(
+STR(?property),
+"district|quarter|neighbour|borough|subdivision|division",
+"i"
+)
+}
+ORDER BY ?property
+        </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: questa query verifica miratamente se esistono delle relazioni esplicite tra
+            Roma e i suoi quartieri e suddivisioni urbane.
+            Applicando il filtro, la query va a selezionare tra le proprietà associate a "Roma" solo quelle 
+            il cui IRI contiene parole legate ai quartieri.  
+        </p>
+        <p>
+            <i>Output</i>: "Roma" presenta 3 proprietà associabili a suddivisioni urbane, ma nessuna è
+            riconducibile a suddivisioni interne alla città.
+        </p>
+
+        <img src="query/query3.png" alt="Output della Query 3" class="query-output">
     </section>
 </div>
