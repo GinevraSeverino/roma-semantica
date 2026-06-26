@@ -147,28 +147,7 @@ h2 {
     text-align: center;
     margin-top: 6px;
 }
-/*topic*/
-.topic-title{
-    font-size: 2rem;
-    text-align: center;
-    color: #7f2b2b;
-    margin: 55px 0 30px;
-    font-family: "Georgia", serif;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    position: relative;
-}
 
-.topic-title::before,
-.topic-title::after{
-    content: "";
-    display: inline-block;
-    width: 55px;
-    height: 2px;
-    background: #cdb5a5;
-    vertical-align: middle;
-    margin: 0 18px;
-}
 
 h3 {
     font-size: 1.5rem;
