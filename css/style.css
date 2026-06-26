@@ -50,7 +50,6 @@ body {
     text-decoration: none;
 }
 
-/* linea animata */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -129,10 +128,7 @@ td {
     padding: 10px;
 }
 
-/* ===================== */
 /* MAPPA ROMA            */
-/* ===================== */
-
 .rome-map {
     position: relative;
     width: 100%;
@@ -185,10 +181,7 @@ td {
 .garbatella { left: 49%; top: 67%; }
 .eur        { left: 44%; top: 86%; }
 
-/* ===================== */
-/* CAROSELLO             */
-/* ===================== */
-
+/* Carosello di foto */
 .carousel {
     position: relative;
     max-width: 1100px;
@@ -231,10 +224,7 @@ td {
     background: rgba(0,0,0,0.8);
 }
 
-/* ===================== */
 /* SEZIONE QUERY SPARQL  */
-/* ===================== */
-
 .query-section {
     margin: 50px 0;
     padding-bottom: 35px;
@@ -261,10 +251,7 @@ td {
     box-shadow: 0 2px 10px rgba(0,0,0,0.25);
 }
 
-/* ===================== */
 /* HOME - SEZIONI        */
-/* ===================== */
-
 .container-home header {
     padding-bottom: 28px;
     margin-bottom: 8px;
@@ -317,10 +304,7 @@ td {
     margin-bottom: 0;
 }
 
-/* ===================== */
-/* RESPONSIVE            */
-/* ===================== */
-
+/* RESPONSIVE */
 @media (max-width: 1024px) {
     .container,
     .container-home {
@@ -385,4 +369,15 @@ td {
     .container-home section ul {
         grid-template-columns: 1fr;
     }
+}
+
+/* Lista */
+.tools-list {
+    columns: 2;
+    column-gap: 50px;
+}
+
+.tools-list li {
+    break-inside: avoid;
+    margin-bottom: 10px;
 }
