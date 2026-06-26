@@ -13,6 +13,7 @@ body {
 
     min-height: 100vh;
 }
+
 .navbar {
     position: sticky;
     top: 0;
@@ -32,7 +33,7 @@ body {
     color: white;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
     gap: 35px;
     list-style: none;
@@ -41,6 +42,7 @@ body {
 }
 
 .nav-links a {
+    position: relative;
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -49,23 +51,22 @@ body {
 }
 
 /* linea animata */
-
-.nav-links a::after{
+.nav-links a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -6px;
     width: 0%;
     height: 2px;
-    background: #8b0000;
+    background: white;
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover{
-    color: #8b0000;
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.nav-links a:hover::after{
+.nav-links a:hover::after {
     width: 100%;
 }
 
@@ -129,7 +130,7 @@ td {
 }
 
 /* ===================== */
-/* MAPPA ROMA */
+/* MAPPA ROMA            */
 /* ===================== */
 
 .rome-map {
@@ -139,7 +140,6 @@ td {
     aspect-ratio: 1 / 1;
     margin: 40px auto;
     border: 3px solid red;
-
     background-image: url("../roma_map.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -147,7 +147,6 @@ td {
 }
 
 .district {
-
     position: absolute;
     width: 50px;
     height: 50px;
@@ -180,39 +179,14 @@ td {
 }
 
 /* Posizioni dei quartieri */
-
-/* Trastevere */
-.trastevere {
-    left: 40%;
-    top: 48%;
-}
-
-/* Testaccio - leggermente più a sinistra */
-.testaccio {
-    left: 45%;
-    top: 56%;
-}
-
-/* Monti - decisamente più a sinistra */
-.monti {
-    left: 42%;
-    top: 38%;
-}
-
-/* Garbatella - nel Q.X */
-.garbatella {
-    left: 49%;
-    top: 67%;
-}
-
-/* EUR - nel Q.XXXII */
-.eur {
-    left: 44%;
-    top: 86%;
-}
+.trastevere { left: 40%; top: 48%; }
+.testaccio  { left: 45%; top: 56%; }
+.monti      { left: 42%; top: 38%; }
+.garbatella { left: 49%; top: 67%; }
+.eur        { left: 44%; top: 86%; }
 
 /* ===================== */
-/* CAROSELLO */
+/* CAROSELLO             */
 /* ===================== */
 
 .carousel {
@@ -228,12 +202,10 @@ td {
 }
 
 .carousel-track img {
-    width: calc(100% / 4);   /* 4 immagini visibili */
+    width: calc(100% / 4);
     height: 250px;
     object-fit: cover;
-
     flex-shrink: 0;
-
     border-radius: 12px;
     box-sizing: border-box;
 }
@@ -252,20 +224,15 @@ td {
     border-radius: 8px;
 }
 
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
-}
+.arrow.left  { left: 10px; }
+.arrow.right { right: 10px; }
 
 .arrow:hover {
     background: rgba(0,0,0,0.8);
 }
 
 /* ===================== */
-/* SEZIONE QUERY SPARQL */
+/* SEZIONE QUERY SPARQL  */
 /* ===================== */
 
 .query-section {
@@ -295,7 +262,62 @@ td {
 }
 
 /* ===================== */
-      /* RESPONSIVE */
+/* HOME - SEZIONI        */
+/* ===================== */
+
+.container-home header {
+    padding-bottom: 28px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.15);
+}
+
+.container-home section {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.12);
+}
+
+.container-home section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.container-home h3 {
+    font-size: 1.4rem;
+    color: #5a0000;
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #8b0000;
+    display: inline-block;
+}
+
+/* Membri del team */
+.container-home section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.container-home section ul li {
+    background: rgba(139, 0, 0, 0.05);
+    border-left: 3px solid #8b0000;
+    padding: 10px 16px;
+    border-radius: 0 6px 6px 0;
+    font-size: 1.1rem;
+    color: #2a0a0a;
+    line-height: 1.4;
+}
+
+/* Galleria */
+.gallery-text {
+    margin-bottom: 0;
+}
+
+/* ===================== */
+/* RESPONSIVE            */
 /* ===================== */
 
 @media (max-width: 1024px) {
@@ -316,26 +338,16 @@ td {
     .logo {
         font-size: 1.7rem;
     }
-    h1 {
-        font-size: 2.4rem;
-    }
-    h2 {
-        font-size: 1.6rem;
-    }
-    h3 {
-        font-size: 1.35rem;
-    }
-    p,
-    li {
-        font-size: 1.1rem;
-    }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.35rem; }
+    p, li { font-size: 1.1rem; }
     .carousel-track img {
-        width: calc(100% / 2);   /* 2 foto per volta */
+        width: calc(100% / 2);
     }
 }
 
 @media (max-width: 768px) {
-
     .navbar {
         flex-direction: column;
         gap: 15px;
@@ -346,39 +358,30 @@ td {
         justify-content: center;
         gap: 12px;
     }
-    .nav-links a {
-        font-size: 1rem;
-    }
-    .logo {
-        font-size: 1.6rem;
-    }
+    .nav-links a { font-size: 1rem; }
+    .logo { font-size: 1.6rem; }
     .container,
     .container-home {
         width: 92%;
         padding: 20px;
         margin: 20px auto;
     }
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.4rem;
-    }
-    h3 {
-        font-size: 1.25rem;
-    }
-    p,
-    li {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.25rem; }
+    p, li {
         font-size: 1rem;
         line-height: 1.6;
     }
     .carousel-track img {
-        width: 100%;   /* una foto per volta */
+        width: 100%;
         height: 220px;
     }
-
     .arrow {
         font-size: 1.5rem;
         padding: 8px 12px;
+    }
+    .container-home section ul {
+        grid-template-columns: 1fr;
     }
 }
