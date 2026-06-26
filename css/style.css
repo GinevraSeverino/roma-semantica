@@ -251,29 +251,34 @@ td {
     top: 41%;
 }
 
+/* Parioli sopra Q.II */
 .parioli {
-    left: 63%;
-    top: 30%;
+    left: 52%;
+    top: 28%;
 }
 
+/* EUR sopra Q.XXXII */
 .eur {
     left: 52%;
-    top: 76%;
+    top: 70%;
 }
 
+/* San Basilio sopra Q.XXX */
 .sanbasilio {
-    left: 78%;
-    top: 22%;
+    left: 76%;
+    top: 18%;
 }
 
+/* Nomentano su Q.V */
 .nomentano {
-    left: 58%;
-    top: 34%;
+    left: 60%;
+    top: 45%;
 }
 
+/* Ardeatino sopra Q.XX */
 .ardeatino {
-    left: 50%;
-    top: 63%;
+    left: 58%;
+    top: 62%;
 }
 
 /* Carosello di foto */
