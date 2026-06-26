@@ -53,7 +53,7 @@ ORDER BY ?resource
             occuperemo in seguito nell'analisi.
         </p>
 
-        <img src="query/query0.png" alt="Output della Query 0" class="query-output">
+        <img src="query/Query0.png" alt="Output della Query 0" class="query-output">
     </section>
     
     <section class="query-section">
@@ -184,5 +184,84 @@ LIMIT 200
         </p>
 
         <img src="query/query4_a.png" alt="Output della Query 4" class="query-output">
+    </section>
+
+    <section class="query-section">
+        <h2>Query 5 - Confronto tra <b>dbo</b> e <b>dbp</b></h2>
+
+        <pre class="query-box"><code>
+PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+PREFIX dbp: &lt;http://dbpedia.org/property/&gt;
+
+SELECT ?livello ?property ?value
+WHERE {
+
+  {
+    BIND("Ontology (dbo)" AS ?livello)
+    BIND(dbo:subdivision AS ?property)
+    dbr:Trastevere dbo:subdivision ?value .
+  }
+
+  UNION
+
+  {
+    BIND("Infobox (dbp)" AS ?livello)
+    BIND(dbp:settlementType AS ?property)
+    dbr:Trastevere dbp:settlementType ?value .
+  }
+
+}
+        </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: questa query mostra la differenza tra il livello ontologico e il livello di modellazione
+            derivato dagli Infobox Wikipedia, andando a cercare gli ogetti associati alle due tipologie di proprietà.
+        </p>
+        <p>
+            <i>Output</i>: si nota che in corrispondenza di proprietà ontologiche è associato un IRI di un'altra risorsa, mentre in corrispondenza
+            delle altre proprietà i valor associati sono stringe di testo o numeri. (DA SISTEMARE)
+        </p>
+
+        <img src="query/query5.png" alt="Output della Query 5" class="query-output">
+    </section>
+
+    <section class="query-section">
+        <h2>Query 6 - Tipizzazione delle entità del progetto</h2>
+
+        <pre class="query-box"><code>
+PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
+PREFIX dbr: &lt;http://dbpedia.org/resource/&gt;
+
+SELECT DISTINCT ?resource ?type
+WHERE {
+  VALUES ?resource {
+    dbr:Trastevere
+    &lthttp://dbpedia.org/resource/Trevi_(rione_of_Rome)&gt
+    dbr:Prati
+    dbr:Testaccio
+    dbr:Parioli
+    &lthttp://dbpedia.org/resource/San_Lorenzo_(Rome)&gt
+    dbr:Nomentano
+    dbr:Ardeatino
+    &lthttp://dbpedia.org/resource/San_Basilio_(Rome)&gt
+    &lthttp://dbpedia.org/resource/EUR,_Rome&gt
+  }
+
+  ?resource rdf:type ?type .
+}
+ORDER BY ?resource ?type
+    </code></pre>
+
+        <p>
+            <i>Obiettivo</i>: la query cerca tutti i tipi RDF associati alle dieci entità del progetto, mostrando chiaramente
+            il livello di disomogeneità anticipato precedentemente.
+        </p>
+        <p>
+            <i>Output</i>: come anticipato, si nota forte disomogeneità nella modellazione. Alcune risorse sono
+            generiche owl:Thing o geo:SpatialThing, altre sono un pò più definite come dbo:Settlement.
+        </p>
+
+        <img src="query/query6.png" alt="Output della Query 6" class="query-output">
     </section>
 </div>
