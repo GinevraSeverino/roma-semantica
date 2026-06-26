@@ -33,6 +33,12 @@ body {
     color: white;
 }
 
+.logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
 .nav-links {
     display: flex;
     gap: 35px;
