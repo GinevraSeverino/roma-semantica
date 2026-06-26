@@ -27,10 +27,19 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-family: "Georgia", serif;
     font-size: 2rem;
     font-weight: bold;
     color: white;
+}
+
+.logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
 }
 
 .nav-links {
