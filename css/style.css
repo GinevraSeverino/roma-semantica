@@ -400,3 +400,15 @@ td {
     break-inside: avoid;
     margin-bottom: 10px;
 }
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 0.85rem;
+    color: white;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    border-top: 1px solid rgba(255,255,255,0.35);
+    margin: 24px 20px 0;
+}
