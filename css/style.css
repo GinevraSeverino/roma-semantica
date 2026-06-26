@@ -214,12 +214,11 @@ td {
 }
 
 .carousel-track img {
-    width: calc(100% / 4);
+    flex: 0 0 auto;
+    width: 260px;
     height: 250px;
     object-fit: cover;
-    flex-shrink: 0;
     border-radius: 12px;
-    box-sizing: border-box;
 }
 
 .arrow {
