@@ -261,6 +261,66 @@ td {
     display: block;
 }
 
+.map-sidebar {
+    position: fixed;
+    right: -320px; /* nascosta inizialmente */
+    top: 120px;
+
+    width: 280px;
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-left: 4px solid #a13535;
+    border-radius: 12px 0 0 12px;
+
+    box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+
+    transition: right 0.3s ease;
+    z-index: 2000;
+}
+
+.map-sidebar.open {
+    right: 0;
+}
+
+.map-sidebar h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.map-sidebar p {
+    font-size: 1rem;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.map-sidebar a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #a13535;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.map-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
 /* Posizioni dei quartieri */
 /* Posizioni dei quartieri analizzati */
 
@@ -612,7 +672,6 @@ td {
 }
 
 /* ============================================================
-   AGGIUNTE PER methodology.html
    Tutte le regole qui sotto sono specifiche per la pagina
    Metodologia e non interferiscono con il resto del sito.
    ============================================================ */
@@ -641,7 +700,7 @@ td {
     position: relative;
 }
 
-/* -- Cerchio numerato --------------------------------------- */
+/* -- Cerchio numerato -- */
 .phase-num {
     flex-shrink: 0;
     width: 80px;
@@ -670,7 +729,7 @@ td {
     letter-spacing: 0;
 }
 
-/* -- Corpo testuale della fase ------------------------------ */
+/* -- Corpo testuale della fase -- */
 .phase-body {
     flex: 1;
     padding-top: 16px;
@@ -684,7 +743,7 @@ td {
     border-bottom: none;
 }
 
-/* -- Griglia gap semantici ---------------------------------- */
+/* -- Griglia gap semantici -- */
 .gap-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -731,7 +790,7 @@ td {
     white-space: nowrap;
 }
 
-/* -- Tabella fonti dati (elegante, senza bordi pesanti) ----- */
+/* -- Tabella fonti dati -- */
 .sources-table {
     width: 100%;
     border-collapse: collapse;
@@ -789,7 +848,7 @@ td {
     text-transform: uppercase;
 }
 
-/* -- Card dimensioni ontologiche ---------------------------- */
+/* -- Card dimensioni ontologiche -- */
 .dim-grid {
     display: grid;
     grid-template-columns: 1fr;
