@@ -531,6 +531,13 @@ td {
     .container-home section ul {
         grid-template-columns: 1fr;
     }
+    .district-chips{
+    grid-template-columns:repeat(2,1fr);
+    }
+
+    .district-chips span{
+    font-size:1rem;
+    }
 }
 /* Lista */
 .tools-list {
