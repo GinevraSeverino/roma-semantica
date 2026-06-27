@@ -534,8 +534,7 @@ td {
     .district-chips{
     grid-template-columns:repeat(2,1fr);
     }
-
-    .district-chips span{
+    .district-chips>*{
     font-size:1rem;
     }
 }
