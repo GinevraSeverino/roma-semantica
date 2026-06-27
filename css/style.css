@@ -246,7 +246,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 
 .map-sidebar {
     position: fixed;
-    right: -320px; /* nascosta inizialmente */
+    right: -320px;
     top: 120px;
     width: 280px;
     padding: 20px;
