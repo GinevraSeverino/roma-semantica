@@ -846,3 +846,45 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     .llm-grid { grid-template-columns: 1fr; }
     .tools-grid { grid-template-columns: 1fr 1fr; }
 }
+/* =====================================================
+                    PARTE TOPIC
+===================================================== */
+
+.topic-section{
+    margin:45px 0;}
+
+.topic-section h2{
+    margin-bottom:18px;}
+
+.topic-center{
+    max-width:850px;
+    margin:0 auto 25px auto;
+    text-align:center;}
+
+.district-list{
+    margin:45px 0;}
+
+.badges{
+    margin-top:25px;}
+
+.badges span{
+    display:inline-block;
+    padding:12px 22px;
+    background:#f2e5db;
+    color:#8d3333;
+    border-radius:25px;
+    font-weight:600;
+    letter-spacing:.3px;
+    transition:.25s ease;}
+
+.badges span:hover{
+    background:#a13535;
+    color:white;
+    transform:translateY(-2px);}
+
+.topic-section p:last-child{
+    margin-bottom:0;}
+
+/* =====================================================
+                 FINE PARTE TOPIC
+===================================================== */
