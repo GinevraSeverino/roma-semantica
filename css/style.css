@@ -249,7 +249,6 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 .rione-dot{ background: rgba(0,102,255,0.8); }
 .district-dot{ background: rgba(255,0,0,0.7); }
 .zona-dot{ background: rgba(138,43,226,0.7); }
-.map-sidebar.open {right: 0;}
 .map-sidebar h2 {
     font-size: 1.4rem;
     margin-bottom: 8px;
