@@ -853,7 +853,7 @@ td {
     color: #555;
 }
 
-/* -- Card LLM (discrete, senza colori esasperati) ----------- */
+/* -- Card LLM -- */
 .llm-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -901,7 +901,7 @@ td {
     text-align: left;
 }
 
-/* -- Griglia strumenti -------------------------------------- */
+/* -- Griglia strumenti -- */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -929,7 +929,7 @@ td {
     flex-shrink: 0;
 }
 
-/* -- Responsive methodology --------------------------------- */
+/* -- Responsive methodology -- */
 @media (max-width: 768px) {
     .phase-timeline::before { left: 30px; }
     .phase-num { width: 62px; height: 62px; font-size: 0.6rem; }
@@ -939,7 +939,3 @@ td {
     .llm-grid { grid-template-columns: 1fr; }
     .tools-grid { grid-template-columns: 1fr 1fr; }
 }
-
-/* ============================================================
-   FINE AGGIUNTE PER methodology.html
-   ============================================================ */
