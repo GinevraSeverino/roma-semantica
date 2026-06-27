@@ -240,8 +240,24 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     z-index: 2000;
 }
 
-.map-sidebar.open {right: 0;}
+.map-legend{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.92);
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    font-size: 0.95rem;
+}
 
+.map-legend h3{margin: 0 0 8px 0; font-size: 1rem; text-align: left;}
+.legend-item{display: flex; align-items: center; gap: 8px; margin: 4px 0;}
+.legend-dot{width: 10px; height: 10px; border-radius: 50%;}
+.rione-dot{ background: rgba(0,102,255,0.8); }
+.district-dot{ background: rgba(255,0,0,0.7); }
+.zona-dot{ background: rgba(138,43,226,0.7); }
+.map-sidebar.open {right: 0;}
 .map-sidebar h2 {
     font-size: 1.4rem;
     margin-bottom: 8px;
