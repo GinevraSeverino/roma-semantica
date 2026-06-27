@@ -611,8 +611,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     margin:20px 0;
     justify-items:stretch;
 }
-
-.district-chips span{
+.district-chips>*{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -623,6 +622,14 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     text-align:center;
     font-size:1.05rem;
     font-weight:500;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.district-chips>*:hover{
+    background:#8d3333;
+    color:#fff;
+    transform:translateY(-2px);
 }
 .sources-table {
     width: 100%;
