@@ -10,179 +10,107 @@
 
 <nav class="navbar">
     <div class="logo">
-        <img src="gallery/colosseo.png" alt="Logo">
-        <span>Roma Semantica</span>
-    </div>
+    <img src="gallery/colosseo.png" alt="Logo">
+    <span>Roma Semantica</span>
+</div>
 
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="topic.html">Topic</a></li>
+        <li><a href="topic.html">Topic</a></li>
         <li><a href="methodology.html">Metodologia</a></li>
         <li><a href="Ontology_extension.html">Ontologia</a></li>
         <li><a href="sparql.html">SPARQL</a></li>
         <li><a href="LLM.html">LLM</a></li>
         <li><a href="results.html">Results</a></li>
         <li><a href="challenges.html">Challenges</a></li>
+
     </ul>
 </nav>
-
+    
 <div class="container">
 
 <h1>Tema del Progetto</h1>
+<p class="subtitle">Roma Semantica: una rappresentazione semantica dell'dentità di Roma</p>
 
+<section class="topic-section">
+<h2>Il contesto del progetto</h2>
 <p>
-Il progetto "Roma Semantica" si focalizza sui quartieri e rioni storici romani. Nello specifico, attraverso il Knowledge Graph di Bpedia vengono esplorati 10 quartieri/rioni che rappresentano
-realtà molto diverse tra loro e che quindi ci consentono di osservare differenti forme di identità urbana.
+Roma rappresenta uno dei contesti urbani più complessi e diversificati d'Europa: la città è suddivisa in rioni, quartieri e zone urbanistiche che, pur appartenendo allo stesso sistema urbano, 
+presentano caratteristiche profondamente differenti dal punto di vista storico, sociale, economico e culturale.
 </p>
-
-<section class="district-list">
-<h2>Cosa abbiamo analizzato</h2>
-<div class="district-chips">
-    <a href="https://dbpedia.org/page/Trastevere" target="_blank" rel="noopener noreferrer">Trastevere</a>
-    <a href="https://dbpedia.org/page/Prati_(rione_of_Rome)" target="_blank" rel="noopener noreferrer">Prati</a>
-    <a href="https://dbpedia.org/page/Trevi_(rione_of_Rome)" target="_blank" rel="noopener noreferrer">Trevi</a>
-    <a href="https://dbpedia.org/page/Testaccio" target="_blank" rel="noopener noreferrer">Testaccio</a>
-    <a href="https://dbpedia.org/page/San_Lorenzo_(Rome)" target="_blank" rel="noopener noreferrer">San Lorenzo</a>
-    <a href="https://dbpedia.org/page/Parioli" target="_blank" rel="noopener noreferrer">Parioli</a>
-    <a href="https://dbpedia.org/page/Europa_(Q._XXXII)" target="_blank" rel="noopener noreferrer">EUR</a>
-    <a href="https://dbpedia.org/page/San_Basilio_(Q._XXX)" target="_blank" rel="noopener noreferrer">San Basilio</a>
-    <a href="https://dbpedia.org/page/Nomentano" target="_blank" rel="noopener noreferrer">Nomentano</a>
-    <a href="https://dbpedia.org/page/Ardeatino" target="_blank" rel="noopener noreferrer">Ardeatino</a>
-</div>
+<p>
+Ogni area sviluppa infatti una propria identità, influenzata dalla presenza di attività commerciali, università, poli direzionali, spazi culturali, aree residenziali e processi di trasformazione urbana.
+Sono questi elementi a contribuire alla definzione del modo in cui un quartiere viene percepito e vissuto dai cittadini e dai visitatori.
+</p>
+<p>
+Il progetto <strong>Roma Semantica</strong> prende in esame queste differenze con l'obiettivo di costruire una rappresentazione semantica più ricca dei quartieri romani, utilizzando  
+<a href="https://www.dbpedia.org/">DBpedia</a> come base di conoscenza e concentrandosi su un campione di aree rappresentative della città.</p>
 </section>
 
-<h2>Esplorare dalla mappa</h2>
-<div class="rome-map">
-    <a class="rione trastevere" href="https://it.wikipedia.org/wiki/Trastevere" target="_blank"
-        data-title="Trastevere"
-        data-type="Rione"
-        data-desc="Rione storico del centro di Roma, noto per la vita notturna e l’identità popolare."
-        onclick="openSidebarFromElement(this)">
-        <span>Trastevere</span>
-    </a>
-    <a class="rione prati" href="https://it.wikipedia.org/wiki/Prati_(Roma)" target="_blank"
-        data-title="Prati"
-        data-type="Rione"
-        data-desc="Rione residenziale elegante vicino al Vaticano."
-        onclick="openSidebarFromElement(this)">
-        <span>Prati</span>
-    </a>
-    <a class="rione trevi" href="https://it.wikipedia.org/wiki/Trevi_(rione_di_Roma)" target="_blank"
-        data-title="Trevi"
-        data-type="Rione"
-        data-desc="Area del centro storico con la Fontana di Trevi."
-        onclick="openSidebarFromElement(this)">
-        <span>Trevi</span>
-    </a>
-    <a class="rione testaccio" href="https://it.wikipedia.org/wiki/Testaccio" target="_blank"
-        data-title="Testaccio"
-        data-type="Rione"
-        data-desc="Quartiere storico legato alla tradizione gastronomica romana."
-        onclick="openSidebarFromElement(this)">
-        <span>Testaccio</span>
-    </a>
-    <a class="zona sanlorenzo" href="https://it.wikipedia.org/wiki/San_Lorenzo_(Roma)" target="_blank"
-        data-title="San Lorenzo"
-        data-type="Zona"
-        data-desc="Area universitaria e creativa con forte identità giovanile."
-        onclick="openSidebarFromElement(this)">
-        <span>San Lorenzo</span>
-    </a>
-    <a class="district parioli" href="https://it.wikipedia.org/wiki/Parioli" target="_blank"
-        data-title="Parioli"
-        data-type="Quartiere"
-        data-desc="Zona residenziale alto-borghese di Roma nord."
-        onclick="openSidebarFromElement(this)">
-        <span>Parioli</span>
-    </a>
-    <a class="district eur" href="https://it.wikipedia.org/wiki/Europa_(Roma)" target="_blank"
-        data-title="EUR"
-        data-type="Quartiere"
-        data-desc="Area direzionale e architettura razionalista."
-        onclick="openSidebarFromElement(this)">
-        <span>EUR</span>
-    </a>
-    <a class="district sanbasilio" href="https://it.wikipedia.org/wiki/San_Basilio_(Roma)" target="_blank"
-        data-title="San Basilio"
-        data-type="Quartiere"
-        data-desc="Periferia romana con forte identità popolare."
-        onclick="openSidebarFromElement(this)">
-        <span>San Basilio</span>
-    </a>
-    <a class="district nomentano" href="https://it.wikipedia.org/wiki/Nomentano" target="_blank"
-        data-title="Nomentano"
-        data-type="Quartiere"
-        data-desc="Area universitaria e residenziale centrale."
-        onclick="openSidebarFromElement(this)">
-        <span>Nomentano</span>
-    </a>
-    <a class="district ardeatino" href="https://it.wikipedia.org/wiki/Ardeatino" target="_blank"
-        data-title="Ardeatino"
-        data-type="Quartiere"
-        data-desc="Zona sud di Roma con aree verdi e siti storici."
-        onclick="openSidebarFromElement(this)">
-        <span>Ardeatino</span>
-    </a>
+<section class="topic-section">
+<h2>Perché Roma?</h2>
+<div class="insight-box">
+<p>
+Roma costituisce un caso di studio stimolante poichè appunto racchiude realtà urbane molto differenti tra loro: rioni storici, quartieri residenziali, aree universitarie, poli direzionali e quartieri periferici. 
+Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
+</div>
+</section>   
+
+<h2>Il campione analizzato</h2>
+<p class="topic-center">Per rappresentare la varietà del tessuto urbano romano è stato selezionato un campione di dieci quartieri e rioni molto eterogenei fra loro.</p>
+
+<section class="district-list">
+<div class="badges">
+<span>Trastevere</span>
+<span>Prati</span>
+<span>Trevi</span>
+<span>Testaccio</span>
+<span>San Lorenzo</span>
+<span>Parioli</span>
+<span>EUR</span>
+<span>San Basilio</span>
+<span>Nomentano</span>
+<span>Ardeatino</span>
 </div>
 
-<div class="map-legend">
-    <h3>Legenda</h3>
-    <div class="legend-item">
-        <span class="legend-dot rione-dot"></span> Rioni
-    </div>
-    <div class="legend-item">
-        <span class="legend-dot district-dot"></span> Quartieri
-    </div>
-    <div class="legend-item">
-        <span class="legend-dot zona-dot"></span> Zone
-    </div>
-</div>
+</section>
     
-<div id="map-sidebar" class="map-sidebar">
-    <button class="close-btn" onclick="closeSidebar()">✕</button>
+<h2 >Esplora i distretti</h2>
 
-    <h2 id="sidebar-title">Titolo</h2>
-    <p id="sidebar-type"></p>
-    <p id="sidebar-desc">
-        Seleziona un punto sulla mappa per vedere i dettagli.
-    </p>
+<div class="rome-map">
 
-    <a id="sidebar-link" href="#" target="_blank">
-        Vai alla pagina
+    <a href="https://en.wikipedia.org/wiki/Trastevere"
+       class="district trastevere">
+       <span>Trastevere</span>
     </a>
+
+    <a href="https://en.wikipedia.org/wiki/Testaccio"
+       class="district testaccio">
+       <span>Testaccio</span>
+    </a>
+
+    <a href="https://en.wikipedia.org/wiki/Garbatella"
+       class="district garbatella">
+       <span>Garbatella</span>
+    </a>
+
+    <a href="https://en.wikipedia.org/wiki/EUR,_Rome"
+       class="district eur">
+       <span>EUR</span>
+    </a>
+
+    <a href="https://en.wikipedia.org/wiki/Monti_(rione_of_Rome)"
+       class="district monti">
+       <span>Monti</span>
+    </a>
+
 </div>
 
-<script>
-function openSidebar(title, type, desc, link) {
-    document.getElementById("sidebar-title").textContent = title;
-    document.getElementById("sidebar-type").textContent = type;
-    document.getElementById("sidebar-desc").textContent = desc;
-    document.getElementById("sidebar-link").href = link;
-
-    document.getElementById("map-sidebar").classList.add("open");
-}
-
-function closeSidebar() {
-    document.getElementById("map-sidebar").classList.remove("open");
-}
-</script>
-
-<script>
-function openSidebarFromElement(el) {
-    const title = el.dataset.title;
-    const type = el.dataset.type;
-    const desc = el.dataset.desc;
-    const link = el.href;
-
-    openSidebar(title, type, desc, link);
-}
-</script>
 
 </div>
 
 <footer class="site-footer">
     © 2026 Roma Semantica · Università di Bologna
 </footer>
-
 </body>
 </html>
