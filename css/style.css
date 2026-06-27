@@ -489,6 +489,9 @@ td {
     .carousel-track img {
         width: calc(100% / 2);
     }
+    .district-chips{
+    grid-template-columns:repeat(3,1fr);
+}
 }
 
 @media (max-width: 768px) {
