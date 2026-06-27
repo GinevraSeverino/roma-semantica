@@ -40,7 +40,7 @@
 <p>
 La prima fase del progetto è consistita nell'esplorazione di DBpedia attraverso query SPARQL tramite l'<a href="https://dbpedia.org/sparql#">endpoint</a> ufficiale, con l'obiettivo primario di comprendere 
 innanzitutto come i quartieri e i rioni di Roma fossero modellati nel Knowledge Graph e, a partire da tale analisi, identificare
-i gap semantici esistenti rispetto alle dimensioni che il progetto intendeva rappresentare. </p>. 
+i gap semantici esistenti rispetto alle dimensioni che il progetto intendeva rappresentare. </p>
 <p>
 Abbiamo interrogato l'entità <code>dbr:Rome</code> per verificarne la tipizzazione e
 le proprietà associate, scoprendo che Roma è classificata come <em>City</em>,
@@ -74,11 +74,7 @@ ma priva di legami diretti con le sue suddivisioni urbane.</p>
         </div>
  
         <div class="insight-box">
-          <strong>Insight</strong>
-          La verifica tramite query SPARQL ha confermato che le proprietà che intendevamo
-          introdurre — <code>hasPerceivedSafety</code>, <code>hasUrbanTransformation</code>,
-          <code>hasDominantUrbanIdentity</code> — non esistono in nessuna forma all'interno
-          di DBpedia, validando la necessità di un'estensione ontologica originale.
+          <strong>Insight</strong> A seguito di quessta fase di analisi ed esplorazione è risultata evidente la necessità di un'estensione ontologica.
         </div>
  
       </div>
@@ -95,7 +91,7 @@ Sulla base dell'esplorazione condotta nella fase precedente, sono stati selezion
 complessità urbana della città. La suddivisione territoriale adottata si basa sulla
 classificazione ufficiale del Comune di Roma — disponibile tramite il portale
 <a href="https://www.comune.roma.it" target="_blank">Roma Capitale</a> e il
-sistema geografico <a href="https://georoma.comune.roma.it" target="_blank">GeoRoma</a>
+sistema geografico <a href="https://geoportale.comune.roma.it/georoma/#/" target="_blank">GeoRoma</a>
  — che distingue rioni del centro storico, quartieri e zone urbanistiche.
 Il campione scelto include aree storiche, quartieri residenziali, zone universitarie,
 poli direzionali e aree periferiche, garantendo varietà morfologica e socio-economica:
@@ -155,13 +151,13 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
                 <br><span class="src-tag">Statistico</span>
               </td>
               <td>Dati socio-demografici, indicatori di qualità della vita e sicurezza percepita
-              utilizzati come riferimento di validazione</td>
+              utilizzati</td>
               <td>Statistico</td>
             </tr>
             <tr>
               <td>
                 <a href="https://www.comune.roma.it" target="_blank">Comune di Roma</a>
-                / <a href="https://georoma.comune.roma.it" target="_blank">GeoRoma</a>
+                / <a href="https://geoportale.comune.roma.it/georoma/#/" target="_blank">GeoRoma</a>
                 <br><span class="src-tag">Istituzionale</span>
               </td>
               <td>Classificazione ufficiale delle suddivisioni urbane di Roma in municipî,
@@ -188,7 +184,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
           abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
           sottoclasse di <code>dbo:CityDistrict</code> — il concetto ontologico esistente più
           affine all'idea di quartiere o rione urbano. Il namespace di progetto scelto è
-          <code>ruo:</code> (<em>http://example.org/rome-urban-ontology/</em>).
+          <code>http://example.org/rome-urban-ontology/</code>, con prefisso <code>ruo:</code>.
         </p>
         <p>
           Sono state introdotte <strong>tre dimensioni semantiche</strong>, ciascuna modellata
@@ -265,7 +261,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
         <h2>LLM Knowledge Extraction e Bias Analysis</h2>
 <p>
 In questa fase abbiamo condotto un processo di knowledge extraction con tre modelli LLM, attravero una tecnica di Prompting Zero-Shot. 
-L'obiettivo centrale di questa fase  è stato quello di analizzare i potenziali bias e stereotipi urbani intrinseci negli LLM,
+L'obiettivo centrale è stato quello di analizzare i potenziali bias e stereotipi urbani intrinseci negli LLM,
 esaminando i valori assegnati da ciascuna IA a ogni singolo rione e quartiere per le proprietà <code>ruo:hasDominantUrbanIdentity</code>, <code>ruo:hasUrbanTransformation</code> 
 e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</a>).</p>
 <p>I  modelli LLM selezionati sono:</p>
