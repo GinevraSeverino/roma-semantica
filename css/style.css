@@ -1,16 +1,13 @@
 body {
     font-family: "Georgia", serif;
     font-size: 1.1rem;
-
     margin: 0;
     padding: 0;
-
     background-image: url("../gallery/roma0.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     min-height: 100vh;
 }
 
@@ -149,7 +146,6 @@ h2 {
     margin-top: 6px;
 }
 
-
 h3 {
     font-size: 1.5rem;
     text-align: left;
@@ -266,18 +262,13 @@ td {
     position: fixed;
     right: -320px; /* nascosta inizialmente */
     top: 120px;
-
     width: 280px;
     padding: 20px;
-
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-
     border-left: 4px solid #a13535;
     border-radius: 12px 0 0 12px;
-
     box-shadow: -4px 0 20px rgba(0,0,0,0.2);
-
     transition: right 0.3s ease;
     z-index: 2000;
 }
@@ -314,73 +305,53 @@ td {
     position: absolute;
     top: 10px;
     right: 10px;
-
     border: none;
     background: transparent;
-
     font-size: 1.2rem;
     cursor: pointer;
 }
 
-/* Posizioni dei quartieri */
 /* Posizioni dei quartieri analizzati */
-
 .trastevere {
     left: 38%;
     top: 48%;
 }
-
 .prati {
     left: 40%;
     top: 37%;
 }
-
 .trevi {
     left: 47%;
     top: 40%;
 }
-
 .testaccio {
     left: 41%;
     top: 54%;
 }
-
 .sanlorenzo {
     left: 57%;
     top: 41%;
 }
-
-/* Parioli Q.II */
 .parioli {
     left: 51%;
     top: 23%;
 }
-
-/* EUR Q.XXXII */
 .eur {
     left: 39%;
     top: 80%;
 }
-
-/* San Basilio Q.XXX */
 .sanbasilio {
     left: 86%;
     top: 13%;
 }
-
-/* Nomentano Q.V */
 .nomentano {
     left: 60%;
     top: 33%;
 }
-
-/* Ardeatino sopra Q.XX */
 .ardeatino {
     left: 52%;
     top: 70%;
 }
-
-
 /* Carosello di foto */
 .carousel {
     position: relative;
@@ -388,12 +359,10 @@ td {
     margin: 60px auto;
     overflow: hidden;
 }
-
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease;
 }
-
 .carousel-track img {
     flex: 0 0 auto;
     width: 260px;
@@ -401,7 +370,6 @@ td {
     object-fit: cover;
     border-radius: 12px;
 }
-
 .arrow {
     position: absolute;
     top: 50%;
@@ -415,10 +383,8 @@ td {
     z-index: 10;
     border-radius: 8px;
 }
-
 .arrow.left  { left: 10px; }
 .arrow.right { right: 10px; }
-
 .arrow:hover {
     background: rgba(0,0,0,0.8);
 }
@@ -429,31 +395,24 @@ td {
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(0,0,0,0.15);
 }
-
 .query-box {
    width: 75%;
     margin: 20px auto;
-
     background: #f4eadc;
     border-left: 6px solid #a13535;
     padding: 18px;
     border-radius: 10px;
-
     overflow-x: auto;
-
     font-family: "Courier New", monospace;
     font-size: 0.95rem;
     line-height: 1.45;
     white-space: pre-wrap;
 }
-
 .query-output {
     display: block;
     width: 75%;
     max-width: 700px;
-
     margin: 25px auto;
-
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.25);
 }
@@ -464,17 +423,14 @@ td {
     margin-bottom: 8px;
     border-bottom: 1px solid rgba(139, 0, 0, 0.15);
 }
-
 .container-home section {
     padding: 28px 0;
     border-bottom: 1px solid rgba(139, 0, 0, 0.12);
 }
-
 .container-home section:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
-
 .container-home h3 {
     font-size: 1.4rem;
     color: #1a1a1a;
@@ -485,7 +441,6 @@ td {
     display: inline-block;
     letter-spacing: 0.5px;
 }
-
 /* Membri del team */
 .container-home section ul {
     list-style: none;
@@ -495,7 +450,6 @@ td {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
-
 .container-home section ul li {
     background: rgba(139, 0, 0, 0.05);
     border-left: 3px solid #8b0000;
@@ -505,12 +459,10 @@ td {
     color: #2a0a0a;
     line-height: 1.4;
 }
-
 /* Galleria */
 .gallery-text {
     margin-bottom: 0;
 }
-
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .container,
@@ -577,7 +529,6 @@ td {
         grid-template-columns: 1fr;
     }
 }
-
 /* Lista */
 .tools-list {
     columns: 2;
@@ -588,7 +539,6 @@ td {
     break-inside: avoid;
     margin-bottom: 10px;
 }
-
 /*TOPIC QUARTIERI*/
 .badges {
     display: flex;
@@ -597,7 +547,6 @@ td {
     gap: 12px;
     margin: 30px 0;
 }
-
 .badges a {
     display: inline-block;
     background: #f2e5db;
@@ -608,13 +557,11 @@ td {
     text-decoration: none;
     transition: all 0.25s ease;
 }
-
 .badges a:hover {
     background: #8d3333;
     color: white;
     transform: translateY(-2px);
 }
-
 /* FOOTER */
 .site-footer {
     text-align: center;
@@ -634,19 +581,15 @@ td {
     align-items: flex-start;
     margin-top: 35px;
 }
-
 .ontology-text {
     flex: 0 0 48%;
 }
-
 .ontology-text section {
     margin-bottom: 45px;
 }
-
 .ontology-text h2 {
     text-align: left;
 }
-
 .ontology-img-box {
     flex: 0 0 42%;
     background: white;
@@ -661,28 +604,19 @@ td {
     height: auto;
     object-fit: contain;
 }
-
 @media (max-width: 900px) {
     .ontology-card {
         flex-direction: column;
     }
-
     .ontology-img-box {
         width: 100%;
     }
 }
-
-/* ============================================================
-   Tutte le regole qui sotto sono specifiche per la pagina
-   Metodologia e non interferiscono con il resto del sito.
-   ============================================================ */
-
 /* -- Timeline verticale delle fasi -------------------------- */
 .phase-timeline {
     position: relative;
     margin: 50px 0 10px;
 }
-
 .phase-timeline::before {
     content: "";
     position: absolute;
@@ -692,7 +626,6 @@ td {
     width: 2px;
     background: linear-gradient(to bottom, #a13535 0%, rgba(161,53,53,0.15) 100%);
 }
-
 .phase-item {
     display: flex;
     gap: 36px;
@@ -700,8 +633,6 @@ td {
     margin-bottom: 52px;
     position: relative;
 }
-
-/* -- Cerchio numerato -- */
 .phase-num {
     flex-shrink: 0;
     width: 80px;
@@ -722,20 +653,16 @@ td {
     z-index: 2;
     box-shadow: 0 0 0 6px rgba(161,53,53,0.1);
 }
-
 .phase-num .num {
     font-size: 1.7rem;
     font-weight: bold;
     line-height: 1;
     letter-spacing: 0;
 }
-
-/* -- Corpo testuale della fase -- */
 .phase-body {
     flex: 1;
     padding-top: 16px;
 }
-
 .phase-body h2 {
     text-align: left;
     font-size: 1.5rem;
@@ -743,15 +670,12 @@ td {
     color: #a13535;
     border-bottom: none;
 }
-
-/* -- Griglia gap semantici -- */
 .gap-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin: 18px 0 22px;
 }
-
 .gap-card {
     background: rgba(161,53,53,0.05);
     border-left: 4px solid #a13535;
@@ -761,7 +685,6 @@ td {
     line-height: 1.5;
     color: #2a0a0a;
 }
-
 .gap-card strong {
     display: block;
     font-size: 0.72rem;
@@ -770,8 +693,6 @@ td {
     color: #a13535;
     margin-bottom: 4px;
 }
-
-/* -- Chip quartieri -- */
 .district-chips {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -790,8 +711,6 @@ td {
     text-align: center;
     white-space: nowrap;
 }
-
-/* -- Tabella fonti dati -- */
 .sources-table {
     width: 100%;
     border-collapse: collapse;
@@ -831,7 +750,6 @@ td {
     text-decoration: none;
     font-weight: 600;
 }
-
 .sources-table a:hover {
     text-decoration: underline;
 }
