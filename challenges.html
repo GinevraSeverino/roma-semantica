@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Challenges</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,7 +14,6 @@
     <img src="gallery/colosseo.png" alt="Logo">
     <span>Roma Semantica</span>
 </div>
-
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="topic.html">Tema</a></li>
@@ -23,50 +23,64 @@
         <li><a href="LLM.html">LLM</a></li>
         <li><a href="results.html">Risultati</a></li>
         <li><a class="active" href="challenges.html">Challenges</a></li>
-
     </ul>
 </nav>
     
 <div class="container">
 
 <h1>Challenges</h1>
+<p class="subtitle">Difficoltà incontrate e soluzioni adottate</p>
+
+<p>
+Il progetto ha incontrato una serie di ostacoli concreti lungo tutte le sue fasi; di seguito documentiamo le principali difficoltà affrontate e le strategie che abbiamo adottato per aggirarle o risolverle.
+</p>
+    
+<div class="challenge-block">
+<div class="challenge-header">
+<span class="challenge-num">01</span>
+<h2>DBpedia poco affidabile</h2>
+</div>
+    <p>
+      Una delle difficoltà maggiori è stata lavorare con DBpedia, molto lontana dall'ideale di Knowledge Graph stabile
+      e ben strutturato. I problemi sono stati numerosi e si sono manifestati in diversi fasi del processo:
+    </p>
+    <ul>
+      <li>
+        <strong>L'endpoint SPARQL è spesso instabile e lento.</strong>
+      </li>
+      <li>
+        <strong>La T-Box non è navigabile.</strong>
+        Il sito ufficiale di DBpedia restituisce errore nel momento in cui si cerca di aprire il link della pagina (<a href"http://archivo.dbpedia.org/download?o=http%3A//dbpedia.org/ontology/&f=owl"T-box </a>).
+      </li>
+      <li>
+        <strong>Il link alla pagina con la gerarchia delle classi non ha funzionato per la maggior parte del tempo.</strong> </li>
+    </ul>
+    <div class="challenge-solution">
+      <span class="solution-label">Soluzione adottata</span>
+      Abbiamo lavorato query per query, verificando manualmente i risultati e svolgendo interrogazioni quando i dati a disposizione non erano sufficienti.
+    </div>
+  </div>
+ 
+
 
 <h2>Inconsistenza nella modellazione di DBpedia</h2>
 <p>
-    DBpedia non dispone di una T-Box esplicita e coerente per i quartieri romani.
-    Le proprietà usate variano da risorsa a risorsa — alcune entità usano dbo:subdivision, altre dbo:isPartOf,
-    altre ancora proprietà custom — rendendo impossibile interrogare l'intero insieme con una singola query affidabile.
+DBpedia non dispone di una T-Box esplicita e coerente per i quartieri romani. Le proprietà usate variano da risorsa a risorsa — alcune entità usano dbo:subdivision, altre dbo:isPartOf, altre ancora proprietà custom — rendendo impossibile interrogare l'intero insieme con una singola query affidabile.
 </p>
-    
+   
 <h2>Eterogeneità nella tipizzazione delle entità</h2>
 <p>
-    I quartieri di Roma non condividono una classe comune in DBpedia. Alcuni sono tipizzati come dbo:Settlement,
-    altri come dbo:AdministrativeRegion, altri come dbo:PopulatedPlace o addirittura senza tipo esplicito. 
-    Questo riflette la complessità amministrativa reale di Roma (rioni storici, quartieri, municipi, suburbi)
-    ma rende la raccolta dati frammentata.
+I quartieri di Roma non condividono una classe comune in DBpedia. Alcuni sono tipizzati come dbo:Settlement, altri come dbo:AdministrativeRegion, altri come dbo:PopulatedPlace o addirittura senza tipo esplicito. 
+Questo riflette la complessità amministrativa reale di Roma (rioni storici, quartieri, municipi, suburbi) ma rende la raccolta dati frammentata.
 </p>
     
 <h2>Assenza di una definizione condivisa di "quartiere"</h2> 
-<p>
-    Roma ha una stratificazione amministrativa e storica unica: i rioni (centri storici),
-    i quartieri (espansione novecentesca), i municipi (suddivisioni amministrative attuali) e le zone urbanistiche
-    coesistono senza una gerarchia chiara in DBpedia.
-</p>
+Roma ha una stratificazione amministrativa e storica unica: i rioni (centri storici), i quartieri (espansione novecentesca), i municipi (suddivisioni amministrative attuali) e le zone urbanistiche coesistono senza una gerarchia chiara in DBpedia.
 
 <h2>Qualità e completezza dei dati</h2>   
-<p>
-    Molte risorse hanno label solo in inglese, proprietà mancanti o valori non normalizzati,
-    rendendo necessaria una pulizia manuale dei dati prima dell'arricchimento semantico.
-</p>
+<p>Molte risorse hanno label solo in inglese, proprietà mancanti o valori non normalizzati, rendendo necessaria una pulizia manuale dei dati prima dell'arricchimento semantico.</p>
 
-<h2>Solution</h2>
-
-<p>
-Wikidata identifiers were adopted as reference entities.
-</p>
-    
 </div>    
-    
 <footer class="site-footer">
     © 2026 Roma Semantica · Università di Bologna
 </footer>
