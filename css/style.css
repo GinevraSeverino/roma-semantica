@@ -212,12 +212,6 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     display: block;
 }
 
-.district:hover span,
-.rione:hover span,
-.zona:hover span {
-    display: block;
-}
-
 .map-sidebar {
     position: fixed;
     right: -360px;
