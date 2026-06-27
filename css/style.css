@@ -126,6 +126,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 /* MAPPA ROMA  */
 .rome-map {
     position: relative;
+    overflow: hidden;
     width: 100%;
     max-width: 900px;
     aspect-ratio: 1 / 1;
