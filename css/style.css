@@ -225,8 +225,25 @@ td {
     transform: translate(-50%, -50%) scale(1.3);
 }
 
+.zona {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(138, 43, 226, 0.40);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.zona:hover {
+    background: rgba(255, 165, 0, 0.85);
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
 .district span,
-.rione span {
+.rione span,
+.zona span {
     display: none;
     position: absolute;
     top: -35px;
@@ -239,7 +256,8 @@ td {
 }
 
 .district:hover span,
-.rione:hover span {
+.rione:hover span,
+.zona:hover span {
     display: block;
 }
 
