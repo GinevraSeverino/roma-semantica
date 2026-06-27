@@ -247,13 +247,13 @@ td {
 /* Posizioni dei quartieri analizzati */
 
 .trastevere {
-    left: 36%;
-    top: 41%;
+    left: 38%;
+    top: 46%;
 }
 
 .prati {
-    left: 46%;
-    top: 40%;
+    left: 43%;
+    top: 38%;
 }
 
 .trevi {
@@ -262,8 +262,8 @@ td {
 }
 
 .testaccio {
-    left: 44%;
-    top: 53%;
+    left: 42%;
+    top: 54%;
 }
 
 .sanlorenzo {
@@ -271,28 +271,28 @@ td {
     top: 41%;
 }
 
-/* Parioli sopra Q.II */
+/* Parioli Q.II */
 .parioli {
     left: 51%;
     top: 23%;
 }
 
-/* EUR sopra Q.XXXII */
+/* EUR Q.XXXII */
 .eur {
     left: 39%;
     top: 80%;
 }
 
-/* San Basilio sopra Q.XXX */
+/* San Basilio Q.XXX */
 .sanbasilio {
     left: 86%;
     top: 13%;
 }
 
-/* Nomentano su Q.V */
+/* Nomentano Q.V */
 .nomentano {
-    left: 62%;
-    top: 40%;
+    left: 60%;
+    top: 36%;
 }
 
 /* Ardeatino sopra Q.XX */
