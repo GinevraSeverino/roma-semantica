@@ -35,22 +35,8 @@ body {
 
 .logo img {width: 70px; height: 70px; object-fit: contain;}
 
-.nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    position: relative;
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: white;
-    text-decoration: none;
-}
+.nav-links {display: flex; gap: 35px; list-style: none; margin: 0; padding: 0;}
+.nav-links a {position: relative; font-size: 1.25rem; font-weight: 600; letter-spacing: 1px; color: white; text-decoration: none;}
 
 .nav-links a::after {
     content: "";
@@ -137,7 +123,7 @@ ul,li {font-size: 1.25rem; line-height: 1.65;}
 table {width: 100%; border-collapse: collapse;}
 th,td {border: 1px solid #ddd; padding: 10px;}
 
-/* MAPPA ROMA            */
+/* MAPPA ROMA  */
 .rome-map {
     position: relative;
     width: 100%;
@@ -161,28 +147,20 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     text-decoration: none;
 }
 
-.district:hover {
-    background: rgba(255,0,0,0.8);
-    transform: translate(-50%, -50%) scale(1.3);
-}
+.district:hover {background: rgba(255,0,0,0.8); transform: translate(-50%, -50%) scale(1.3);}
 
 .rione {
     position: absolute;
     width: 30px;
     height: 30px;
-
     border-radius: 50%;
     background: rgba(0, 102, 255, 0.45);
-
     transform: translate(-50%, -50%);
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
-.rione:hover {
-    background: rgba(0, 102, 255, 0.9);
-    transform: translate(-50%, -50%) scale(1.3);
-}
+.rione:hover {background: rgba(0, 102, 255, 0.9); transform: translate(-50%, -50%) scale(1.3);}
 
 .zona {
     position: absolute;
@@ -195,12 +173,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     text-decoration: none;
 }
 
-.zona:hover {
-    background: rgba(255, 165, 0, 0.85);
-    transform: translate(-50%, -50%) scale(1.3);
-}
+.zona:hover {background: rgba(255, 165, 0, 0.85); transform: translate(-50%, -50%) scale(1.3);}
 
-/* TOOLTIP AVANZATO */
 .district span,
 .rione span,
 .zona span {
@@ -287,23 +261,20 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     text-align: left;
 }
 
-.map-sidebar p {
-    font-size: 1rem;
-    margin: 8px 0;
-    text-align: left;
-}
+.map-sidebar p {font-size: 1rem; margin: 8px 0; text-align: left;}
 
 .map-sidebar a {
     display: inline-block;
-    margin-top: 12px;
-    color: #a13535;
+    margin-top: 14px;
+    padding: 8px 12px;
+    background: #a13535;
+    color: white;
+    border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
+    transition: all 0.2s ease;
 }
-
-.map-sidebar a:hover {
-    text-decoration: underline;
-}
+.map-sidebar a:hover {background: #7f2626; transform: translateY(-2px);}
 
 .close-btn {
     position: absolute;
@@ -334,10 +305,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     margin: 60px auto;
     overflow: hidden;
 }
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
+.carousel-track {display: flex; transition: transform 0.5s ease;}
 .carousel-track img {
     flex: 0 0 auto;
     width: 260px;
@@ -396,14 +364,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     margin-bottom: 8px;
     border-bottom: 1px solid rgba(139, 0, 0, 0.15);
 }
-.container-home section {
-    padding: 28px 0;
-    border-bottom: 1px solid rgba(139, 0, 0, 0.12);
-}
-.container-home section:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
+.container-home section {padding: 28px 0; border-bottom: 1px solid rgba(139, 0, 0, 0.12);}
+.container-home section:last-child {border-bottom: none; padding-bottom: 0;}
 .container-home h3 {
     font-size: 1.4rem;
     color: #1a1a1a;
@@ -433,9 +395,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     line-height: 1.4;
 }
 /* Galleria */
-.gallery-text {
-    margin-bottom: 0;
-}
+.gallery-text {margin-bottom: 0;}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .container,
@@ -486,7 +447,6 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 /* Lista */
 .tools-list {columns: 2; column-gap: 50px;}
-
 .tools-list li {break-inside: avoid; margin-bottom: 10px;}
 
 /*TOPIC QUARTIERI*/
@@ -507,11 +467,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     text-decoration: none;
     transition: all 0.25s ease;
 }
-.badges a:hover {
-    background: #8d3333;
-    color: white;
-    transform: translateY(-2px);
-}
+.badges a:hover {background: #8d3333; color: white; transform: translateY(-2px);}
+
 /* FOOTER */
 .site-footer {
     text-align: center;
@@ -531,15 +488,9 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     align-items: flex-start;
     margin-top: 35px;
 }
-.ontology-text {
-    flex: 0 0 48%;
-}
-.ontology-text section {
-    margin-bottom: 45px;
-}
-.ontology-text h2 {
-    text-align: left;
-}
+.ontology-text {flex: 0 0 48%;}
+.ontology-text section {margin-bottom: 45px;}
+.ontology-text h2 {text-align: left;}
 .ontology-img-box {
     flex: 0 0 42%;
     background: white;
@@ -562,11 +513,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
         width: 100%;
     }
 }
-/* -- Timeline verticale delle fasi -------------------------- */
-.phase-timeline {
-    position: relative;
-    margin: 50px 0 10px;
-}
+/* -- Timeline verticale delle fasi -- */
+.phase-timeline {position: relative; margin: 50px 0 10px;}
 .phase-timeline::before {
     content: "";
     position: absolute;
@@ -609,23 +557,9 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     line-height: 1;
     letter-spacing: 0;
 }
-.phase-body {
-    flex: 1;
-    padding-top: 16px;
-}
-.phase-body h2 {
-    text-align: left;
-    font-size: 1.5rem;
-    margin: 0 0 12px;
-    color: #a13535;
-    border-bottom: none;
-}
-.gap-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 18px 0 22px;
-}
+.phase-body {flex: 1; padding-top: 16px;}
+.phase-body h2 {text-align: left; font-size: 1.5rem; margin: 0 0 12px; color: #a13535; border-bottom: none;}
+.gap-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0 22px;}
 .gap-card {
     background: rgba(161,53,53,0.05);
     border-left: 4px solid #a13535;
@@ -665,18 +599,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     transition:.25s;
 }
 
-.district-chips>*:hover{
-    background:#8d3333;
-    color:#fff;
-    transform:translateY(-2px);
-}
-.sources-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 18px 0 22px;
-    font-size: 1.1rem;
-}
-
+.district-chips>*:hover{background:#8d3333; color:#fff; transform:translateY(-2px);}
+.sources-table {width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 1.1rem;}
 .sources-table thead th {
     background: transparent;
     color: #a13535;
@@ -689,30 +613,11 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     text-align: left;
 }
 
-.sources-table tbody td {
-    padding: 13px 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-    vertical-align: top;
-    color: #1a1a1a;
-}
-
-.sources-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.sources-table tbody tr:hover td {
-    background: rgba(161,53,53,0.03);
-}
-
-.sources-table a {
-    color: #a13535;
-    text-decoration: none;
-    font-weight: 600;
-}
-.sources-table a:hover {
-    text-decoration: underline;
-}
-
+.sources-table tbody td {padding: 13px 16px; border-bottom: 1px solid rgba(0,0,0,0.07); vertical-align: top; color: #1a1a1a;}
+.sources-table tbody tr:last-child td {border-bottom: none;}
+.sources-table tbody tr:hover td {background: rgba(161,53,53,0.03);}
+.sources-table a {color: #a13535; text-decoration: none; font-weight: 600;}
+.sources-table a:hover {text-decoration: underline;}
 .sources-table .src-tag {
     display: inline-block;
     font-size: 0.75rem;
@@ -727,13 +632,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 /* -- Card dimensioni ontologiche -- */
-.dim-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin: 18px 0;
-}
-
+.dim-grid {display: grid; grid-template-columns: 1fr; gap: 14px;margin: 18px 0;}
 .dim-card {
     display: flex;
     gap: 18px;
@@ -743,7 +642,6 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     border-radius: 10px;
     padding: 16px 20px;
 }
-
 .dim-icon {
     flex-shrink: 0;
     width: 44px;
@@ -757,95 +655,24 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     font-size: 1.2rem;
     margin-top: 2px;
 }
-
-.dim-content h4 {
-    margin: 0 0 5px;
-    font-size: 1.15rem;
-    color: #1a1a1a;
-    font-family: "Georgia", serif;
-}
-
-.dim-content p {
-    margin: 0 0 8px;
-    font-size: 1rem;
-    line-height: 1.55;
-    color: #444;
-    text-align: left;
-}
-
-.dim-values {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-top: 8px;
-}
-
-.dim-values em {
-    font-style: normal;
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    padding: 3px 11px;
-    border-radius: 12px;
-    font-size: 0.95rem;
-    color: #555;
-}
+.dim-content h4 {margin: 0 0 5px; font-size: 1.15rem; color: #1a1a1a; font-family: "Georgia", serif;}
+.dim-content p {margin: 0 0 8px; font-size: 1rem; line-height: 1.55; color: #444; text-align: left;}
+.dim-values {display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px;}
+.dim-values em {font-style: normal; background: #f4f4f4; border: 1px solid #ddd; padding: 3px 11px; border-radius: 12px; font-size: 0.95rem; color: #555;}
 
 /* -- Card LLM -- */
-.llm-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 18px 0;
-}
-
-.llm-card {
-    background: rgba(255,255,255,0.85);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 18px 16px;
-}
-
-.llm-card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.llm-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
+.llm-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0;}
+.llm-card {background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.1); border-radius: 10px; padding: 18px 16px;}
+.llm-card-header {display: flex; align-items: center; gap: 10px; margin-bottom: 8px;}
+.llm-dot {width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;}
 .llm-dot.gpt { background: #10a37f; }
 .llm-dot.gem { background: #4285f4; }
 .llm-dot.mis { background: #f55036; }
-
-.llm-card h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #1a1a1a;
-    font-family: "Georgia", serif;
-}
-
-.llm-card p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #555;
-    text-align: left;
-}
+.llm-card h4 {margin: 0; font-size: 1.1rem; color: #1a1a1a; font-family: "Georgia", serif;}
+.llm-card p {margin: 0; font-size: 0.95rem; line-height: 1.5; color: #555; text-align: left;}
 
 /* -- Griglia strumenti -- */
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 18px 0;
-}
-
+.tools-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0;}
 .tool-item {
     display: flex;
     align-items: center;
@@ -857,14 +684,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     font-size: 1.05rem;
     color: #333;
 }
-
-.tool-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #a13535;
-    flex-shrink: 0;
-}
+.tool-dot {width: 8px; height: 8px; border-radius: 50%; background: #a13535; flex-shrink: 0;}
 
 /* -- Responsive methodology -- */
 @media (max-width: 768px) {
@@ -876,27 +696,12 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     .llm-grid { grid-template-columns: 1fr; }
     .tools-grid { grid-template-columns: 1fr 1fr; }
 }
-/* =====================================================
-                    PARTE TOPIC
-===================================================== */
-
-.topic-section{
-    margin:45px 0;}
-
-.topic-section h2{
-    margin-bottom:18px;}
-
-.topic-center{
-    max-width:850px;
-    margin:0 auto 25px auto;
-    text-align:center;}
-
-.district-list{
-    margin:45px 0;}
-
-.badges{
-    margin-top:25px;}
-
+/* == PARTE TOPIC == */
+.topic-section{margin:45px 0;}
+.topic-section h2{margin-bottom:18px;}
+.topic-center{max-width:850px; margin:0 auto 25px auto; text-align:center;}
+.district-list{margin:45px 0;}
+.badges{margin-top:25px;}
 .badges span{
     display:inline-block;
     padding:12px 22px;
@@ -906,15 +711,5 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     font-weight:600;
     letter-spacing:.3px;
     transition:.25s ease;}
-
-.badges span:hover{
-    background:#a13535;
-    color:white;
-    transform:translateY(-2px);}
-
-.topic-section p:last-child{
-    margin-bottom:0;}
-
-/* =====================================================
-                 FINE PARTE TOPIC
-===================================================== */
+.badges span:hover{background:#a13535; color:white; transform:translateY(-2px);}
+.topic-section p:last-child{margin-bottom:0;}
