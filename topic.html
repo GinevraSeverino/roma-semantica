@@ -142,5 +142,20 @@ realtà molto diverse tra loro e che quindi ci consentono di osservare different
     </a>
 </div>
 
+<script>
+function openSidebar(title, type, desc, link) {
+    document.getElementById("sidebar-title").textContent = title;
+    document.getElementById("sidebar-type").textContent = type;
+    document.getElementById("sidebar-desc").textContent = desc;
+    document.getElementById("sidebar-link").href = link;
+
+    document.getElementById("map-sidebar").classList.add("open");
+}
+
+function closeSidebar() {
+    document.getElementById("map-sidebar").classList.remove("open");
+}
+</script>
+
 </body>
 </html>
