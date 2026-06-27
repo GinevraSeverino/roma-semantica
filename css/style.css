@@ -233,7 +233,7 @@ td {
 
 .prati {
     left: 46%;
-    top: 23%;
+    top: 40%;
 }
 
 .trevi {
@@ -253,8 +253,8 @@ td {
 
 /* Parioli sopra Q.II */
 .parioli {
-    left: 52%;
-    top: 28%;
+    left: 51%;
+    top: 23%;
 }
 
 /* EUR sopra Q.XXXII */
@@ -518,7 +518,6 @@ font-weight:500;}
 }
 
 /* ONTOLOGY EXTENSION */
-
 .ontology-card {
     display: flex;
     gap: 35px;
