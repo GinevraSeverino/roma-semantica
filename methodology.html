@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Topic</title>
+<title>Metodologia</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,124 +23,359 @@
         <li><a href="LLM.html">LLM</a></li>
         <li><a href="results.html">Results</a></li>
         <li><a href="challenges.html">Challenges</a></li>
-
     </ul>
 </nav>
     
 <div class="container">
-    
 <h1>Metodologia</h1>
+<p class="subtitle">Dal gap semantico al Knowledge Graph arricchito</p>
 
-<h2>1&deg; Fase: Esplorazione e Gap Identification</h2>
+<div class="phase-timeline">
+  <div class="phase-item">
+      <div class="phase-num"><span class="num">1</span>Fase</div>
+      <div class="phase-body">
+ 
+        <h2>Esplorazione e Gap Identification</h2>
 
 <p>
 La prima fase del progetto è consistita nell'esplorazione di DBpedia attraverso query SPARQL tramite l'<a href="https://dbpedia.org/sparql#">endpoint</a> ufficiale, con l'obiettivo primario di comprendere 
-innanzitutto come i quartieri e i rioni di Roma fossero modellati nel Knowledge Graph e, succesivamente, di individuare dei potenziali gap semantici esistenti. 
-In totale, abbiamo identificato 4 gap nell'ontologia:
-    <ul>
-        <li>Assenza di un legame diretto tra l'entità Roma e i suoi quartieri/rioni </li> 
-        <li>Mancanza di proprietà in grado di descrivere l'identità urbana delle aree</li>
-        <li>Presenza di risorse prive di proprietà significative</li>
-        <li>Forte disomogeneità nella modellazione delle entità dei quartieri e rioni</li>
-    </ul>
-</p>
+innanzitutto come i quartieri e i rioni di Roma fossero modellati nel Knowledge Graph e, a partire da tale analisi, identificare
+i gap semantici esistenti rispetto alle dimensioni che il progetto intendeva rappresentare. </p>. 
+<p>
+Abbiamo interrogato l'entità <code>dbr:Rome</code> per verificarne la tipizzazione e
+le proprietà associate, scoprendo che Roma è classificata come <em>City</em>,
+<em>Location</em>, <em>Place</em>, <em>PopulatedPlace</em> e <em>Settlement</em>,
+ma priva di legami diretti con le sue suddivisioni urbane.</p>
+
+<p>In totale, abbiamo identificato 4 gap nell'ontologia:
+<div class="gap-grid">
+          <div class="gap-card">
+            <strong>Gap 1</strong>
+            Assenza di un legame diretto tra l'entità Roma e i suoi quartieri e rioni: le
+            proprietà <code>subdivision</code>, <code>subdivisionType</code> e
+            <code>subdivisionName</code> presenti in DBpedia non descrivono relazioni
+            dirette con i singoli quartieri.
+          </div>
+          <div class="gap-card">
+            <strong>Gap 2</strong>
+            Mancanza di proprietà in grado di descrivere l'identità urbana delle aree: nessuna
+            dimensione socio-culturale o identitaria.
+          </div>
+          <div class="gap-card">
+            <strong>Gap 3</strong>
+            Presenza di risorse prive di proprietà significative: diverse entità quartiere
+            esistono nel grafo con pochissime triple, spesso limitate a coordinate geografiche
+            o link a categorie Wikipedia.
+          </div>
+          <div class="gap-card">
+            <strong>Gap 4</strong>
+            Forte disomogeneità nella modellazione delle entità
+          </div>
+        </div>
+ 
+        <div class="insight-box">
+          <strong>Insight</strong>
+          La verifica tramite query SPARQL ha confermato che le proprietà che intendevamo
+          introdurre — <code>hasPerceivedSafety</code>, <code>hasUrbanTransformation</code>,
+          <code>hasDominantUrbanIdentity</code> — non esistono in nessuna forma all'interno
+          di DBpedia, validando la necessità di un'estensione ontologica originale.
+        </div>
+ 
+      </div>
+    </div>
+
     
-<h2>2&deg; Fase: Data Collection</h2>
-<p>
- Sulla base dell'esplorazione condotta nella fase precedente, sono stati successivamente  selezionati dieci quartieri e rioni di Roma come campione rappresentativo della complessità
-urbana della città: Trastevere, Prati, Trevi, Testaccio, San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino. La selezione include aree storiche, quartieri residenziali, zone universitarie, poli direzionali e aree periferiche.
-Per ciascuna entità sono stati raccolti i dati già presenti in DBpedia tramite query SPARQL dedicate, verificando proprietà, tipi RDF e categorie associate.
-</p>
-
-<h2>3&deg; Fase: Ontology Design</h2>
-<p>
-Una volta identificato il gap semantico e selezionate le zone urbane, abbiamo progettato un'estensione dell'ontologia formale dell'ontologia di DBpedia (vedi il <a href=Ontology_extension.html>disegno ontologico</a>). 
-Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale, abbiamo introdotto una nuova classe denominata <code>ruo:RomanUrbanArea</code>, definita come sottoclasse di 
-<code>dbo:CityDistrict</code>, identificato come il concetto ontologico esistente più affine all'idea di quartiere/rione urbano. 
-Il prefisso di progetto scelto è <code>ruo:</code> (<em>&lt;http://example.org/rome-urban-ontology/&gt;</em>). 
-Inoltre, sono state introdotte tre dimensioni semantiche principali: 
-<ul>
-    <li><strong>Identità Urbana Dominante:</strong> Modellata tramite la Object Property <code>ruo:hasDominantUrbanIdentity</code>, la quale punta alla classe <code>ruo:DominantUrbanIdentity</code>. Gli individui ammessi (istanze) includono concetti quali <em>Studentesco, Residenziale, Business, Commerciale, Creativo, Nightlife</em>.</li>
-    <li><strong>Stato di Trasformazione Urbana:</strong> Modellato tramite la Object Property <code>ruo:hasUrbanTransformation</code>, avente come range la classe <code>ruo:UrbanTransformation</code>, le cui istanze descrivono le dinamiche socio-economiche del tessuto (<em>Stabile, Riqualificazione, Gentrificazione</em>).</li>
-    <li><strong>Sicurezza Percepita:</strong> Modellata in modo snello tramite la Datatype Property <code>ruo:hasPerceivedSafety</code>, che associa direttamente alla risorsa un valore testuale letterale (<code>rdfs:Literal</code>) indicante il livello emerso (es. <em>"high"</em>, <em>"medium"</em>, <em>"low"</em>).</li>
-</ul>
-</p>
-
-<h2>4&deg; Fase: LLM Knowledge Extraction e Bias Analysis</h2>
-<p>
-Nella seguente fase abbiamo selezionato 3 diversi  modelli LLM :
-</p>
-<ul>
-    <li><strong>OpenAI ChatGPT</strong>: modello di grandi dimensioni, gratuito basato su GPT-4o mini</li>
-    <li><strong>Google Gemini</strong>:modello gratuito basato su Gemini 1.5 Flash e di grandi dimensioni</li>
-    <li><strong>Mistral AI</strong>: tramite la piattaforma ufficiale Le Chat con il modello europeo gratuito e di medie dimensioni Mistral Large</li>
-</ul>
-<p>
-Tramite questi modelli abbiamo realizzato un processo di estrazione della conoscenza, che è avvenuta impostando una tecnica di Prompting Zero-Shot. 
-L'obiettivo centrale di questo approccio multi-modello è stato quello di analizzare sistematicamente i potenziali bias e stereotipi urbani intrinseci negli LLM,
-esaminando i valori assegnati in modo indipendente da ciascuna IA a ogni singolo rione e quartiere per le proprietà <code>ruo:hasDominantUrbanIdentity</code>, <code>ruo:hasUrbanTransformation</code> e <code>ruo:hasPerceivedSafety</code>.
-
-</p>
-
-<h2>Tools</h2>
-<ul class="tools-list">
-    <li>Wikipedia</li>
-    <li>DBpedia</li>
-    <li>Draw.io</li>
-    <li>GraphDB</li>
-    <li>SPARQL endpoint</li>
-    <li>LLMs: ChatGPT, Google Gemini, Mistral</li>
-    <li>GitHub</li>
-    <li>Google Drive</li>
-    <li>Overleaf</li>
-</ul>
-
+<div class="phase-item">
+      <div class="phase-num"><span class="num">2</span>Fase</div>
+      <div class="phase-body">
 <h2>Data Collection</h2>
+   <p>
+Sulla base dell'esplorazione condotta nella fase precedente, sono stati selezionati
+<strong>dieci quartieri e rioni di Roma</strong> come campione rappresentativo della
+complessità urbana della città. La suddivisione territoriale adottata si basa sulla
+classificazione ufficiale del Comune di Roma — disponibile tramite il portale
+<a href="https://www.comune.roma.it" target="_blank">Roma Capitale</a> e il
+sistema geografico <a href="https://georoma.comune.roma.it" target="_blank">GeoRoma</a>
+ — che distingue rioni del centro storico, quartieri e zone urbanistiche.
+Il campione scelto include aree storiche, quartieri residenziali, zone universitarie,
+poli direzionali e aree periferiche, garantendo varietà morfologica e socio-economica:
+        </p>
 
+ <div class="district-chips">
+          <span>Trastevere</span>
+          <span>Prati</span>
+          <span>Trevi</span>
+          <span>Testaccio</span>
+          <span>San Lorenzo</span>
+          <span>Parioli</span>
+          <span>EUR</span>
+          <span>Ponte Mammolo</span>
+          <span>Nomentano</span>
+          <span>Ardeatino</span>
+        </div>
+          
+<p> INSERIRE TESTO </p>
+ 
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Fonte</th>
+              <th>Contributo al progetto</th>
+              <th>Tipo di dato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="https://it.wikipedia.org" target="_blank">Wikipedia</a>
+                <br><span class="src-tag">Enciclopedico</span>
+              </td>
+              <td>Informazioni storiche, descrizioni narrative dei quartieri, contesto culturale</td>
+              <td>Testuale</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://dbpedia.org" target="_blank">DBpedia</a>
+                <br><span class="src-tag">Knowledge Graph</span>
+              </td>
+              <td>Proprietà RDF di base, tipi ontologici, triple esistenti per ciascuna entità</td>
+              <td>RDF / SPARQL</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>
+                <br><span class="src-tag">Geografico</span>
+              </td>
+              <td>Dati di trasporto pubblico, servizi presenti, infrastrutture urbane</td>
+              <td>Geospaziale</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://www.istat.it" target="_blank">ISTAT</a>
+                <br><span class="src-tag">Statistico</span>
+              </td>
+              <td>Dati socio-demografici, indicatori di qualità della vita e sicurezza percepita
+              utilizzati come riferimento di validazione</td>
+              <td>Statistico</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://www.comune.roma.it" target="_blank">Comune di Roma</a>
+                / <a href="https://georoma.comune.roma.it" target="_blank">GeoRoma</a>
+                <br><span class="src-tag">Istituzionale</span>
+              </td>
+              <td>Classificazione ufficiale delle suddivisioni urbane di Roma in municipî,
+              quartieri e rioni — base per la selezione e categorizzazione delle entità</td>
+              <td>Istituzionale</td>
+            </tr>
+          </tbody>
+        </table>
+ 
+      </div>
+    </div>
+    
+<div class="phase-item">
+      <div class="phase-num"><span class="num">3</span>Fase</div>
+      <div class="phase-body">
+ 
+       <h2>Ontology Design</h2>
+ 
+ <p>
+          Individuati i gap semantici e definito il campione di entità, abbiamo progettato
+          un'estensione formale dell'ontologia di DBpedia (vedi il
+          <a href="Ontology_extension.html">disegno ontologico</a>).
+          Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale,
+          abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
+          sottoclasse di <code>dbo:CityDistrict</code> — il concetto ontologico esistente più
+          affine all'idea di quartiere o rione urbano. Il namespace di progetto scelto è
+          <code>ruo:</code> (<em>http://example.org/rome-urban-ontology/</em>).
+        </p>
+        <p>
+          Sono state introdotte <strong>tre dimensioni semantiche</strong>, ciascuna modellata
+          tramite una proprietà dedicata con il proprio range ontologico:
+        </p>
+ 
+        <div class="dim-grid">
+ 
+          <div class="dim-card">
+            <div class="dim-icon">🏙️</div>
+            <div class="dim-content">
+              <h4>Identità Urbana Dominante</h4>
+              <p>
+                Object Property <code>ruo:hasDominantUrbanIdentity</code> con dominio
+                <code>ruo:RomanUrbanArea</code> e range la classe
+                <code>ruo:DominantUrbanIdentity</code>. Gli individui ammessi sono istanze
+                di questa classe.
+              </p>
+              <div class="dim-values">
+                <em>Studentesco</em>
+                <em>Residenziale</em>
+                <em>Business</em>
+                <em>Commerciale</em>
+                <em>Creativo</em>
+                <em>Nightlife</em>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="dim-card">
+            <div class="dim-icon">🔄</div>
+            <div class="dim-content">
+              <h4>Stato di Trasformazione Urbana</h4>
+              <p>
+                Object Property <code>ruo:hasUrbanTransformation</code> con dominio
+                <code>ruo:RomanUrbanArea</code> e range la classe
+                <code>ruo:UrbanTransformation</code>. Le istanze descrivono le dinamiche
+                socio-economiche del tessuto urbano.
+              </p>
+              <div class="dim-values">
+                <em>Stabile</em>
+                <em>Riqualificazione</em>
+                <em>Gentrificazione</em>
+              </div>
+            </div>
+          </div>
+ 
+          <div class="dim-card">
+            <div class="dim-icon">🔒</div>
+            <div class="dim-content">
+              <h4>Sicurezza Percepita</h4>
+              <p>
+                Datatype Property <code>ruo:hasPerceivedSafety</code> con dominio
+                <code>ruo:RomanUrbanArea</code> e range <code>rdfs:Literal</code>.
+                Associa direttamente alla risorsa un valore testuale indicante il livello
+                di sicurezza percepita emerso dall'analisi.
+              </p>
+              <div class="dim-values">
+                <em>"high"</em>
+                <em>"medium"</em>
+                <em>"low"</em> </div>
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </div>
+
+<div class="phase-item">
+      <div class="phase-num"><span class="num">4</span>Fase</div>
+      <div class="phase-body">
+ 
+        <h2>LLM Knowledge Extraction e Bias Analysis</h2>
 <p>
-Per la costruzione del Knowledge Graph sono state utilizzate diverse fonti aperte,
-ciascuna delle quali ha contribuito con differenti tipologie di informazioni sui
-quartieri di Roma.
-</p>
+In questa fase abbiamo condotto un processo di knowledge extraction con tre modelli LLM, attravero una tecnica di Prompting Zero-Shot. 
+L'obiettivo centrale di questa fase  è stato quello di analizzare i potenziali bias e stereotipi urbani intrinseci negli LLM,
+esaminando i valori assegnati da ciascuna IA a ogni singolo rione e quartiere per le proprietà <code>ruo:hasDominantUrbanIdentity</code>, <code>ruo:hasUrbanTransformation</code> 
+e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</a>).</p>
+<p>I  modelli LLM selezionati sono:</p>
+<div class="llm-grid">
+          <div class="llm-card">
+            <div class="llm-card-header">
+              <span class="llm-dot gpt"></span>
+              <h4>OpenAI ChatGPT</h4>
+            </div>
+            <p>Modello GPT-4o mini, gratuito, di grandi dimensioni. Accesso tramite interfaccia web ufficiale.</p>
+          </div>
+          <div class="llm-card">
+            <div class="llm-card-header">
+              <span class="llm-dot gem"></span>
+              <h4>Google Gemini</h4>
+            </div>
+            <p>Modello Gemini 1.5 Flash, gratuito, di grandi dimensioni. Accesso tramite Google AI Studio.</p>
+          </div>
+          <div class="llm-card">
+            <div class="llm-card-header">
+              <span class="llm-dot mis"></span>
+              <h4>Mistral AI</h4>
+            </div>
+            <p>Modello Mistral Large, europeo e open-weight, di medie dimensioni. Accesso tramite la piattaforma Le Chat.</p>
+          </div>
+        </div>
+ <div class="insight-box">
+          <strong>Insight</strong>
+          I tre modelli sono stati scelti in base alle diverse caratteristiche: modello europeo di medie dimensioni, modelli di grandi dimensioni americani.
+        </div>
+ 
+      </div>
+    </div>
 
-<table>
-<tr>
-    <th>Source</th>
-    <th>Description</th>
-</tr>
-<tr>
-    <td><a href="https://it.wikipedia.org/wiki/Pagina_principale">Wikipedia</a></td>
-    <td>Monuments and districts</td>
-</tr>
-<tr>
-    <td><a href="https://dbpedia.org">DBpedia</a></td>
-    <td>Historical information</td>
-</tr>
-<tr>
-    <td><a href="https://www.openstreetmap.org">OpenStreetMap</a></td>
-    <td>Transportation and services</td>
-</tr>
-<tr>
-    <td><a href="https://geoportale.comune.roma.it/georoma/#/viewer/22188" target="_blank" rel="noopener noreferrer">
-        Roma Capitale | GeoRoma
-    </a></td>
-    <td>Dati sui quartieri, categorizzazione in municipi, quartieri e rioni</td>
-</tr>
-<tr>
-    <td><a href="https://www.info.roma.it/mappa_confini_storici_roma.asp" target="_blank" rel="noopener noreferrer">
-        InfoRoma
-    </a></td>
-    <td>Posizione geografica e confini storici delle zone analizzate</td>
-</tr>
-</table>
 
-
-    
+  <div class="phase-item">
+      <div class="phase-num"><span class="num">5</span>Fase</div>
+      <div class="phase-body">
+ 
+        <h2>Produzione delle Triple RDF</h2>
+ 
+        <p>
+          Raccolte e confrontate le risposte dei tre LLM per ciascun quartiere e ciascuna
+          dimensione semantica, abbiamo adottato un approccio di <strong>validazione
+          multi-fonte</strong> per stabilire il valore da inserire nel Knowledge Graph:
+        </p>
+        <ul>
+          <li>
+            <strong>Consenso tra modelli:</strong> nei casi di accordo tra due o tre LLM,
+            il valore condiviso è stato adottato direttamente come valore di verità
+            per la tripla corrispondente.
+          </li>
+          <li>
+            <strong>Fonti istituzionali:</strong> nei casi di disaccordo, si è fatto
+            riferimento a dati ISTAT, alla classificazione del Comune di Roma e a
+            riconoscimenti ufficiali del turismo romano per orientare la scelta.
+          </li>
+          <li>
+            <strong>Coerenza con DBpedia:</strong> ulteriore controllo incrociato con le
+            informazioni già presenti nel grafo — monumenti, istituzioni, categorie
+            associate — per verificare la plausibilità del valore selezionato.
+          </li>
+        </ul>
+        <p>
+          Le triple risultanti sono state serializzate nel formato <strong>Turtle (.ttl)</strong>
+          e caricate in <strong>GraphDB</strong> per la costruzione del Knowledge Graph
+          arricchito. Ogni entità quartiere è stata collegata al grafo originale di DBpedia
+          tramite la proprietà <code>owl:sameAs</code>, garantendo l'interoperabilità con le
+          risorse preesistenti. Le triple prodotte sono consultabili nella sezione
+          <a href="results.html">Results</a>.
+        </p>
+ 
+        <div class="insight-box">
+          <strong>Insight</strong>
+          La produzione delle triple ha richiesto scelte motivate nei casi di disaccordo
+          tra i modelli: Testaccio, ad esempio, è stato classificato come
+          <em>Gentrificazione</em> sulla base del consenso di due modelli su tre, supportato
+          dalla presenza di spazi culturali nel grafo DBpedia legati alla trasformazione del
+          vecchio mattatoio. Questa fase ha evidenziato come la soggettività delle dimensioni
+          semantiche richieda un processo di validazione esplicito e trasparente.
+        </div>
+ 
+      </div>
+    </div>
+ 
+  </div><!-- /phase-timeline -->
+ 
+  <div class="section-divider"></div>
+ 
+  <h2>Strumenti utilizzati</h2>
+ 
+  <div class="tools-grid">
+    <div class="tool-item"><span class="tool-dot"></span>Wikipedia</div>
+    <div class="tool-item"><span class="tool-dot"></span>DBpedia</div>
+    <div class="tool-item"><span class="tool-dot"></span>Draw.io</div>
+    <div class="tool-item"><span class="tool-dot"></span>GraphDB</div>
+    <div class="tool-item"><span class="tool-dot"></span>SPARQL Endpoint</div>
+    <div class="tool-item"><span class="tool-dot"></span>ChatGPT</div>
+    <div class="tool-item"><span class="tool-dot"></span>Google Gemini</div>
+    <div class="tool-item"><span class="tool-dot"></span>Mistral AI</div>
+    <div class="tool-item"><span class="tool-dot"></span>GitHub</div>
+    <div class="tool-item"><span class="tool-dot"></span>Google Drive</div>
+    <div class="tool-item"><span class="tool-dot"></span>Overleaf</div>
+  </div>
+ 
 </div>
-
-    
+ 
 <footer class="site-footer">
-    © 2026 Roma Semantica · Università di Bologna
+  © 2026 Roma Semantica · Università di Bologna
 </footer>
+ 
 </body>
 </html>
