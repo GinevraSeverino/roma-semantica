@@ -79,7 +79,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Trastevere"
         data-type="Rione"
         data-desc="Rione storico del centro di Roma, noto per vita notturna e identità popolare."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Trastevere</strong><br>
             🏛 Rione<br>
@@ -90,7 +90,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Prati"
         data-type="Rione"
         data-desc="Rione residenziale elegante vicino al Vaticano."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Prati</strong><br>
             🏛 Rione<br>
@@ -101,7 +101,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Trevi"
         data-type="Rione"
         data-desc="Area del centro storico con la Fontana di Trevi."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Trevi</strong><br>
             🏛 Rione<br>
@@ -112,7 +112,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Testaccio"
         data-type="Rione"
         data-desc="Quartiere storico legato alla tradizione gastronomica romana."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Testaccio</strong><br>
             🏛 Rione<br>
@@ -123,7 +123,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="San Lorenzo"
         data-type="Zona"
         data-desc="Area universitaria e creativa con forte identità giovanile."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>San Lorenzo</strong><br>
             📍 Zona<br>
@@ -134,7 +134,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Parioli"
         data-type="Quartiere"
         data-desc="Zona residenziale alto-borghese di Roma nord."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Parioli</strong><br>
             🏙 Quartiere<br>
@@ -145,7 +145,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="EUR"
         data-type="Quartiere"
         data-desc="Area direzionale e architettura razionalista."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>EUR</strong><br>
             🏙 Quartiere<br>
@@ -156,7 +156,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="San Basilio"
         data-type="Quartiere"
         data-desc="Periferia romana con forte identità popolare."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>San Basilio</strong><br>
             🏙 Quartiere<br>
@@ -167,7 +167,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Nomentano"
         data-type="Quartiere"
         data-desc="Area universitaria e residenziale centrale."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Nomentano</strong><br>
             🏙 Quartiere<br>
@@ -178,7 +178,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         data-title="Ardeatino"
         data-type="Quartiere"
         data-desc="Zona sud di Roma con aree verdi e siti storici."
-        onclick="openSidebarFromElement(this)">
+        >
         <span>
             <strong>Ardeatino</strong><br>
             🏙 Quartiere<br>
@@ -186,46 +186,6 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
         </span>
     </a>
 </div>
-    
-<div id="map-sidebar" class="map-sidebar">
-    <button class="close-btn" onclick="closeSidebar()">✕</button>
-
-    <h2 id="sidebar-title">Titolo</h2>
-    <p id="sidebar-type" class="sidebar-type"></p>
-    <div id="sidebar-rdf" class="sidebar-rdf"></div>
-    <p id="sidebar-desc">
-        Seleziona un punto sulla mappa per vedere i dettagli.
-    </p>
-
-    <a id="sidebar-link" href="#" target="_blank">
-        Vai alla pagina
-    </a>
-</div>
-
-<script>
-function openSidebar(title, type, desc, link) {
-    document.getElementById("sidebar-title").textContent = title;
-    document.getElementById("sidebar-type").innerHTML = "Tipologia: <strong>" + type + "</strong>";
-    document.getElementById("sidebar-desc").textContent = desc;
-    document.getElementById("sidebar-link").href = link;
-    document.getElementById("map-sidebar").classList.add("open");
-}
-
-function closeSidebar() {
-    document.getElementById("map-sidebar").classList.remove("open");
-}
-</script>
-
-<script>
-function openSidebarFromElement(el) {
-    const title = el.dataset.title;
-    const type = el.dataset.type;
-    const desc = el.dataset.desc;
-    const link = el.href;
-
-    openSidebar(title, type, desc, link);
-}
-</script>
 
 </div>
 
