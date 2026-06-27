@@ -218,7 +218,7 @@ Oltre a ciò, la scelta è stata motivata da un'interesse personale</p>
 <script>
 function openSidebar(title, type, desc, link) {
     document.getElementById("sidebar-title").textContent = title;
-    document.getElementById("sidebar-type").textContent = type;
+    document.getElementById("sidebar-type").innerHTML = "Tipologia: <strong>" + type + "</strong>";
     document.getElementById("sidebar-desc").textContent = desc;
     document.getElementById("sidebar-link").href = link;
 
