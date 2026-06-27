@@ -234,8 +234,9 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 
 .map-legend{
     position:absolute;
-    right:-260px;
+    right:10px;
     top:60px;
+    transform: translateX(100%);
     font-size:1.25rem;
     line-height:1.65;
     color:#1a1a1a;
