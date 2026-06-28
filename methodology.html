@@ -167,8 +167,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
        <h2>Ontology Design</h2>
  
  <p>
-          Individuati i gap semantici e definito il campione di entità, abbiamo progettato
-          un'estensione formale dell'ontologia di DBpedia (vedi il
+          Individuati i gap semantici e definito il campione di entità, abbiamo progettato un'estensione formale dell'ontologia di DBpedia (vedi il
           <a href="Ontology_extension.html">disegno ontologico</a>).
           Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale,
           abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
@@ -190,7 +189,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
                 Object Property <code>ruo:hasDominantUrbanIdentity</code> con dominio
                 <code>ruo:RomanUrbanArea</code> e range la classe
                 <code>ruo:DominantUrbanIdentity</code>. Gli individui ammessi sono istanze
-                di questa classe.
+                di questa classe. Ad esempio:
               </p>
               <div class="dim-values">
                 <em>Studentesco</em>
@@ -211,7 +210,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
                 Object Property <code>ruo:hasUrbanTransformation</code> con dominio
                 <code>ruo:RomanUrbanArea</code> e range la classe
                 <code>ruo:UrbanTransformation</code>. Le istanze descrivono le dinamiche
-                socio-economiche del tessuto urbano.
+                socio-economiche del tessuto urbano. Ad esmepio:
               </p>
               <div class="dim-values">
                 <em>Stabile</em>
@@ -229,7 +228,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
                 Datatype Property <code>ruo:hasPerceivedSafety</code> con dominio
                 <code>ruo:RomanUrbanArea</code> e range <code>rdfs:Literal</code>.
                 Associa direttamente alla risorsa un valore testuale indicante il livello
-                di sicurezza percepita emerso dall'analisi.
+                di sicurezza percepita emerso dall'analisi. Ad esempio:
               </p>
               <div class="dim-values">
                 <em>"high"</em>
@@ -255,32 +254,32 @@ esaminando i valori assegnati da ciascuna IA a ogni singolo rione e quartiere pe
 e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</a>).</p>
 <p>I  modelli LLM selezionati sono:</p>
 <div class="llm-grid">
-          <div class="llm-card">
-            <div class="llm-card-header">
-              <span class="llm-dot gpt"></span>
-              <h4>OpenAI ChatGPT</h4>
-            </div>
-            <p>Modello Chat GPT Pro , a pagamento, di grandi dimensioni. Accesso tramite interfaccia web ufficiale.</p>
-          </div>
-          <div class="llm-card">
-            <div class="llm-card-header">
-              <span class="llm-dot gem"></span>
-              <h4>Google Gemini</h4>
-            </div>
-            <p>Modello Gemini 1.5 Flash, gratuito, di grandi dimensioni. Accesso tramite Google AI Studio.</p>
-          </div>
-          <div class="llm-card">
-            <div class="llm-card-header">
-              <span class="llm-dot mis"></span>
-              <h4>Mistral AI</h4>
-            </div>
-            <p>Modello Mistral Large, europeo e open-weight, di medie dimensioni. Accesso tramite la piattaforma Le Chat.</p>
-          </div>
-        </div>
- <div class="insight-box">
-          <strong>Insight</strong>
-          I tre modelli sono stati scelti in base alle diverse caratteristiche: modello europeo di medie dimensioni, modelli di grandi dimensioni statunitensi
-        </div>
+  <div class="llm-card">
+    <div class="llm-card-header">
+      <span class="llm-dot gpt"></span>
+      <h4>OpenAI ChatGPT</h4>
+    </div>
+    <p>ChatGPT Pro, a pagamento, modello di grandi dimensioni.</p>
+  </div>
+  <div class="llm-card">
+    <div class="llm-card-header">
+      <span class="llm-dot gem"></span>
+      <h4>Google Gemini</h4>
+    </div>
+    <p>Gemini 3.5 Flash, gratuito, modello di grandi dimensioni.</p>
+  </div>
+  <div class="llm-card">
+    <div class="llm-card-header">
+      <span class="llm-dot mis"></span>
+      <h4>Mistral AI</h4>
+    </div>
+    <p>Minstral AI, europeo, modello di medie dimensioni.</p>
+  </div>
+</div>
+
+<div class="insight-box">
+  <strong>Insight</strong> I tre modelli sono stati selezionati per garantire una comparazione eterogenea: due modelli di grandi dimensioni — uno gratuito (Gemini 1.5 Flash) e uno a pagamento (GPT-4o) — un terzo modello di medie dimensioni ad architettura europea (Mistral Large).
+</div>
  
       </div>
     </div>
