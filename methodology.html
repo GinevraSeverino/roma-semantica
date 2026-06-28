@@ -284,52 +284,34 @@ e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</
       </div>
     </div>
 
-
-  <div class="phase-item">
+<div class="phase-item">
       <div class="phase-num"><span class="num">5</span>Fase</div>
       <div class="phase-body">
  
         <h2>Produzione delle Triple RDF</h2>
  
-        <p>
-          Raccolte e confrontate le risposte dei tre LLM per ciascun quartiere e ciascuna
-          dimensione semantica, abbiamo adottato un approccio di <strong>validazione
-          multi-fonte</strong> per stabilire il valore da inserire nel Knowledge Graph:
-        </p>
+<p>
+  In questa fase abbiamo prodotto le triple serializzate nel formato <strong>Turtle (.ttl)</strong>
+  tramite i modelli di AI precedentemente selezionati. Sono state adottate tre tecniche di prompting distinte:</p>
         <ul>
           <li>
-            <strong>Consenso tra modelli:</strong> nei casi di accordo tra due o tre LLM,
-            il valore condiviso è stato adottato direttamente come valore di verità
-            per la tripla corrispondente.
+            <strong>Zero-shot:</strong> al modello viene fornita solo la specifica ontologica e la lista dei quartieri, senza alcun esempio
+    di output atteso. Si tratta dell'approccio più diretto.
           </li>
           <li>
-            <strong>Fonti istituzionali:</strong> nei casi di disaccordo, si è fatto
-            riferimento a dati ISTAT, alla classificazione del Comune di Roma e a
-            riconoscimenti ufficiali del turismo romano per orientare la scelta.
+            <strong>Few-shot:</strong> al modello vengono forniti esempi di triple RDF già costruite, che fungono da schema da replicare
+    per gli altri quartieri.
           </li>
           <li>
-            <strong>Coerenza con DBpedia:</strong> ulteriore controllo incrociato con le
-            informazioni già presenti nel grafo — monumenti, istituzioni, categorie
-            associate — per verificare la plausibilità del valore selezionato.
+            <strong>Zero-shot con Chain of Thought:</strong> al modello viene richiesto di seguire una catena di ragionamento esplicita per ciascun quartiere,
+    prima di produrre le triple.
           </li>
         </ul>
-        <p>
-          Le triple risultanti sono state serializzate nel formato <strong>Turtle (.ttl)</strong>
-          e caricate in <strong>GraphDB</strong> per la costruzione del Knowledge Graph
-          arricchito. Ogni entità quartiere è stata collegata al grafo originale di DBpedia
-          tramite la proprietà <code>owl:sameAs</code>, garantendo l'interoperabilità con le
-          risorse preesistenti. Le triple prodotte sono consultabili nella sezione
-          <a href="results.html">Results</a>.
-        </p>
  
         <div class="insight-box">
           <strong>Insight</strong>
-          La produzione delle triple ha richiesto scelte motivate nei casi di disaccordo
-          tra i modelli: Testaccio, ad esempio, è stato classificato come
-          <em>Gentrificazione</em> sulla base del consenso di due modelli su tre, supportato
-          dalla presenza di spazi culturali nel grafo DBpedia legati alla trasformazione del
-          vecchio mattatoio. Questa fase ha evidenziato come la soggettività delle dimensioni
-          semantiche richieda un processo di validazione esplicito e trasparente.
+         Per approfondire, visitare la sezione <a href="LLM.html">LLm</a>.
+
         </div>
  
       </div>
