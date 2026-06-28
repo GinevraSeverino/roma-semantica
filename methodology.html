@@ -36,7 +36,7 @@
       <div class="phase-num"><span class="num">1</span>Fase</div>
       <div class="phase-body">
  
-        <h2>Esplorazione e Gap Identification</h2>
+<h2>Esplorazione e Gap Identification</h2>
 
 <p>
 La prima fase del progetto è consistita nell'esplorazione di DBpedia attraverso query SPARQL tramite l'<a href="https://dbpedia.org/sparql#">endpoint</a> ufficiale, con l'obiettivo primario di comprendere 
@@ -45,8 +45,7 @@ i gap semantici esistenti rispetto alle dimensioni che il progetto intendeva rap
 <p>
 Abbiamo interrogato l'entità <code>dbr:Rome</code> per verificarne la tipizzazione e
 le proprietà associate, scoprendo che Roma è classificata come <em>City</em>,
-<em>Location</em>, <em>Place</em>, <em>PopulatedPlace</em> e <em>Settlement</em>,
-ma priva di legami diretti con le sue suddivisioni urbane.</p>
+<em>Location</em>, <em>Place</em>, <em>PopulatedPlace</em> e <em>Settlement</em>,ma priva di legami diretti con le sue suddivisioni urbane.</p>
 
 <p>In totale, abbiamo identificato 4 gap nell'ontologia:
 <div class="gap-grid">
@@ -54,8 +53,7 @@ ma priva di legami diretti con le sue suddivisioni urbane.</p>
             <strong>Gap 1</strong>
             Assenza di un legame diretto tra l'entità Roma e i suoi quartieri e rioni: le
             proprietà <code>subdivision</code>, <code>subdivisionType</code> e
-            <code>subdivisionName</code> presenti in DBpedia non descrivono relazioni
-            dirette con i singoli quartieri.
+            <code>subdivisionName</code> presenti in DBpedia non descrivono relazioni dirette con i singoli quartieri.
           </div>
           <div class="gap-card">
             <strong>Gap 2</strong>
@@ -75,7 +73,7 @@ ma priva di legami diretti con le sue suddivisioni urbane.</p>
         </div>
  
         <div class="insight-box">
-          <strong>Insight</strong> A seguito di quessta fase di analisi ed esplorazione è risultata evidente la necessità di un'estensione ontologica.
+          <strong>Insight</strong> A seguito di questa fase di analisi ed esplorazione è risultata evidente la necessità di un'estensione ontologica.
         </div>
  
       </div>
@@ -95,8 +93,7 @@ classificazione ufficiale del Comune di Roma — disponibile tramite il portale
 sistema geografico <a href="https://geoportale.comune.roma.it/georoma/#/viewer/22188" target="_blank">GeoRoma</a>
  — che distingue rioni del centro storico, quartieri e zone urbanistiche.
 Il campione scelto include aree storiche, quartieri residenziali, zone universitarie,
-poli direzionali e aree periferiche, garantendo varietà morfologica e socio-economica:
-        </p>
+poli direzionali e aree periferiche, garantendo varietà morfologica e socio-economica:</p>
 
  <div class="district-chips">
           <span>Trastevere</span>
@@ -106,12 +103,12 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
           <span>San Lorenzo</span>
           <span>Parioli</span>
           <span>EUR</span>
-          <span>Ponte Mammolo</span>
+          <span>San Basilio</span>
           <span>Nomentano</span>
           <span>Ardeatino</span>
         </div>
           
-<p> INSERIRE TESTO </p>
+<p>Tabella riassuntiva delle fonti che abbiamo usato come supporto </p>
  
         <table class="sources-table">
           <thead>
@@ -124,7 +121,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
           <tbody>
             <tr>
               <td>
-                <a href="https://it.wikipedia.org" target="_blank">Wikipedia</a>
+                <a href="https://it.wikipedia.org/wiki/Quartieri_di_Roma" target="_blank">Wikipedia</a>
                 <br><span class="src-tag">Enciclopedico</span>
               </td>
               <td>Informazioni storiche, descrizioni narrative dei quartieri, contesto culturale</td>
@@ -185,7 +182,6 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
         </p>
  
         <div class="dim-grid">
- 
           <div class="dim-card">
             <div class="dim-icon">🏙️</div>
             <div class="dim-content">
@@ -264,7 +260,7 @@ e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</
               <span class="llm-dot gpt"></span>
               <h4>OpenAI ChatGPT</h4>
             </div>
-            <p>Modello GPT-4o mini, gratuito, di grandi dimensioni. Accesso tramite interfaccia web ufficiale.</p>
+            <p>Modello Chat GPT Pro , a pagamento, di grandi dimensioni. Accesso tramite interfaccia web ufficiale.</p>
           </div>
           <div class="llm-card">
             <div class="llm-card-header">
