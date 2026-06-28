@@ -556,23 +556,23 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 .marker-roman-area {
-    left: 39%;
-    top: 31%;
+    left: 32%;
+    top: 25%;
 }
 
 .marker-identity-property {
     left: 40%;
-    top: 48%;
+    top: 50%;
 }
 
 .marker-identity {
-    left: 60%;
+    left: 45%;
     top: 48%;
 }
 
 .marker-transformation-property {
-    left: 49%;
-    top: 67%;
+    left: 43%;
+    top: 70%;
 }
 
 .marker-transformation {
@@ -581,7 +581,7 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 .marker-safety {
-    left: 15%;
+    left: 12%;
     top: 43%;
 }
 
