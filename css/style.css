@@ -561,8 +561,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 .marker-identity-property {
-    left: 35%;
-    top: 47%;
+    left: 25%;
+    top: 42%;
 }
 
 .marker-identity {
@@ -571,13 +571,13 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 .marker-transformation-property {
-    left: 32%;
+    left: 20%;
     top: 70%;
 }
 
 .marker-transformation {
-    left: 55%;
-    top: 70%;
+    left: 40%;
+    top: 80%;
 }
 
 .marker-safety {
