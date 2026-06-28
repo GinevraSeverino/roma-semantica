@@ -166,20 +166,11 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
  
        <h2>Ontology Design</h2>
  
- <p>
-          Individuati i gap semantici e definito il campione di entità, abbiamo progettato un'estensione formale dell'ontologia di DBpedia (vedi il
-          <a href="Ontology_extension.html">disegno ontologico</a>).
-          Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale,
-          abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
-          sottoclasse di <code>dbo:CityDistrict</code> — il concetto ontologico esistente più
-          affine all'idea di quartiere o rione urbano. Il namespace di progetto scelto è
-          <code>http://example.org/rome-urban-ontology/</code>, con prefisso <code>ruo:</code>.
-        </p>
-        <p>
-          Sono state introdotte <strong>tre dimensioni semantiche</strong>, ciascuna modellata
-          tramite una proprietà dedicata con il proprio range ontologico:
-        </p>
- 
+ <p>Individuati i gap semantici e definito il campione di entità, abbiamo progettato un'estensione formale dell'ontologia di DBpedia (vedi il <a href="Ontology_extension.html">disegno ontologico</a>).
+    Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale, abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
+    sottoclasse di <code>dbo:CityDistrict</code> — il concetto ontologico esistente più affine all'idea di quartiere o rione urbano. Il namespace di progetto scelto è
+     <code>http://example.org/rome-urban-ontology/</code>, con prefisso <code>ruo:</code>. </p>
+<p> Sono state introdotte <strong>tre dimensioni semantiche</strong>, ciascuna modellata tramite una proprietà dedicata con il proprio range ontologico: </p>
         <div class="dim-grid">
           <div class="dim-card">
             <div class="dim-icon">🏙️</div>
@@ -246,7 +237,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
       <div class="phase-num"><span class="num">4</span>Fase</div>
       <div class="phase-body">
  
-        <h2>LLM Knowledge Extraction e Bias Analysis</h2>
+<h2>LLM Knowledge Extraction e Bias Analysis</h2>
 <p>
 In questa fase abbiamo condotto un processo di knowledge extraction con tre modelli LLM, attravero una tecnica di Prompting Zero-Shot. 
 L'obiettivo centrale è stato quello di analizzare i potenziali bias e stereotipi urbani intrinseci negli LLM,
@@ -284,58 +275,159 @@ e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</
       </div>
     </div>
 
+<div class="phase-item">
+<div class="phase-num"><span class="num">5</span>Fase</div>
+<div class="phase-body">
+ 
+<h2>Produzione delle triple RDF</h2>
+<p>In questa fase sono state prodotte le triple serializzate nel formato <strong>Turtle (.ttl)</strong> tramite i modelli di AI precedentemente selezionati. 
+   Sono state adottate tre tecniche di prompting distinte: <strong>Zero-shot</strong>, <strong>Few-shot</strong> e <strong>Zero-shot con Chain of Thought</strong>.
+  I risultati completi sono disponibili nella sezione <a href="results.html">Risultati</a>.</p>
 
-  <div class="phase-item">
-      <div class="phase-num"><span class="num">5</span>Fase</div>
-      <div class="phase-body">
- 
-        <h2>Produzione delle Triple RDF</h2>
- 
-        <p>
-          Raccolte e confrontate le risposte dei tre LLM per ciascun quartiere e ciascuna
-          dimensione semantica, abbiamo adottato un approccio di <strong>validazione
-          multi-fonte</strong> per stabilire il valore da inserire nel Knowledge Graph:
-        </p>
-        <ul>
-          <li>
-            <strong>Consenso tra modelli:</strong> nei casi di accordo tra due o tre LLM,
-            il valore condiviso è stato adottato direttamente come valore di verità
-            per la tripla corrispondente.
-          </li>
-          <li>
-            <strong>Fonti istituzionali:</strong> nei casi di disaccordo, si è fatto
-            riferimento a dati ISTAT, alla classificazione del Comune di Roma e a
-            riconoscimenti ufficiali del turismo romano per orientare la scelta.
-          </li>
-          <li>
-            <strong>Coerenza con DBpedia:</strong> ulteriore controllo incrociato con le
-            informazioni già presenti nel grafo — monumenti, istituzioni, categorie
-            associate — per verificare la plausibilità del valore selezionato.
-          </li>
-        </ul>
-        <p>
-          Le triple risultanti sono state serializzate nel formato <strong>Turtle (.ttl)</strong>
-          e caricate in <strong>GraphDB</strong> per la costruzione del Knowledge Graph
-          arricchito. Ogni entità quartiere è stata collegata al grafo originale di DBpedia
-          tramite la proprietà <code>owl:sameAs</code>, garantendo l'interoperabilità con le
-          risorse preesistenti. Le triple prodotte sono consultabili nella sezione
-          <a href="results.html">Results</a>.
-        </p>
- 
-        <div class="insight-box">
-          <strong>Insight</strong>
-          La produzione delle triple ha richiesto scelte motivate nei casi di disaccordo
-          tra i modelli: Testaccio, ad esempio, è stato classificato come
-          <em>Gentrificazione</em> sulla base del consenso di due modelli su tre, supportato
-          dalla presenza di spazi culturali nel grafo DBpedia legati alla trasformazione del
-          vecchio mattatoio. Questa fase ha evidenziato come la soggettività delle dimensioni
-          semantiche richieda un processo di validazione esplicito e trasparente.
-        </div>
- 
-      </div>
-    </div>
- 
-  </div><!-- /phase-timeline -->
+<div class="challenge-block">
+  <div class="challenge-header">
+    <span class="challenge-num">1</span>
+    <h2>Zero-shot</h2>
+  </div>
+  <p>
+    Al modello viene fornita solo la specifica ontologica e la lista dei quartieri, senza alcun esempio
+    di output atteso. Si tratta dell'approccio più diretto. 
+  </p>
+  <div class="query-box">Sei un esperto di ontologie RDF e Knowledge Graph.
+Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
+la conoscenza già presente in DBpedia mediante la seguente ontologia:
+
+Classi
+  ruo:RomanUrbanArea
+  ruo:DominantUrbanIdentity
+  ruo:UrbanTransformation
+Object Property
+  ruo:hasDominantUrbanIdentity
+  ruo:hasUrbanTransformation
+Datatype Property
+  ruo:hasPerceivedSafety
+
+Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
+San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
+
+Per ciascun quartiere utilizza la corrispondente risorsa di DBpedia (dbr:)
+e formalizza le varie relazioni secondo l'ontologia.
+Basati esclusivamente su informazioni consolidate e ampiamente documentate.
+Non inventare proprietà, classi o informazioni.
+Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
+  @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
+  @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
+  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</div>
+  <div class="insight-box">
+    <strong>Osservazioni</strong>
+    [spazio per i commenti sui risultati]
+  </div>
+</div>
+
+<div class="challenge-block">
+  <div class="challenge-header">
+    <span class="challenge-num">2</span>
+    <h2>Few-shot</h2>
+  </div>
+  <p>
+    Al modello vengono forniti esempi di triple RDF già costruite, che fungono da schema da replicare
+    per gli altri quartieri.</p>
+<div class="query-box">Sei un esperto di ontologie RDF e Knowledge Graph.
+Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
+la conoscenza già presente in DBpedia mediante la seguente ontologia:
+
+Classi
+  ruo:RomanUrbanArea
+  ruo:DominantUrbanIdentity
+  ruo:UrbanTransformation
+Object Property
+  ruo:hasDominantUrbanIdentity
+  ruo:hasUrbanTransformation
+Datatype Property
+  ruo:hasPerceivedSafety
+
+Per costruire le triple RDF basati su questo esempio:
+  Soggetto:  la risorsa dbr:Trastevere
+  Predicato: rdf:type
+  Oggetto:   ruo:RomanUrbanArea
+
+  Soggetto:  la risorsa dbr:Trastevere
+  Predicato: ruo:hasUrbanTransformation
+  Oggetto:   un individuo della classe ruo:UrbanTransformation
+
+Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
+San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
+
+Basati esclusivamente su informazioni consolidate e ampiamente documentate.
+Non inventare proprietà, classi o informazioni non supportate dalle fonti;
+in caso di incertezza scegli l'interpretazione più plausibile.
+Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
+  @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
+  @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
+  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</div>
+  <div class="insight-box">
+    <strong>Osservazioni</strong>
+    [spazio per i commenti sui risultati]
+  </div>
+</div>
+
+<div class="challenge-block">
+  <div class="challenge-header">
+    <span class="challenge-num">3</span>
+    <h2>Zero-shot con Chain of Thought</h2>
+  </div>
+  <p>
+    Al modello viene richiesto di seguire una catena di ragionamento esplicita per ciascun quartiere,
+    prima di produrre le triple.</p>
+  <div class="query-box">Sei un esperto di ontologie RDF e Knowledge Graph.
+Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
+la conoscenza già presente in DBpedia mediante la seguente ontologia:
+
+Classi
+  ruo:RomanUrbanArea
+  ruo:DominantUrbanIdentity
+  ruo:UrbanTransformation
+Object Property
+  ruo:hasDominantUrbanIdentity
+  ruo:hasUrbanTransformation
+Datatype Property
+  ruo:hasPerceivedSafety
+
+Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
+San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
+
+Per arrivare all'output procedi passo dopo passo usando questa catena di pensiero:
+  1. Considera la risorsa DBpedia corrispondente (namespace dbr:);
+     assegnale il tipo ruo:RomanUrbanArea.
+  2. Individua la DominantUrbanIdentity più rappresentativa e istanziala
+     come individuo della classe ruo:DominantUrbanIdentity.
+  3. Individua la UrbanTransformation più rappresentativa e istanziala
+     come individuo della classe ruo:UrbanTransformation.
+  4. Assegna un valore alla proprietà ruo:hasPerceivedSafety utilizzando
+     una stringa descrittiva ("High", "Medium" o "Low").
+
+Basati esclusivamente su informazioni consolidate e ampiamente documentate.
+Non inventare proprietà, classi o informazioni non supportate dalle fonti;
+in caso di incertezza scegli l'interpretazione più plausibile.
+Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
+  @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
+  @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
+  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+Restituisci esclusivamente il codice Turtle.</div>
+  <div class="insight-box">
+    <strong>Osservazioni</strong>
+    [spazio per i commenti sui risultati]
+  </div>
+</div>
+    
+    
+</div>
+</div>
+
+    
+  </div><!-- fine timeline -->
  
   <div class="section-divider"></div>
  
