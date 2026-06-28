@@ -166,11 +166,20 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
  
        <h2>Ontology Design</h2>
  
- <p>Individuati i gap semantici e definito il campione di entità, abbiamo progettato un'estensione formale dell'ontologia di DBpedia (vedi il <a href="Ontology_extension.html">disegno ontologico</a>).
-    Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale, abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
-    sottoclasse di <code>dbo:CityDistrict</code> — il concetto ontologico esistente più affine all'idea di quartiere o rione urbano. Il namespace di progetto scelto è
-     <code>http://example.org/rome-urban-ontology/</code>, con prefisso <code>ruo:</code>. </p>
-<p> Sono state introdotte <strong>tre dimensioni semantiche</strong>, ciascuna modellata tramite una proprietà dedicata con il proprio range ontologico: </p>
+ <p>
+          Individuati i gap semantici e definito il campione di entità, abbiamo progettato un'estensione formale dell'ontologia di DBpedia (vedi il
+          <a href="Ontology_extension.html">disegno ontologico</a>).
+          Per risolvere l'eterogeneità di classificazione riscontrata nel grafo originale,
+          abbiamo introdotto una nuova classe <code>ruo:RomanUrbanArea</code>, definita come
+          sottoclasse di <code>dbo:CityDistrict</code> — il concetto ontologico esistente più
+          affine all'idea di quartiere o rione urbano. Il namespace di progetto scelto è
+          <code>http://example.org/rome-urban-ontology/</code>, con prefisso <code>ruo:</code>.
+        </p>
+        <p>
+          Sono state introdotte <strong>tre dimensioni semantiche</strong>, ciascuna modellata
+          tramite una proprietà dedicata con il proprio range ontologico:
+        </p>
+ 
         <div class="dim-grid">
           <div class="dim-card">
             <div class="dim-icon">🏙️</div>
@@ -237,7 +246,7 @@ poli direzionali e aree periferiche, garantendo varietà morfologica e socio-eco
       <div class="phase-num"><span class="num">4</span>Fase</div>
       <div class="phase-body">
  
-<h2>LLM Knowledge Extraction e Bias Analysis</h2>
+        <h2>LLM Knowledge Extraction e Bias Analysis</h2>
 <p>
 In questa fase abbiamo condotto un processo di knowledge extraction con tre modelli LLM, attravero una tecnica di Prompting Zero-Shot. 
 L'obiettivo centrale è stato quello di analizzare i potenziali bias e stereotipi urbani intrinseci negli LLM,
@@ -275,43 +284,58 @@ e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</
       </div>
     </div>
 
-<div class="phase-item">
-<div class="phase-num"><span class="num">5</span>Fase</div>
-<div class="phase-body">
+
+  <div class="phase-item">
+      <div class="phase-num"><span class="num">5</span>Fase</div>
+      <div class="phase-body">
  
-<h2>Produzione delle triple RDF</h2>
-<p>In questa fase sono state prodotte le triple serializzate nel formato <strong>Turtle (.ttl)</strong> tramite i modelli di AI precedentemente selezionati. 
-   Sono state adottate tre tecniche di prompting distinte: <strong>Zero-shot</strong>, <strong>Few-shot</strong> e <strong>Zero-shot con Chain of Thought</strong>.
-  Per aprofondimenti sui risultati visitare la sezione <a href="LLM.html">LLM</a>.</p>
-
-  <div class="challenge-header">
-    <span class="challenge-num">1</span>
-    <h2>Zero-shot</h2>
-  </div>
-  <p>
-    Al modello viene fornita solo la specifica ontologica e la lista dei quartieri, senza alcun esempio
-    di output atteso. Si tratta dell'approccio più diretto. 
-  </p>
-  
-  <div class="challenge-header">
-    <span class="challenge-num">2</span>
-    <h2>Few-shot</h2>
-  </div>
-  <p>
-    Al modello vengono forniti esempi di triple RDF già costruite, che fungono da schema da replicare
-    per gli altri quartieri.</p>
-  <div class="challenge-header">
-    <span class="challenge-num">3</span>
-    <h2>Zero-shot con Chain of Thought</h2>
-  </div>
-  <p>
-    Al modello viene richiesto di seguire una catena di ragionamento esplicita per ciascun quartiere,
-    prima di produrre le triple.  </p>
-
-
-    
-    
-  </div><!-- fine timeline -->
+        <h2>Produzione delle Triple RDF</h2>
+ 
+        <p>
+          Raccolte e confrontate le risposte dei tre LLM per ciascun quartiere e ciascuna
+          dimensione semantica, abbiamo adottato un approccio di <strong>validazione
+          multi-fonte</strong> per stabilire il valore da inserire nel Knowledge Graph:
+        </p>
+        <ul>
+          <li>
+            <strong>Consenso tra modelli:</strong> nei casi di accordo tra due o tre LLM,
+            il valore condiviso è stato adottato direttamente come valore di verità
+            per la tripla corrispondente.
+          </li>
+          <li>
+            <strong>Fonti istituzionali:</strong> nei casi di disaccordo, si è fatto
+            riferimento a dati ISTAT, alla classificazione del Comune di Roma e a
+            riconoscimenti ufficiali del turismo romano per orientare la scelta.
+          </li>
+          <li>
+            <strong>Coerenza con DBpedia:</strong> ulteriore controllo incrociato con le
+            informazioni già presenti nel grafo — monumenti, istituzioni, categorie
+            associate — per verificare la plausibilità del valore selezionato.
+          </li>
+        </ul>
+        <p>
+          Le triple risultanti sono state serializzate nel formato <strong>Turtle (.ttl)</strong>
+          e caricate in <strong>GraphDB</strong> per la costruzione del Knowledge Graph
+          arricchito. Ogni entità quartiere è stata collegata al grafo originale di DBpedia
+          tramite la proprietà <code>owl:sameAs</code>, garantendo l'interoperabilità con le
+          risorse preesistenti. Le triple prodotte sono consultabili nella sezione
+          <a href="results.html">Results</a>.
+        </p>
+ 
+        <div class="insight-box">
+          <strong>Insight</strong>
+          La produzione delle triple ha richiesto scelte motivate nei casi di disaccordo
+          tra i modelli: Testaccio, ad esempio, è stato classificato come
+          <em>Gentrificazione</em> sulla base del consenso di due modelli su tre, supportato
+          dalla presenza di spazi culturali nel grafo DBpedia legati alla trasformazione del
+          vecchio mattatoio. Questa fase ha evidenziato come la soggettività delle dimensioni
+          semantiche richieda un processo di validazione esplicito e trasparente.
+        </div>
+ 
+      </div>
+    </div>
+ 
+  </div><!-- /phase-timeline -->
  
   <div class="section-divider"></div>
  
