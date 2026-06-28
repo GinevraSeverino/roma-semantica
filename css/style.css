@@ -493,8 +493,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 
 .ontology-interactive img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 80%;
+    height: 0 auto;
 }
 
 .ontology-marker {
@@ -576,8 +576,8 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 .marker-transformation {
-    left: 77%;
-    top: 66%;
+    left: 74%;
+    top: 64%;
 }
 
 .marker-safety {
