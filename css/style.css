@@ -72,6 +72,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+.container section, .dim-card {animation: fadeUp 0.6s ease both;}
+.dim-card:hover {transform: translateY(-4px); transition: 0.25s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.12);}
 
 h1 {font-size: 3rem; text-align: center;}
 h2 {font-size: 1.8rem; text-align: center;}
