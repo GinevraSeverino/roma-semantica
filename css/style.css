@@ -460,38 +460,146 @@ th,td {border: 1px solid #ddd; padding: 10px;}
     margin-top: 24px;
 }
 
-/* ONTOLOGY EXTENSION */
-.ontology-card {
-    display: flex;
-    gap: 35px;
-    align-items: flex-start;
-    margin-top: 35px;
-}
-.ontology-text {flex: 0 0 48%;}
-.ontology-text section {margin-bottom: 45px;}
-.ontology-text h2 {text-align: left;}
-.ontology-img-box {
-    flex: 0 0 42%;
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,.18);
+/* ONTOLOGY INTERACTIVE */
+
+.ontology-page {
+    max-width: 1150px;
 }
 
-.ontology-img-box img {
+.ontology-intro {
+    margin-bottom: 35px;
+}
+
+.ontology-intro h2,
+.ontology-summary h2 {
+    text-align: left;
+}
+
+.viewer-caption {
+    text-align: center;
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+}
+
+.ontology-interactive {
+    position: relative;
+    width: 92%;
+    margin: 30px auto 45px auto;
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.22);
+}
+
+.ontology-interactive img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: contain;
 }
+
+.ontology-marker {
+    position: absolute;
+}
+
+.ontology-marker summary {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #a13535;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: Georgia, serif;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.35);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.ontology-marker summary:hover {
+    background: #8b0000;
+    transform: scale(1.15);
+}
+
+.ontology-marker summary::-webkit-details-marker {
+    display: none;
+}
+
+.marker-box {
+    position: absolute;
+    width: 260px;
+    background: rgba(255,255,255,.98);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.28);
+    z-index: 20;
+}
+
+.marker-box h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #8b0000;
+    font-size: 1.05rem;
+}
+
+.marker-box p {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    text-align: left;
+    margin: 0;
+}
+
+.marker-roman-area {
+    left: 39%;
+    top: 31%;
+}
+
+.marker-identity-property {
+    left: 55%;
+    top: 44%;
+}
+
+.marker-identity {
+    left: 75%;
+    top: 42%;
+}
+
+.marker-transformation-property {
+    left: 55%;
+    top: 67%;
+}
+
+.marker-transformation {
+    left: 77%;
+    top: 66%;
+}
+
+.marker-safety {
+    left: 15%;
+    top: 43%;
+}
+
+.ontology-summary {
+    margin-top: 45px;
+}
+
 @media (max-width: 900px) {
-    .ontology-card {
-        flex-direction: column;
-    }
-    .ontology-img-box {
+    .ontology-interactive {
         width: 100%;
+        padding: 10px;
+    }
+
+    .marker-box {
+        width: 220px;
     }
 }
+
 /* -- Timeline verticale delle fasi -- */
 .phase-timeline {position: relative; margin: 50px 0 10px;}
 .phase-timeline::before {
