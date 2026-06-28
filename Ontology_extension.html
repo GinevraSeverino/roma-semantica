@@ -37,27 +37,55 @@
 
             <section>
                 <h2>Motivazioni</h2>
-                <p>...</p>
+                <p>L'attività di esplorazione del Knowledge Graph, in particolare della modellazione delle entità, ha evidenziato come i quartieri
+                romani siano descritti principalmente mediante informazioni di taglio geografico e amministrativo, mentre risultino assenti caratteristiche
+                capaci di rappresentarne le trasformazioni del tessuto cittadino e l'identità urbana. 
+                Per colmare queste lacune è stata forumalata una proposta di estensione dell'ontologia di DBpedia, mantenendo compatibiltà con il modello
+                concettuale attuale.</p>
             </section>
 
             <section>
-                <h2>ruo:RomanUrbanArea</h2>
-                <p>...</p>
+                <h2>Classe ruo:RomanUrbanArea</h2>
+                <p>L'estesnsione comincia con l'introduzione di una nuova classe "RomanUrbanArea", definita come sottoclasse di <i>dbo:CityDistrict</i> già presente
+                nell'ontologia di DBpedia. Questa classe ha l'obiettivo di ridurre la forte eterogeneità nella tipizzazione delle risorse corrispondenti
+                ai quartieri romani, introducendo una classe abbastanza specifica per la suddivisione urbana di Roma che allo stesso tempo preservi il collegamento con
+                la modellazione esistente, favorendo il riutilizzo della conoscenza già presente.
+                </p>
+                <p>
+                    A partire dalla nuova classe sono state introdotte 3 proprietà dedicate alla descrizione delle caratteristiche identitarie dei quartieri:
+                    <ul>
+                        <li>ruo:hasDominantUrbanIdentity - ObjectProperty, collegata ad una nuova classe</li>
+                        <li>ruo:hasUrbanTransformation - ObjectProperty, collegata ad una nuova classe</li>
+                        <li>ruo:hasPercivedSafety - DatatypeProperty, collegata ad un valore testuale</li>
+                    </ul>
+                </p>
             </section>
 
             <section>
-                <h2>ruo:hasUrbanFunction</h2>
-                <p>...</p>
+                <h2>ruo:DominantUrbanIdentity</h2>
+                <p>
+                    Questa nuova classe rappresenta l'identità urbana associata ad un quartiere o rione di Roma, plasmata dall presenza di particolari
+                    attività commerciali, università, spazi culturali o aree residenziali. 
+                </p>
+                <p>
+                    Alcuni individui esemplificativi della classe sono: ruo:StudentIdentity e ruo:ResidentialIdentity.
+                </p>
             </section>
 
             <section>
-                <h2>ruo:hasCulturalCharacter</h2>
-                <p>...</p>
+                <h2>ruo:UrbanTransformation</h2>
+                <p>
+                    Questa nuova classe rappresenta eventuali trasformazioni urbane in atto in un quartiere, rione o zona urbana, rappresentativa delle
+                    principali dinamiche di evoluzione urbana osservabili nelle varie zone urbane di Roma.
+                </p>
+                <p> Alcuni individui esemplificativi della classe sono: ruo:Requalification e ruo:Gentrification.</p>
             </section>
 
             <section>
-                <h2>ruo:hasRepresentativeLandmark</h2>
-                <p>...</p>
+                <h2>ruo:hasPerceivedSafety</h2>
+                <p>
+                    Questa proprietà è stata modellata come DatatypeProperty con rage rdfs:Literal
+                </p>
             </section>
 
         </div>
