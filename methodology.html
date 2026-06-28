@@ -282,9 +282,8 @@ e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</
 <h2>Produzione delle triple RDF</h2>
 <p>In questa fase sono state prodotte le triple serializzate nel formato <strong>Turtle (.ttl)</strong> tramite i modelli di AI precedentemente selezionati. 
    Sono state adottate tre tecniche di prompting distinte: <strong>Zero-shot</strong>, <strong>Few-shot</strong> e <strong>Zero-shot con Chain of Thought</strong>.
-  I risultati completi sono disponibili nella sezione <a href="results.html">Risultati</a>.</p>
+  Per aprofondimenti sui risultati visitare la sezione <a href="LLM.html">LLM</a>.</p>
 
-<div class="challenge-block">
   <div class="challenge-header">
     <span class="challenge-num">1</span>
     <h2>Zero-shot</h2>
@@ -293,39 +292,7 @@ e <code>ruo:hasPerceivedSafety</code> (<a href="LLM.html">vedi approfondimento</
     Al modello viene fornita solo la specifica ontologica e la lista dei quartieri, senza alcun esempio
     di output atteso. Si tratta dell'approccio più diretto. 
   </p>
-  <div class="query-box">Sei un esperto di ontologie RDF e Knowledge Graph.
-Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
-la conoscenza già presente in DBpedia mediante la seguente ontologia:
-
-Classi
-  ruo:RomanUrbanArea
-  ruo:DominantUrbanIdentity
-  ruo:UrbanTransformation
-Object Property
-  ruo:hasDominantUrbanIdentity
-  ruo:hasUrbanTransformation
-Datatype Property
-  ruo:hasPerceivedSafety
-
-Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
-San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
-
-Per ciascun quartiere utilizza la corrispondente risorsa di DBpedia (dbr:)
-e formalizza le varie relazioni secondo l'ontologia.
-Basati esclusivamente su informazioni consolidate e ampiamente documentate.
-Non inventare proprietà, classi o informazioni.
-Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
-  @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
-  @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
-  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</div>
-  <div class="insight-box">
-    <strong>Osservazioni</strong>
-    [spazio per i commenti sui risultati]
-  </div>
-</div>
-
-<div class="challenge-block">
+  
   <div class="challenge-header">
     <span class="challenge-num">2</span>
     <h2>Few-shot</h2>
@@ -333,46 +300,6 @@ Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</d
   <p>
     Al modello vengono forniti esempi di triple RDF già costruite, che fungono da schema da replicare
     per gli altri quartieri.</p>
-<div class="query-box">Sei un esperto di ontologie RDF e Knowledge Graph.
-Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
-la conoscenza già presente in DBpedia mediante la seguente ontologia:
-
-Classi
-  ruo:RomanUrbanArea
-  ruo:DominantUrbanIdentity
-  ruo:UrbanTransformation
-Object Property
-  ruo:hasDominantUrbanIdentity
-  ruo:hasUrbanTransformation
-Datatype Property
-  ruo:hasPerceivedSafety
-
-Per costruire le triple RDF basati su questo esempio:
-  Soggetto:  la risorsa dbr:Trastevere
-  Predicato: rdf:type
-  Oggetto:   ruo:RomanUrbanArea
-
-  Soggetto:  la risorsa dbr:Trastevere
-  Predicato: ruo:hasUrbanTransformation
-  Oggetto:   un individuo della classe ruo:UrbanTransformation
-
-Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
-San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
-
-Basati esclusivamente su informazioni consolidate e ampiamente documentate.
-Non inventare proprietà, classi o informazioni non supportate dalle fonti;
-in caso di incertezza scegli l'interpretazione più plausibile.
-Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
-  @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
-  @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
-  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</div>
-  <div class="insight-box">
-    <strong>Osservazioni</strong>
-    [spazio per i commenti sui risultati]
-  </div>
-</div>
-
 <div class="challenge-block">
   <div class="challenge-header">
     <span class="challenge-num">3</span>
@@ -380,52 +307,10 @@ Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</d
   </div>
   <p>
     Al modello viene richiesto di seguire una catena di ragionamento esplicita per ciascun quartiere,
-    prima di produrre le triple.</p>
-  <div class="query-box">Sei un esperto di ontologie RDF e Knowledge Graph.
-Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
-la conoscenza già presente in DBpedia mediante la seguente ontologia:
+    prima di produrre le triple.  </p>
 
-Classi
-  ruo:RomanUrbanArea
-  ruo:DominantUrbanIdentity
-  ruo:UrbanTransformation
-Object Property
-  ruo:hasDominantUrbanIdentity
-  ruo:hasUrbanTransformation
-Datatype Property
-  ruo:hasPerceivedSafety
 
-Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
-San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
-
-Per arrivare all'output procedi passo dopo passo usando questa catena di pensiero:
-  1. Considera la risorsa DBpedia corrispondente (namespace dbr:);
-     assegnale il tipo ruo:RomanUrbanArea.
-  2. Individua la DominantUrbanIdentity più rappresentativa e istanziala
-     come individuo della classe ruo:DominantUrbanIdentity.
-  3. Individua la UrbanTransformation più rappresentativa e istanziala
-     come individuo della classe ruo:UrbanTransformation.
-  4. Assegna un valore alla proprietà ruo:hasPerceivedSafety utilizzando
-     una stringa descrittiva ("High", "Medium" o "Low").
-
-Basati esclusivamente su informazioni consolidate e ampiamente documentate.
-Non inventare proprietà, classi o informazioni non supportate dalle fonti;
-in caso di incertezza scegli l'interpretazione più plausibile.
-Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
-  @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
-  @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
-  @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-Restituisci esclusivamente il codice Turtle.</div>
-  <div class="insight-box">
-    <strong>Osservazioni</strong>
-    [spazio per i commenti sui risultati]
-  </div>
-</div>
     
-    
-</div>
-</div>
-
     
   </div><!-- fine timeline -->
  
