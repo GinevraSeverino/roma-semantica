@@ -561,22 +561,22 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 }
 
 .marker-identity-property {
-    left: 55%;
-    top: 44%;
+    left: 40%;
+    top: 48%;
 }
 
 .marker-identity {
-    left: 75%;
-    top: 42%;
+    left: 60%;
+    top: 48%;
 }
 
 .marker-transformation-property {
-    left: 55%;
+    left: 49%;
     top: 67%;
 }
 
 .marker-transformation {
-    left: 74%;
+    left: 77%;
     top: 60%;
 }
 
