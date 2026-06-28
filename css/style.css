@@ -495,7 +495,7 @@ p a:hover {color: #8b0000;}
 .marker-identity {left: 47%; top: 48%;}
 .marker-transformation-property {left: 25%; top: 72%;}
 .marker-transformation {left: 47%; top: 77%;}
-.marker-safety {left: 10%; top: 27%;}
+.marker-safety {left: 10%; top: 30%;}
 .ontology-summary {margin-top: 45px;}
 
 @media (max-width: 900px) {
