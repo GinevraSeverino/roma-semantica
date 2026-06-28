@@ -537,11 +537,11 @@ th,td {border: 1px solid #ddd; padding: 10px;}
 .marker-box h3 {margin-top: 0; margin-bottom: 8px; color: #8b0000; font-size: 1.05rem;}
 .marker-box p {font-size: 0.95rem; line-height: 1.45; text-align: left; margin: 0;}
 .marker-roman-area {left: 32%; top: 25%;}
-.marker-identity-property {left: 25%; top: 42%;}
+.marker-identity-property {left: 30%; top: 44%;}
 .marker-identity {left: 47%; top: 48%;}
-.marker-transformation-property {left: 30%; top: 72%;}
-.marker-transformation {left: 45%; top: 77%;}
-.marker-safety {left: 10%; top: 23%;}
+.marker-transformation-property {left: 25%; top: 72%;}
+.marker-transformation {left: 47%; top: 77%;}
+.marker-safety {left: 10%; top: 27%;}
 .ontology-summary {margin-top: 45px;}
 
 @media (max-width: 900px) {
