@@ -203,28 +203,29 @@
 Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
 la conoscenza già presente in DBpedia mediante la seguente ontologia:
 
-Classi
+Classi:
   ruo:RomanUrbanArea
   ruo:DominantUrbanIdentity
   ruo:UrbanTransformation
-Object Property
+Object Property:
   ruo:hasDominantUrbanIdentity
   ruo:hasUrbanTransformation
-Datatype Property
+Datatype Property:
   ruo:hasPerceivedSafety
 
 Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
 San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
 
 Per ciascun quartiere utilizza la corrispondente risorsa di DBpedia (dbr:)
-e formalizza le varie relazioni secondo l'ontologia.
-Basati esclusivamente su informazioni consolidate e ampiamente documentate.
-Non inventare proprietà, classi o informazioni.
-Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
+e formalizza le varie relazioni secondo l'ontologia. 
+Considera tutte le classi e le proprietà formalizzate nell'ontologia.
+
+Non inventare altre proprietà, classi o informazioni.
+In output genera triple RDF in sintassi Turtle utilizzando i namespace:
   @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
   @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
   @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</div>
+Non aggiungere spiegazioni o commenti, restituisci soltanto le triple Turtle.</div>
   <div class="insight-box">
     <strong>Osservazioni</strong>
     [spazio per i commenti sui risultati]
@@ -241,17 +242,17 @@ Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</d
 Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
 la conoscenza già presente in DBpedia mediante la seguente ontologia:
 
-Classi
+Classi:
   ruo:RomanUrbanArea
   ruo:DominantUrbanIdentity
   ruo:UrbanTransformation
-Object Property
+Object Property:
   ruo:hasDominantUrbanIdentity
   ruo:hasUrbanTransformation
-Datatype Property
+Datatype Property:
   ruo:hasPerceivedSafety
 
-Per costruire le triple RDF basati su questo esempio:
+Per costruire le triple RDF basati su questi esempi:
   Soggetto:  la risorsa dbr:Trastevere
   Predicato: rdf:type
   Oggetto:   ruo:RomanUrbanArea
@@ -263,10 +264,8 @@ Per costruire le triple RDF basati su questo esempio:
 Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
 San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
 
-Basati esclusivamente su informazioni consolidate e ampiamente documentate.
-Non inventare proprietà, classi o informazioni non supportate dalle fonti;
-in caso di incertezza scegli l'interpretazione più plausibile.
-Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
+Non inventare altre proprietà, classi o informazioni.
+In output genera triple RDF in sintassi Turtle utilizzando i namespace:
   @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
   @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
   @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
@@ -287,14 +286,14 @@ Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</d
 Devi produrre un arricchimento semantico dei quartieri di Roma estendendo
 la conoscenza già presente in DBpedia mediante la seguente ontologia:
 
-Classi
+Classi:
   ruo:RomanUrbanArea
   ruo:DominantUrbanIdentity
   ruo:UrbanTransformation
-Object Property
+Object Property:
   ruo:hasDominantUrbanIdentity
   ruo:hasUrbanTransformation
-Datatype Property
+Datatype Property:
   ruo:hasPerceivedSafety
 
 Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
@@ -310,14 +309,12 @@ Per arrivare all'output procedi passo dopo passo usando questa catena di pensier
   4. Assegna un valore alla proprietà ruo:hasPerceivedSafety utilizzando
      una stringa descrittiva ("High", "Medium" o "Low").
 
-Basati esclusivamente su informazioni consolidate e ampiamente documentate.
-Non inventare proprietà, classi o informazioni non supportate dalle fonti;
-in caso di incertezza scegli l'interpretazione più plausibile.
-Genera esclusivamente triple RDF in sintassi Turtle utilizzando i namespace:
+Non inventare altre proprietà, classi o informazioni.
+In output genera triple RDF in sintassi Turtle utilizzando i namespace:
   @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
   @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
   @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-Restituisci esclusivamente il codice Turtle.</div>
+Restituisci le triple Turtle e il ragionamento che hai fatto.</div>
   <div class="insight-box">
     <strong>Osservazioni</strong>
     [spazio per i commenti sui risultati]
