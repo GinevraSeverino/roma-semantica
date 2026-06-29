@@ -338,10 +338,37 @@ Restituisci le triple Turtle e il ragionamento che hai fatto.</div>
 </div>
 
 
+<script>
 
+const headers = document.querySelectorAll(".accordion-header");
 
+headers.forEach(header => {
 
+    header.addEventListener("click", () => {
 
+        const currentContent = header.nextElementSibling;
+        const isOpen = currentContent.classList.contains("show");
+
+        // chiude tutti
+        document.querySelectorAll(".accordion-content").forEach(content => {
+            content.classList.remove("show");
+        });
+
+        document.querySelectorAll(".accordion-header").forEach(h => {
+            h.classList.remove("active");
+        });
+
+        // se non era aperto, apre solo quello cliccato
+        if(!isOpen){
+            currentContent.classList.add("show");
+            header.classList.add("active");
+        }
+
+    });
+
+});
+
+</script>
 
 </section>
 </div>
