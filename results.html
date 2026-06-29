@@ -51,45 +51,54 @@
         <article class="llm-result-card">
             <h2>ChatGPT Plus</h2>
             <p>
-                Inserisci qui un breve commento sul comportamento del primo modello:
-                coerenza sintattica, rispetto dell'ontologia, qualità delle triple RDF,
-                eventuali errori o allucinazioni.
+               ChatGPT Plus ha prodotto gli output più coerenti complessivamente con l'estensione ontologica proposta, rispettando quasi sempre le classi
+                e le proprietà definite. 
             </p>
-
             <p>
-                Inserisci qui il commento sugli output Turtle generati con zero-shot,
-                few-shot o chain-of-thought prompting.
+               Nel caso dello <b>Zero-shot</b> il modello ha dimostrato già un'elevata capacità di inferire identità urbane e trasformazioni plausibili, tanto che
+                l'output RDF/Turtle di questo primo prompt sembra essere il migliore, nonostante sia abbinato alla tecnica di prompting più superficiale.
+            </p>
+            <p>
+               L'approccio <b>Few-shot</b> ha migliorato la regolarità sintattica delle triple, ma ha portato a una lieve semplificazione degli individui delle
+                due classi <i>ruo:DominantUrbaIdentity</i> e <i>ruo:UrbanTransformation</i>, tendendo a seguire maggiormente gli esempi forniti.
+            </p>
+            <p>
+                Nel prompting <b>Zero-shot Chain of thoughts</b> il modello ha esplicitato il ragionamento, ma ha introdotto maggiore variabilità terminologica
+                e alcune incongruenze negli IRI e nella denominazione degli individui.
             </p>
         </article>
 
         <article class="llm-result-card">
             <h2>Gemini</h2>
-            <p>Lo <strong>Zero-shot</strong> di Gemini produce triple sintatticamente valide, ci sono delle criticità. Innanzitutto, come Gemini 
-                Gemini non riesce ad inidividuare correttemente gli URI delle entità quartiieri e rioni in Dbpedia. Inoltre, come è possibile vedere dal frammento riportato, 
-                gli individui all'interno delle classi  <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code> anche se corretti formalmente, non resituisconoo un significato semantico.
-                Il valore di <code>ruo:hasPerceivedSafety</code> viene interpretato come un numero intero, probabilmente da 0 a 5.
+            <p>
+                Gemini ha mostrato un comportamento diverso, beneficiando del ragionamento esplicito e mostrando un miglioramento nell'output.
             </p>
-            <p>Il <strong>few-shot</strong> non si disatnzia molto dal risultato precedente. Rimangono le stesse criticità dello zero shot, ma il livello di <code>ruo:hasPerceivedSafety</code> viene interpretato come un numero decimale 
+            <p>
+                Con il prompting <b>Zero-shot</b> e <b>Few-shots</b> ha rispettato la struttura generale delle triple RDF, ma ha generato individui fortemente dipendenti
+                dal nome del quartiere, limitando la capacità di astrarre concetti più trasversali.
             </p>
-            <p>Il risultato migliore è sicuramente quello ottenuto con la tecnica di prompting <strong>zero-shot con CoT</strong>. Infatti, pur mantenendo il problema degli URI non corretti delle entità rioni e quartieri romani di Dbpedia, qui 
-                gli individui delle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code> acquisicono un senso semantico.
-                Il valore di <code>ruo:hasPerceivedSafety</code> qui è una stringa che indica un livello tra Higt, Midium, Low.
+            <p>
+                L'introduzione di <b>Chain of thought</b> ha prodotto un netto miglioramento, individuando identità urbane e trasformazioni maggiormente descrittive
+                e semanticamente significative.
             </p>
         </article>
 
         <article class="llm-result-card">
             <h2>Mistral</h2>
-            <p>Lo <strong>Zero-shot</strong> di Mistral produce triple sintatticamente valide, che sebbene presentino qualche criticità risultano nel complesso soddisfacenti. Anche Mistral come Gemini 
-                 non riesce a inidividuare correttemente gli URI delle entità quartiieri e rioni in Dbpedia. Tuttavia, a livello di senso semantico, gli individui delle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code>, hanno significato anche se sono molto semplici (a differenza dello zero shot di Gemini).
-                Qui il livello di <code>ruo:hasPerceivedSafety</code> viene interpretato come un numero intero, probabilmente da 0 a 10.
+            <p>
+                Minstral dimostra buine capacità descrittive ma è risultato il modello con le maggiori difficoltà nell'adattarsi alla struttura ontologica proposta.
             </p>
-            <p>Con la tecnica <strong>few-shot</strong> abbiamo invece un peggioramento evudente. Non solo rimane il problema degli URI delle entità di Dbpedia, ma Mistral inserisce dei placeholder al posto del prefisso delle risorse appratenenti alle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code>. Dunque, le triple non riultano valide.
-            Secondariamente a ciò, gli individui non portano del significato ma riprendono il nome della porprietà, come succedeva con Gemini (tecninche zero shot e few shot)
-            Qui il valore di <code>ruo:hasPerceivedSafety</code> è un numero decimale tra lo 0 e 1. 
+            <p>
+                Nel caso dello <b>Zero-shot</b> ha prodotto triple sintatticamente corrette ma semanticamente troppo semplificate, utilizzando valori molto
+                generici per gli individui, rappresentando ad esempio la sicurezza tramite valori numerici anzichè qualitativi.
             </p>
-            <p>Un risultato simile allo zero shot semplice è quello ottenuto con la tecnica di prompting <strong>zero-shot con CoT</strong>. Infatti, c'è ancora il problema degli URI non corretti delle entità rioni e quartieri romani di Dbpedia, ma 
-                gli individui delle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code> acquisicono un senso semantico rispetto al few shot. In questo caso, diversamente dalla prima tecnica, Mistral utilizza per ogni quartiere assegna alle object property degli individui che sì hanno senso, ma sono specifici per quel quartiere/rione.
-                Il valore di <code>ruo:hasPerceivedSafety</code> qui è una stringa che indica un livello tra Higt, Midium, Low.
+            <p>
+                Con il prompting <b>Few-shots</b> il modello ha migliorato l'aderenza alla struttura RDF, ma ha introdotto numerosi <i>blank node</i> riducendo
+                la riusabilità del grafo.
+            </p>
+            <p>
+                Anche nel <b>Chain of thought</b> il modello ha fornito un ragionamento articolato e coerente, ma gli individui generati risultano 
+                troppo specifici per quartiere.
             </p>
         </article>
 
@@ -112,18 +121,20 @@
         <h2>Conclusioni e sviluppi futuri</h2>
 
         <p>
-            Il confronto tra i modelli ha mostrato come i Large Language Models possano
-            supportare la produzione di conoscenza RDF, ma richiedano una fase di controllo
-            e validazione per garantire coerenza semantica, correttezza sintattica e
-            compatibilità con l'ontologia di riferimento.
+            La sperimentazione con i Large Language Models ha evidenziato il potenziale di questi strumenti nel supportare le attività di modellazione
+            semantica. Gli LLM sono un valido strumento per sostenere la produzione di esempi RDF/turtle, la scrittura di query SPARQL e la revisione della documentazione.
+            Tuttavia, l'eseprienza ha sicuramente confermato l'importanza della validazione umana sull'output generato come controllo finale sulla
+            correttezza delle classi, delle proprietà e delle relazioni ontologiche.
         </p>
-
         <p>
-            Come sviluppo futuro, l'estensione ontologica potrebbe essere ulteriormente
-            raffinata introducendo vocabolari controllati per gli individui delle nuove
-            classi, eventualmente modellati in SKOS, così da rendere più stabile e
-            riutilizzabile la descrizione delle identità urbane e delle trasformazioni
-            dei quartieri romani.
+            Come sviluppi futuri si possono prendere in considerazione diverse possibilità:
+            <ul>
+                <li><b>Ampliamento del dominio</b> - si può pensare di estendere l'analisi ad un numero maggiore di quartieri e zone urbane di Roma.</li>
+                <li><b>Nuovi dataset</b> - si possono integrare ulteriori fonti Linked Open DAta provenienti da enti pubblici e istituzioni culturali.</li>
+                <li><b>Vocabolari controllati</b> - l'estensione ontologica può essere affiancata alla produzione di vocabolari controllati in SKOS per 
+                gestire gli individui appartenenti alle due classi <i>ruo:DominantUrbanIdentity</i> e <i>ruo:UrbanTransformation</i></li>, aprendo la possibilità di avere 
+                una classe anche per "PerceivedSafety" con termini controllati.
+            </ul>
         </p>
     </section>
 
