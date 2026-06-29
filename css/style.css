@@ -130,23 +130,26 @@ p a:hover {color: #8b0000;}
 .accordion-item{margin-bottom:16px;}
 .accordion-header{
     width:100%;
-    background:#a13535;
-    color:white;
-    border:none;
+    background: rgba(161,53,53,.12);
+    color:#8d3333;
+    border: 1px solid rgba(161,53,53,.12);
+    backdrop-filter: blur(6px);
     padding:20px 26px;
-    font-size:1.45rem;
+    font-size:1.4rem;
     font-family:"Georgia", serif;
+    font-weight:bold;
     text-align:left;
     cursor:pointer;
-    transition:.25s;
+    transition:all .25s ease;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
-.accordion-header:hover{background:#8d3333;}
+.accordion-header:hover{background: rgba(161,53,53,.30);}
+.accordion-header.active{background: rgba(161,53,53,.22);}
 .accordion-header::after{content:"+"; font-size:1.8rem;font-weight:bold;}
 .accordion-header.active::after{content:"−";}
-.accordion-content{display:none; background:white; padding:28px; border:1px solid rgba(161,53,53,.2); border-top:none;}
+.accordion-content{display:none; rgba(255,255,255,.88); padding:28px; border:1px solid rgba(161,53,53,.2); border-top:none;}
 .accordion-content.show{ display:block;}
 
 /* MAPPA ROMA  */
