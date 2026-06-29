@@ -28,115 +28,93 @@
     </ul>
 </nav>
 
-<div class="container">
-    
+<div class="container results-page">
+
 <h1>Risultati</h1>
 
-<div class="section-title">
+<section class="results-hero">
     <p class="subtitle">
         Rileggere Roma attraverso il Knowledge Graph
     </p>
-<div class="section-divider"></div>
-    
+    <div class="section-divider"></div>
+
     <p class="results-intro">
         Il progetto "Roma Semantica nasce con l'intenzione di colmare alcuni gap da noi individuati nell'ontologia Dpbedia, soprattutto rispetto ad una rappresentazione meramente storico-amministrativa delle zone urbane di Roma. L'obiettivo è stato, quindi, quello di
         realizzare un arricchimento semantico che restituisse almeno in parte l'identità dei rioni e quartieri romani. Per farlo, è stata formulata un'estensione dell'ontologia di Dpbedia, con 3 nuove classi ontologiche ( <code>ruo:RomanUrbanArea</code>, definita come
-          sottoclasse di <code>dbo:CityDistrict</code>, <code>ruo:UrbanTransformation</code> e <code>ruo:DominantUrbanIdentity</code>) e tre nuove proprietà (la DatatypeProperty <code>ruo:hasPerceivedSafety</code> e le Object Property <code>ruo:hasDominantUrbanIdentity</code>
-        e <code>ruo:hasUrbanTransformation</code>). Questa estensione è stata poi utilizzata per descrivere un campione di 10 quartieri/rioni di Roma e attraverso l'ausilio di 3 modelli di AI, sono state create in totale 540 triple RDF Turtle con tre tecniche di pormpting diverse.</p>
+        sottoclasse di <code>dbo:CityDistrict</code>, <code>ruo:UrbanTransformation</code> e <code>ruo:DominantUrbanIdentity</code>) e tre nuove proprietà (la DatatypeProperty <code>ruo:hasPerceivedSafety</code> e le Object Property <code>ruo:hasDominantUrbanIdentity</code>
+        e <code>ruo:hasUrbanTransformation</code>). Questa estensione è stata poi utilizzata per descrivere un campione di 10 quartieri/rioni di Roma e attraverso l'ausilio di 3 modelli di AI, sono state create in totale 540 triple RDF Turtle con tre tecniche di pormpting diverse.
+    </p>
 
-    <p>Vediamo ora meglio i risultati delle triple RDF </p>
-    
-    <section class="llm-results-grid">
+    <p>Vediamo ora meglio i risultati delle triple RDF</p>
+</section>
 
-        <article class="llm-result-card">
+<section class="llm-story">
+
+    <article class="llm-story-card">
+        <div class="llm-badge">01</div>
+        <div class="llm-story-content">
             <h2>ChatGPT Plus</h2>
-            <p>
-               ChatGPT Plus ha prodotto gli output più coerenti complessivamente con l'estensione ontologica proposta, rispettando quasi sempre le classi
-                e le proprietà definite. 
-            </p>
-            <p>
-               Nel caso dello <b>Zero-shot</b> il modello ha dimostrato già un'elevata capacità di inferire identità urbane e trasformazioni plausibili, tanto che
-                l'output RDF/Turtle di questo primo prompt sembra essere il migliore, nonostante sia abbinato alla tecnica di prompting più superficiale.
-            </p>
-            <p>
-               L'approccio <b>Few-shot</b> ha migliorato la regolarità sintattica delle triple, ma ha portato a una lieve semplificazione degli individui delle
-                due classi <i>ruo:DominantUrbaIdentity</i> e <i>ruo:UrbanTransformation</i>, tendendo a seguire maggiormente gli esempi forniti.
-            </p>
-            <p>
-                Nel prompting <b>Zero-shot Chain of thoughts</b> il modello ha esplicitato il ragionamento, ma ha introdotto maggiore variabilità terminologica
-                e alcune incongruenze negli IRI e nella denominazione degli individui.
-            </p>
-        </article>
+            <p>ChatGPT Plus ha prodotto gli output più coerenti complessivamente con l'estensione ontologica proposta, rispettando quasi sempre le classi e le proprietà definite.</p>
+            <p>Nel caso dello <b>Zero-shot</b> il modello ha dimostrato già un'elevata capacità di inferire identità urbane e trasformazioni plausibili, tanto che l'output RDF/Turtle di questo primo prompt sembra essere il migliore, nonostante sia abbinato alla tecnica di prompting più superficiale.</p>
+            <p>L'approccio <b>Few-shot</b> ha migliorato la regolarità sintattica delle triple, ma ha portato a una lieve semplificazione degli individui delle due classi <i>ruo:DominantUrbaIdentity</i> e <i>ruo:UrbanTransformation</i>, tendendo a seguire maggiormente gli esempi forniti.</p>
+            <p>Nel prompting <b>Zero-shot Chain of thoughts</b> il modello ha esplicitato il ragionamento, ma ha introdotto maggiore variabilità terminologica e alcune incongruenze negli IRI e nella denominazione degli individui.</p>
+        </div>
+    </article>
 
-        <article class="llm-result-card">
+    <article class="llm-story-card reverse">
+        <div class="llm-badge">02</div>
+        <div class="llm-story-content">
             <h2>Gemini</h2>
-            <p>
-                Gemini ha mostrato un comportamento diverso, beneficiando del ragionamento esplicito e mostrando un miglioramento nell'output.
-            </p>
-            <p>
-                Con il prompting <b>Zero-shot</b> e <b>Few-shots</b> ha rispettato la struttura generale delle triple RDF, ma ha generato individui fortemente dipendenti
-                dal nome del quartiere, limitando la capacità di astrarre concetti più trasversali.
-            </p>
-            <p>
-                L'introduzione di <b>Chain of thought</b> ha prodotto un netto miglioramento, individuando identità urbane e trasformazioni maggiormente descrittive
-                e semanticamente significative.
-            </p>
-        </article>
+            <p>Gemini ha mostrato un comportamento diverso, beneficiando del ragionamento esplicito e mostrando un miglioramento nell'output.</p>
+            <p>Con il prompting <b>Zero-shot</b> e <b>Few-shots</b> ha rispettato la struttura generale delle triple RDF, ma ha generato individui fortemente dipendenti dal nome del quartiere, limitando la capacità di astrarre concetti più trasversali.</p>
+            <p>L'introduzione di <b>Chain of thought</b> ha prodotto un netto miglioramento, individuando identità urbane e trasformazioni maggiormente descrittive e semanticamente significative.</p>
+        </div>
+    </article>
 
-        <article class="llm-result-card">
+    <article class="llm-story-card">
+        <div class="llm-badge">03</div>
+        <div class="llm-story-content">
             <h2>Mistral</h2>
-            <p>
-                Minstral dimostra buone capacità descrittive ma è risultato il modello con le maggiori difficoltà nell'adattarsi alla struttura ontologica proposta.
-            </p>
-            <p>
-                Nel caso dello <b>Zero-shot</b> ha prodotto triple sintatticamente corrette ma semanticamente troppo semplificate, utilizzando valori molto
-                generici per gli individui, rappresentando ad esempio la sicurezza tramite valori numerici anzichè qualitativi.
-            </p>
-            <p>
-                Con il prompting <b>Few-shots</b> il modello ha migliorato l'aderenza alla struttura RDF, ma ha introdotto numerosi <i>blank node</i> riducendo
-                la riusabilità del grafo.
-            </p>
-            <p>
-                Anche nel <b>Chain of thought</b> il modello ha fornito un ragionamento articolato e coerente, ma gli individui generati risultano 
-                troppo specifici per quartiere.
-            </p>
-        </article>
+            <p>Minstral dimostra buone capacità descrittive ma è risultato il modello con le maggiori difficoltà nell'adattarsi alla struttura ontologica proposta.</p>
+            <p>Nel caso dello <b>Zero-shot</b> ha prodotto triple sintatticamente corrette ma semanticamente troppo semplificate, utilizzando valori molto generici per gli individui, rappresentando ad esempio la sicurezza tramite valori numerici anzichè qualitativi.</p>
+            <p>Con il prompting <b>Few-shots</b> il modello ha migliorato l'aderenza alla struttura RDF, ma ha introdotto numerosi <i>blank node</i> riducendo la riusabilità del grafo.</p>
+            <p>Anche nel <b>Chain of thought</b> il modello ha fornito un ragionamento articolato e coerente, ma gli individui generati risultano troppo specifici per quartiere.</p>
+        </div>
+    </article>
 
-    </section>
+</section>
 
-    <section class="validated-results">
-        <h2>Triple validate finali</h2>
+<section class="ttl-download-box">
+    <h2>Triple validate finali</h2>
 
-        <p>
-            A seguito del confronto tra gli output prodotti dai modelli, le triple RDF
-            sono state sottoposte a una fase di revisione e validazione. Il file finale scaricabile, contiene le triple considerate coerenti con l'ontologia proposta e con gli obiettivi del progetto.
-        </p>
+    <p>
+        A seguito del confronto tra gli output prodotti dai modelli, le triple RDF
+        sono state sottoposte a una fase di revisione e validazione. Il file finale scaricabile, contiene le triple considerate coerenti con l'ontologia proposta e con gli obiettivi del progetto.
+    </p>
 
-        <a href="results/Triple_RDF.ttl" class="download-button" download>
-            Scarica il file Turtle validato
-        </a>
-    </section>
+    <a href="results/Triple_RDF.ttl" class="download-button" download>
+        Scarica il file Turtle validato
+    </a>
+</section>
 
-    <section class="future-work">
-        <h2>Conclusioni e sviluppi futuri</h2>
+<section class="future-work-timeline">
+    <h2>Conclusioni e sviluppi futuri</h2>
 
-        <p>
-            La sperimentazione con i Large Language Models ha evidenziato il potenziale di questi strumenti nel supportare le attività di modellazione
-            semantica. Gli LLM sono un valido strumento per sostenere la produzione di esempi RDF/turtle, la scrittura di query SPARQL e la revisione della documentazione.
-            Tuttavia, l'eseprienza ha sicuramente confermato l'importanza della validazione umana sull'output generato come controllo finale sulla
-            correttezza delle classi, delle proprietà e delle relazioni ontologiche.
-        </p>
-        <p>
-            Come sviluppi futuri si possono prendere in considerazione diverse possibilità:
-            <ul>
-                <li><b>Ampliamento del dominio</b> - si può pensare di estendere l'analisi ad un numero maggiore di quartieri e zone urbane di Roma.</li>
-                <li><b>Nuovi dataset</b> - si possono integrare ulteriori fonti Linked Open DAta provenienti da enti pubblici e istituzioni culturali.</li>
-                <li><b>Vocabolari controllati</b> - l'estensione ontologica può essere affiancata alla produzione di vocabolari controllati in SKOS per 
-                gestire gli individui appartenenti alle due classi <i>ruo:DominantUrbanIdentity</i> e <i>ruo:UrbanTransformation</i></li>, aprendo la possibilità di avere 
-                una classe anche per "PerceivedSafety" con termini controllati.
-            </ul>
-        </p>
-    </section>
+    <p>
+        La sperimentazione con i Large Language Models ha evidenziato il potenziale di questi strumenti nel supportare le attività di modellazione
+        semantica. Gli LLM sono un valido strumento per sostenere la produzione di esempi RDF/turtle, la scrittura di query SPARQL e la revisione della documentazione.
+        Tuttavia, l'eseprienza ha sicuramente confermato l'importanza della validazione umana sull'output generato come controllo finale sulla
+        correttezza delle classi, delle proprietà e delle relazioni ontologiche.
+    </p>
+
+    <p>Come sviluppi futuri si possono prendere in considerazione diverse possibilità:</p>
+
+    <ul class="timeline-list">
+        <li><b>Ampliamento del dominio</b> - si può pensare di estendere l'analisi ad un numero maggiore di quartieri e zone urbane di Roma.</li>
+        <li><b>Nuovi dataset</b> - si possono integrare ulteriori fonti Linked Open DAta provenienti da enti pubblici e istituzioni culturali.</li>
+        <li><b>Vocabolari controllati</b> - l'estensione ontologica può essere affiancata alla produzione di vocabolari controllati in SKOS per gestire gli individui appartenenti alle due classi <i>ruo:DominantUrbanIdentity</i> e <i>ruo:UrbanTransformation</i>, aprendo la possibilità di avere una classe anche per "PerceivedSafety" con termini controllati.</li>
+    </ul>
+</section>
 
 </div>
 </div>
