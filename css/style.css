@@ -777,3 +777,19 @@ p a:hover {color: #8b0000;}
         transform: translateY(0);
     }
 }
+
+/* -- Tabella performance LLM -- */
+.perf-table thead th { text-align: center; }
+.perf-table thead th:first-child { text-align: left; }
+.perf-model-header { display: flex; align-items: center; gap: 8px; justify-content: center; }
+.perf-score { text-align: center; vertical-align: middle; }
+.score-badge {
+    display: inline-block;
+    min-width: 48px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(161, 53, 53, 0.08);
+    color: #8b0000;
+}
