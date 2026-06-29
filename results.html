@@ -39,10 +39,10 @@
 <div class="section-divider"></div>
     
     <p class="results-intro">
-        Il progetto "Roma Semantica nasce con l'intenzione di colmare alcuni gap da noi individuati dell'ontologia Dpbedia, soprattutto rispetto ad una rappresentazione meramente storico-amministrativa delle zone urbane di Roma. L'obiettivo è stato, quindi, quello di
-        produrre un arricchimento semantico che restituisse almeno in parte l'identità dei rioni e quartieri romani. Per farlo, è stata ideata una possibile estensione del KG di Dpbedia, con 3 nuove classi ontologiche ( <code>ruo:RomanUrbanArea</code>, definita come
+        Il progetto "Roma Semantica nasce con l'intenzione di colmare alcuni gap da noi individuati nell'ontologia Dpbedia, soprattutto rispetto ad una rappresentazione meramente storico-amministrativa delle zone urbane di Roma. L'obiettivo è stato, quindi, quello di
+        realizzare un arricchimento semantico che restituisse almeno in parte l'identità dei rioni e quartieri romani. Per farlo, è stata ideata una possibile estensione del KG di Dpbedia, con 3 nuove classi ontologiche ( <code>ruo:RomanUrbanArea</code>, definita come
           sottoclasse di <code>dbo:CityDistrict</code>, <code>ruo:UrbanTransformation</code> e <code>ruo:DominantUrbanIdentity</code>) e tre nuove proprietà (la Datatype Property <code>ruo:hasPerceivedSafety</code> e le Object Property <code>ruo:hasDominantUrbanIdentity</code>
-        eObject Property <code>ruo:hasUrbanTransformation</code>). Questa estensione è stata poi utilizzata per descrivere un campione di 10 entità dei quartieri/rioni di Roma e attraverso l'ausilio di 3 modelli di AI, sono state create in totale 540 triple RDF Turtle con tre tecniche di pormpting diverse.</p>
+        e <code>ruo:hasUrbanTransformation</code>). Questa estensione è stata poi utilizzata per descrivere un campione di 10 quartieri/rioni di Roma e attraverso l'ausilio di 3 modelli di AI, sono state create in totale 540 triple RDF Turtle con tre tecniche di pormpting diverse.</p>
 
     <p>Vediamo ora meglio i risultati delle triple RDF </p>
     
@@ -64,26 +64,32 @@
 
         <article class="llm-result-card">
             <h2>Gemini</h2>
-            <p>
-                Inserisci qui il commento sul secondo modello, evidenziando differenze
-                rispetto al primo.
+            <p>Lo <strong>Zero-shot</strong> di Gemini produce triple sintatticamente valide, ci sono delle criticità. Innanzitutto, come Gemini 
+                Gemini non riesce ad inidividuare correttemente gli URI delle entità quartiieri e rioni in Dbpedia. Inoltre, come è possibile vedere dal frammento riportato, 
+                gli individui all'interno delle classi  <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code> anche se corretti formalmente, non resituisconoo un significato semantico.
+                Il valore di <code>ruo:hasPerceivedSafety</code> viene interpretato come un numero intero, probabilmente da 0 a 5.
             </p>
-
-            <p>
-                Inserisci qui il commento sugli output Turtle prodotti dalle diverse
-                strategie di prompting.
+            <p>Il <strong>few-shot</strong> non si disatnzia molto dal risultato precedente. Rimangono le stesse criticità dello zero shot, ma il livello di <code>ruo:hasPerceivedSafety</code> viene interpretato come un numero decimale 
+            </p>
+            <p>Il risultato migliore è sicuramente quello ottenuto con la tecnica di prompting <strong>zero-shot con CoT</strong>. Infatti, pur mantenendo il problema degli URI non corretti delle entità rioni e quartieri romani di Dbpedia, qui 
+                gli individui delle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code> acquisicono un senso semantico.
+                Il valore di <code>ruo:hasPerceivedSafety</code> qui è una stringa che indica un livello tra Higt, Midium, Low.
             </p>
         </article>
 
         <article class="llm-result-card">
-            <h2>Minstral</h2>
-            <p>
-                Inserisci qui il commento sul terzo modello, specificando punti di forza,
-                limiti e grado di aderenza al modello ontologico.
+            <h2>Mistral</h2>
+            <p>Lo <strong>Zero-shot</strong> di Mistral produce triple sintatticamente valide, che sebbene presentino qualche criticità risultano nel complesso soddisfacenti. Anche Mistral come Gemini 
+                 non riesce a inidividuare correttemente gli URI delle entità quartiieri e rioni in Dbpedia. Tuttavia, a livello di senso semantico, gli individui delle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code>, hanno significato anche se sono molto semplici (a differenza dello zero shot di Gemini).
+                Qui il livello di <code>ruo:hasPerceivedSafety</code> viene interpretato come un numero intero, probabilmente da 0 a 10.
             </p>
-
-            <p>
-                Inserisci qui il commento sugli output Turtle del modello.
+            <p>Con la tecnica <strong>few-shot</strong> abbiamo invece un peggioramento evudente. Non solo rimane il problema degli URI delle entità di Dbpedia, ma Mistral inserisce dei placeholder al posto del prefisso delle risorse appratenenti alle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code>. Dunque, le triple non riultano valide.
+            Secondariamente a ciò, gli individui non portano del significato ma riprendono il nome della porprietà, come succedeva con Gemini (tecninche zero shot e few shot)
+            Qui il valore di <code>ruo:hasPerceivedSafety</code> è un numero decimale tra lo 0 e 1. 
+            </p>
+            <p>Un risultato simile allo zero shot semplice è quello ottenuto con la tecnica di prompting <strong>zero-shot con CoT</strong>. Infatti, c'è ancora il problema degli URI non corretti delle entità rioni e quartieri romani di Dbpedia, ma 
+                gli individui delle classi <code>ruo:DominantUrbanIdentity</code> e <code>ruo:UrbanTransformation</code> acquisicono un senso semantico rispetto al few shot. In questo caso, diversamente dalla prima tecnica, Mistral utilizza per ogni quartiere assegna alle object property degli individui che sì hanno senso, ma sono specifici per quel quartiere/rione.
+                Il valore di <code>ruo:hasPerceivedSafety</code> qui è una stringa che indica un livello tra Higt, Midium, Low.
             </p>
         </article>
 
