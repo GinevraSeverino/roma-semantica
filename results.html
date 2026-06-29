@@ -39,10 +39,13 @@
 <div class="section-divider"></div>
     
     <p class="results-intro">
-        In questa sezione vengono discussi i risultati ottenuti, analizzando più nel dettaglio il comportamento dei 3 LLM interrogati, e i possibili sviluppi fututri del progetto. 
-        Sarà poi possibile scaricare il file di Triple RDF/Turtle ufficiale e validato.
-    </p>
+        Il progetto "Roma Semantica nasce con l'intenzione di colmare alcuni gap da noi individuati dell'ontologia Dpbedia, soprattutto rispetto ad una rappresentazione meramente storico-amministrativa delle zone urbane di Roma. L'obiettivo è stato, quindi, quello di
+        produrre un arricchimento semantico che restituisse almeno in parte l'identità dei rioni e quartieri romani. Per farlo, è stata ideata una possibile estensione del KG di Dpbedia, con 3 nuove classi ontologiche ( <code>ruo:RomanUrbanArea</code>, definita come
+          sottoclasse di <code>dbo:CityDistrict</code>, <code>ruo:UrbanTransformation</code> e <code>ruo:DominantUrbanIdentity</code>) e tre nuove proprietà (la Datatype Property <code>ruo:hasPerceivedSafety</code> e le Object Property <code>ruo:hasDominantUrbanIdentity</code>
+        eObject Property <code>ruo:hasUrbanTransformation</code>). Questa estensione è stata poi utilizzata per descrivere un campione di 10 entità dei quartieri/rioni di Roma e attraverso l'ausilio di 3 modelli di AI, sono state create in totale 540 triple RDF Turtle con tre tecniche di pormpting diverse.</p>
 
+    <p>Vediamo ora meglio i risultati delle triple RDF </p>
+    
     <section class="llm-results-grid">
 
         <article class="llm-result-card">
