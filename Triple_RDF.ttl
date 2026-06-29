@@ -1,0 +1,75 @@
+@prefix ruo: <http://example.org/rome-urban-ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://dbpedia.org/resource/Trastevere> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:HistoricPopularIdentity ;
+    ruo:hasUrbanTransformation ruo:Touristification ;
+    ruo:hasPerceivedSafety "Medium"^^xsd:string .
+
+<http://dbpedia.org/resource/Trevi_(rione_of_Rome)> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:MonumentalTouristIdentity ;
+    ruo:hasUrbanTransformation ruo:CommercialTouristTransformation ;
+    ruo:hasPerceivedSafety "High"^^xsd:string .
+
+<http://dbpedia.org/resource/Prati> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:ResidentialAdministrativeIdentity ;
+    ruo:hasUrbanTransformation ruo:MiddleClassUrbanDevelopment ;
+    ruo:hasPerceivedSafety "High"^^xsd:string .
+
+<http://dbpedia.org/resource/Testaccio> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:WorkingClassCulturalIdentity ;
+    ruo:hasUrbanTransformation ruo:PostIndustrialRegeneration ;
+    ruo:hasPerceivedSafety "Medium"^^xsd:string .
+
+<http://dbpedia.org/resource/San_Lorenzo_(Rome)> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:StudentBohemianIdentity ;
+    ruo:hasUrbanTransformation ruo:NightlifeAndStudentification ;
+    ruo:hasPerceivedSafety "Medium"^^xsd:string .
+
+<http://dbpedia.org/resource/Parioli> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:UpperClassResidentialIdentity ;
+    ruo:hasUrbanTransformation ruo:EliteResidentialConsolidation ;
+    ruo:hasPerceivedSafety "High"^^xsd:string .
+
+<http://dbpedia.org/resource/EUR,_Rome> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:RationalistBusinessIdentity ;
+    ruo:hasUrbanTransformation ruo:ModernistPlannedDevelopment ;
+    ruo:hasPerceivedSafety "High"^^xsd:string .
+
+<http://dbpedia.org/resource/San_Basilio_(Rome)> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:PeripheralPopularIdentity ;
+    ruo:hasUrbanTransformation ruo:PublicHousingUrbanization ;
+    ruo:hasPerceivedSafety "Low"^^xsd:string .
+
+<http://dbpedia.org/resource/Nomentano> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:ResidentialInstitutionalIdentity ;
+    ruo:hasUrbanTransformation ruo:UrbanExpansionConsolidation ;
+    ruo:hasPerceivedSafety "Medium"^^xsd:string .
+
+<http://dbpedia.org/resource/Ardeatino> rdf:type ruo:RomanUrbanArea ;
+    ruo:hasDominantUrbanIdentity ruo:ResidentialHistoricalMemoryIdentity ;
+    ruo:hasUrbanTransformation ruo:SuburbanResidentialExpansion ;
+    ruo:hasPerceivedSafety "Medium"^^xsd:string .
+
+ruo:HistoricPopularIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:MonumentalTouristIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:ResidentialAdministrativeIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:WorkingClassCulturalIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:StudentBohemianIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:UpperClassResidentialIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:RationalistBusinessIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:PeripheralPopularIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:ResidentialInstitutionalIdentity rdf:type ruo:DominantUrbanIdentity .
+ruo:ResidentialHistoricalMemoryIdentity rdf:type ruo:DominantUrbanIdentity .
+
+ruo:Touristification rdf:type ruo:UrbanTransformation .
+ruo:CommercialTouristTransformation rdf:type ruo:UrbanTransformation .
+ruo:MiddleClassUrbanDevelopment rdf:type ruo:UrbanTransformation .
+ruo:PostIndustrialRegeneration rdf:type ruo:UrbanTransformation .
+ruo:NightlifeAndStudentification rdf:type ruo:UrbanTransformation .
+ruo:EliteResidentialConsolidation rdf:type ruo:UrbanTransformation .
+ruo:ModernistPlannedDevelopment rdf:type ruo:UrbanTransformation .
+ruo:PublicHousingUrbanization rdf:type ruo:UrbanTransformation .
+ruo:UrbanExpansionConsolidation rdf:type ruo:UrbanTransformation .
+ruo:SuburbanResidentialExpansion rdf:type ruo:UrbanTransformation .
