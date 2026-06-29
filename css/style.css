@@ -778,3 +778,79 @@ p a:hover {color: #8b0000;}
     background: rgba(161, 53, 53, 0.08);
     color: #8b0000;
 }
+
+/* RESULTS PAGE */
+
+.results-page {
+    max-width: 1150px;
+}
+
+.results-intro {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.llm-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 45px 0;
+}
+
+.llm-result-card {
+    background: rgba(255,255,255,0.68);
+    padding: 25px;
+    border-radius: 14px;
+    border-top: 5px solid #a13535;
+    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.llm-result-card h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+}
+
+.llm-result-card h3 {
+    font-size: 1.25rem;
+    color: #8b0000;
+}
+
+.llm-result-card p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+.validated-results,
+.future-work {
+    margin-top: 45px;
+    padding: 30px;
+    background: rgba(255,255,255,0.65);
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+}
+
+.validated-results h2,
+.future-work h2 {
+    text-align: left;
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 22px;
+    background: #a13535;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.download-button:hover {
+    background: #8b0000;
+}
+
+@media (max-width: 1000px) {
+    .llm-results-grid {
+        grid-template-columns: 1fr;
+    }
+}
