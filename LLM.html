@@ -236,15 +236,15 @@ Per ciascun quartiere utilizza la corrispondente risorsa di DBpedia (dbr:)
 e formalizza le varie relazioni secondo l'ontologia. 
 Considera tutte le classi e le proprietà formalizzate nell'ontologia.
 
-Non inventare altre proprietà, classi o informazioni.
+Non inventare altre proprietà e classi.
 In output genera le corrispondenti triple RDF in sintassi Turtle utilizzando i namespace:
   @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
   @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
   @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 Non aggiungere spiegazioni o commenti, restituisci soltanto le triple Turtle.</div>
   <div class="insight-box">
-    <strong>Osservazioni</strong>
-    [spazio per i commenti sui risultati]
+    <strong>Osservazioni:</strong>
+      <p> Tra i prompt che abbiamo usato questo è il più semplice, senza esempi. Per evitare che i modelli si aggiungessero altre proprità o classi è stata data la specifica di "non innventare altre proprietà e classi", che è stata mantenuta anche per gli latri prompt </p>
   </div>
 </div>
 
@@ -269,6 +269,7 @@ Datatype Property:
   ruo:hasPerceivedSafety
 
 Per costruire le triple RDF basati su questi esempi:
+esempio 1
   Soggetto:  la risorsa dbr:Trastevere
   Predicato: rdf:type
   Oggetto:   ruo:RomanUrbanArea
@@ -277,18 +278,29 @@ Per costruire le triple RDF basati su questi esempi:
   Predicato: ruo:hasUrbanTransformation
   Oggetto:   un individuo della classe ruo:UrbanTransformation
 
+esempio 2
+  Soggetto:  la risorsa dbr: Prati
+  Predicato: rdf:type
+  Oggetto:   ruo:RomanUrbanArea
+
+  Soggetto:  la risorsa dbr:Prati
+  Predicato: ruo:hasUrbanTransformation
+  Oggetto:   un individuo della classe ruo:UrbanTransformation
+
 Analizza i seguenti quartieri/rioni: Trastevere, Trevi, Prati, Testaccio,
 San Lorenzo, Parioli, EUR, San Basilio, Nomentano e Ardeatino.
 
-Non inventare altre proprietà, classi o informazioni.
+Non inventare altre proprietà e classi.
 In output genera le corrispondenti triple RDF in sintassi Turtle utilizzando i namespace:
   @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
   @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
   @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 Non aggiungere spiegazioni o commenti, restituisci soltanto il codice Turtle.</div>
   <div class="insight-box">
-    <strong>Osservazioni</strong>
-    [spazio per i commenti sui risultati]
+    <strong>Osservazioni:</strong>
+      <p>
+          in questo caso nel prompt vengono fornito ai modelli due esempi su come devono essere costruite le triple Rdf in formato Turtle 
+      </p>
   </div>
 </div>
 
@@ -325,15 +337,16 @@ Per arrivare all'output procedi passo dopo passo usando questa catena di pensier
   4. Assegna un valore alla proprietà ruo:hasPerceivedSafety utilizzando
      una stringa descrittiva ("High", "Medium" o "Low").
 
-Non inventare altre proprietà, classi o informazioni.
+Non inventare altre proprietà e classi.
 In output genera le corrispondenti triple RDF in sintassi Turtle utilizzando i namespace:
   @prefix dbr: &lt;http://dbpedia.org/resource/&gt; .
   @prefix ruo: &lt;http://example.org/rome-urban-ontology/&gt; .
   @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 Restituisci le triple Turtle e il ragionamento che hai fatto.</div>
   <div class="insight-box">
-    <strong>Osservazioni</strong>
-    [spazio per i commenti sui risultati]
+    <strong>Osservazioni:</strong>
+      <p> al porompt Zero Shot vengono aggiunte due indicazioni fondamentali: la catena di pensiero che i modelli devono eseguire per costruire le triple e l'obbligo di restituzione non solo delle triple RDF in formato 
+    Turtle, ma anche dell'intero ragionamento svolto</p>
   </div>
 </div>
 
