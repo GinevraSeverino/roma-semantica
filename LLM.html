@@ -350,9 +350,65 @@ Restituisci le triple Turtle e il ragionamento che hai fatto.</div>
   </div>
 </div>
 
+<div class="section-divider"></div>
 
+<section class="analysis-section">
+
+  <h2>LLM Performance</h2>
+  <p class="subtitle" style="margin-bottom: 28px;">Tabella riassuntiva delle performance per ogni tecnica di prompt</p>
+
+  <table class="sources-table perf-table">
+    <thead>
+      <tr>
+        <th style="width: 34%;">Tecnica di Prompt</th>
+        <th>
+          <div class="perf-model-header">
+            <span class="llm-dot gpt"></span> ChatGPT Pro
+          </div>
+        </th>
+        <th>
+          <div class="perf-model-header">
+            <span class="llm-dot mis"></span> Mistral
+          </div>
+        </th>
+        <th>
+          <div class="perf-model-header">
+            <span class="llm-dot gem"></span> Gemini
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Zero-shot</strong></td>
+        <td class="perf-score"><span class="score-badge">OTTIMA</span></td>
+        <td class="perf-score"><span class="score-badge">MODERATA</span></td>
+        <td class="perf-score"><span class="score-badge">BUONA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Few-shot</strong></td>
+        <td class="perf-score"><span class="score-badge">OTTIMA</span></td>
+        <td class="perf-score"><span class="score-badge">SCARSA</span></td>
+        <td class="perf-score"><span class="score-badge">BUONA</span></td>
+      </tr>
+      <tr>
+        <td><strong>Zero-shot + CoT</strong></td>
+        <td class="perf-score"><span class="score-badge">OTTIMA</span></td>
+        <td class="perf-score"><span class="score-badge">BUONA</span></td>
+        <td class="perf-score"><span class="score-badge">OTTIMA</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">
+    <strong>Nota metodologica</strong>
+<p>scala di valutazione: ECCELLENTE - OTTIMA - BUONA - MODERATA - SUFFICIENTE</p>
+  </div>
+
+</section>
+
+    
 <script>
-
 const headers = document.querySelectorAll(".accordion-header");
 
 headers.forEach(header => {
@@ -376,14 +432,12 @@ headers.forEach(header => {
             currentContent.classList.add("show");
             header.classList.add("active");
         }
-
     });
-
 });
-
 </script>
-
 </section>
+
+    
 </div>
 <footer class="site-footer">
     © 2026 Roma Semantica · Università di Bologna
