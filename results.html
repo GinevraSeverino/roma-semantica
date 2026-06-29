@@ -28,162 +28,89 @@
     </ul>
 </nav>
 
-<div class="container">
-
-<h1>Discussione e conclusioni</h1>
-
-<p>
-L'obiettivo del progetto è stato analizzare la rappresentazione semantica dei quartieri di Roma attraverso il confronto tra diverse fonti di Linked Open Data, valutando come tali risorse descrivano le aree urbane dal punto di vista geografico, amministrativo e culturale. L'analisi ha evidenziato differenze nella modellazione delle informazioni e ha permesso di individuare aspetti non adeguatamente rappresentati dagli attuali vocabolari semantici. Da queste osservazioni è nata la proposta di un'estensione ontologica dedicata alle aree urbane romane, progettata per descrivere dimensioni quali identità urbana, trasformazioni del territorio e sicurezza percepita.
-</p>
-
-<div class="section-divider"></div>
-
-<h2>Principali risultati</h2>
-
-<div class="results-grid">
-
-<div class="result-card">
-<div class="result-number">01</div>
-
-<h3>Analisi delle fonti</h3>
-
-<p>
-Il confronto tra DBpedia, Wikidata e OpenStreetMap ha evidenziato una rappresentazione eterogenea dei quartieri di Roma, con differenze nella tipizzazione delle risorse, nella completezza delle informazioni e nella granularità dei dati disponibili.
-</p>
-
-</div>
-
-<div class="result-card">
-
-<div class="result-number">02</div>
-
-<h3>Estensione ontologica</h3>
-
-<p>
-L'analisi dei gap semantici ha portato alla progettazione di una nuova estensione dell'ontologia, introducendo la classe <strong>ruo:RomanUrbanArea</strong> e nuove proprietà dedicate alla descrizione dell'identità urbana, delle trasformazioni territoriali e della sicurezza percepita.
-</p>
-
-</div>
-
-<div class="result-card">
-
-<div class="result-number">03</div>
-
-<h3>Interrogazione dei dati</h3>
-
-<p>
-Le query SPARQL hanno consentito di verificare la disponibilità delle informazioni nei diversi dataset e di confrontarne la struttura, mettendo in evidenza le principali differenze nella rappresentazione semantica delle aree urbane.
-</p>
-
-</div>
-
-<div class="result-card">
-
-<div class="result-number">04</div>
-
-<h3>Supporto degli LLM</h3>
-
-<p>
-I Large Language Models si sono rivelati utili per supportare la progettazione dell'ontologia, la generazione di codice RDF/Turtle e la definizione delle query SPARQL, riducendo i tempi di sviluppo ma richiedendo sempre una validazione critica dei risultati prodotti.
-</p>
-
-</div>
-
-</div>
-
-<div class="section-divider"></div>
-
-<h2>Riflessioni emerse</h2>
-
-<div class="challenge-solution">
-
-<span class="solution-label">Osservazioni</span>
-
-L'analisi svolta ha mostrato come le principali risorse del Web dei Dati descrivano efficacemente gli aspetti geografici e amministrativi dei quartieri di Roma, mentre risultino meno adatte a rappresentarne le caratteristiche identitarie, culturali e percettive.
-
-<br><br>
-
-Informazioni quali l'identità urbana dominante, i processi di trasformazione dei quartieri o il livello di sicurezza percepita sono generalmente presenti soltanto all'interno di descrizioni testuali e non vengono modellate mediante proprietà semantiche esplicite. Ciò limita le possibilità di interrogazione automatica e di integrazione tra dataset differenti.
-
-<br><br>
-
-L'estensione ontologica proposta rappresenta quindi un possibile contributo per descrivere tali dimensioni in modo uniforme e interoperabile, favorendo la costruzione di Knowledge Graph territoriali più ricchi e semanticamente coerenti.
-
-</div>
-
-<div class="section-divider"></div>
-
-<h2>Il ruolo dei Large Language Models</h2>
-
-<div class="insight-box">
-
-La sperimentazione con i Large Language Models ha evidenziato il potenziale di questi strumenti nel supportare le attività di modellazione semantica. Gli LLM hanno facilitato la progettazione dell'ontologia, la produzione di esempi RDF/Turtle, la scrittura di query SPARQL e la revisione della documentazione del progetto.
-
-<br><br>
-
-L'esperienza ha tuttavia confermato l'importanza della validazione umana: la correttezza delle classi, delle proprietà e delle relazioni ontologiche deve essere sempre verificata criticamente, soprattutto quando si introducono estensioni personalizzate o si integrano dataset eterogenei.
-
-</div>
-
-<div class="section-divider"></div>
-
-<h2>Conclusioni</h2>
-
-<div class="challenge-solution">
-
-<span class="solution-label">Sintesi</span>
-
-Nel complesso, il progetto dimostra come l'integrazione tra Linked Open Data, ontologie e Large Language Models rappresenti un approccio efficace per analizzare e descrivere semanticamente il territorio urbano. La proposta di estensione ontologica costituisce una base riutilizzabile per future attività di arricchimento dei dati e per la costruzione di Knowledge Graph dedicati ai quartieri della città di Roma.
-
-</div>
-
-<div class="section-divider"></div>
-
-<h2>Sviluppi futuri</h2>
-
-<div class="results-grid">
-
-<div class="result-card">
-
-<h3>Ampliamento del dominio</h3>
-
-<p>
-Estendere l'analisi a un numero maggiore di quartieri e municipi della città di Roma.
-</p>
-
-</div>
-
-<div class="result-card">
-
-<h3>Popolamento del Knowledge Graph</h3>
-
-<p>
-Automatizzare l'integrazione dei dati provenienti da diverse sorgenti aperte.
-</p>
-
-</div>
-
-<div class="result-card">
-
-<h3>Nuovi dataset</h3>
-
-<p>
-Integrare ulteriori fonti di Linked Open Data provenienti da enti pubblici e istituzioni culturali.
-</p>
-
-</div>
-
-<div class="result-card">
-
-<h3>Vocabolari SKOS</h3>
-
-<p>
-Affiancare all'ontologia vocabolari controllati per modellare identità urbana, trasformazioni e sicurezza percepita.
-</p>
-
-</div>
-
-</div>
+<div class="container results-page">
+
+    <h1>Risultati</h1>
+
+    <p class="results-intro">
+        In questa sezione vengono discussi i risultati ottenuti, analizzando più nel dettaglio il comportamento dei 3 LLM interrogati, e i possibili sviluppi fututri del progetto. 
+        Sarà poi possibile scaricare il file di Triple RDF/Turtle ufficiale e validato.
+    </p>
+
+    <section class="llm-results-grid">
+
+        <article class="llm-result-card">
+            <h2>ChatGPT Plus</h2>
+            <p>
+                Inserisci qui un breve commento sul comportamento del primo modello:
+                coerenza sintattica, rispetto dell'ontologia, qualità delle triple RDF,
+                eventuali errori o allucinazioni.
+            </p>
+
+            <p>
+                Inserisci qui il commento sugli output Turtle generati con zero-shot,
+                few-shot o chain-of-thought prompting.
+            </p>
+        </article>
+
+        <article class="llm-result-card">
+            <h2>Gemini</h2>
+            <p>
+                Inserisci qui il commento sul secondo modello, evidenziando differenze
+                rispetto al primo.
+            </p>
+
+            <p>
+                Inserisci qui il commento sugli output Turtle prodotti dalle diverse
+                strategie di prompting.
+            </p>
+        </article>
+
+        <article class="llm-result-card">
+            <h2>Minstral</h2>
+            <p>
+                Inserisci qui il commento sul terzo modello, specificando punti di forza,
+                limiti e grado di aderenza al modello ontologico.
+            </p>
+
+            <p>
+                Inserisci qui il commento sugli output Turtle del modello.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="validated-results">
+        <h2>Triple validate finali</h2>
+
+        <p>
+            A seguito del confronto tra gli output prodotti dai modelli, le triple RDF
+            sono state sottoposte a una fase di revisione e validazione. Il file finale scaricabile, contiene le triple considerate coerenti con l'ontologia proposta e con gli obiettivi del progetto.
+        </p>
+
+        <a href="results/Triple_RDF.ttl" class="download-button" download>
+            Scarica il file Turtle validato
+        </a>
+    </section>
+
+    <section class="future-work">
+        <h2>Conclusioni e sviluppi futuri</h2>
+
+        <p>
+            Il confronto tra i modelli ha mostrato come i Large Language Models possano
+            supportare la produzione di conoscenza RDF, ma richiedano una fase di controllo
+            e validazione per garantire coerenza semantica, correttezza sintattica e
+            compatibilità con l'ontologia di riferimento.
+        </p>
+
+        <p>
+            Come sviluppo futuro, l'estensione ontologica potrebbe essere ulteriormente
+            raffinata introducendo vocabolari controllati per gli individui delle nuove
+            classi, eventualmente modellati in SKOS, così da rendere più stabile e
+            riutilizzabile la descrizione delle identità urbane e delle trasformazioni
+            dei quartieri romani.
+        </p>
+    </section>
 
 </div>
 
