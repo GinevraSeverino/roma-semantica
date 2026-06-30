@@ -96,6 +96,11 @@ h2 {font-size: 1.8rem; text-align: center;}
     line-height: 1.6;
 }
 
+.insight-box a:hover {
+    color: #8d3333;
+    text-decoration: underline;
+}
+
 .section-divider {
     margin: 20px 0 50px 0;
     height: 2px;
@@ -122,7 +127,7 @@ p {font-size: 1.25rem; line-height: 1.65; text-align: justify;}
 ul,li {font-size: 1.25rem; line-height: 1.65;}
 table {width: 100%; border-collapse: collapse;}
 th,td {border: 1px solid #ddd; padding: 10px;}
-p a {color: #a13535;   /* rosso coerente col tuo tema */ text-decoration: underline;}
+p a {color: #a13535; text-decoration: underline;}
 p a:hover {color: #8b0000;}
 
 /* ACCORDION LLM */
