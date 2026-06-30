@@ -801,56 +801,29 @@ p a:hover {color: #8b0000;}
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
     border-left: 7px solid #a13535;
 }
-
-.llm-story-card.reverse {
-    grid-template-columns: 1fr 120px;
-    border-left: none;
-    border-right: 7px solid #a13535;
-}
-
-.llm-story-card.reverse .llm-badge {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.llm-story-card.reverse .llm-story-content {
-    grid-column: 1;
-    grid-row: 1;
-}
-
+.llm-story-card.reverse {grid-template-columns: 1fr 120px; border-left: none; border-right: 7px solid #a13535;}
+.llm-story-card.reverse .llm-badge {grid-column: 2;grid-row: 1;}
+.llm-story-card.reverse .llm-story-content {grid-column: 1; grid-row: 1;}
 .llm-badge {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-
     background: #a13535;
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 2rem;
     font-weight: bold;
     box-shadow: 0 3px 10px rgba(0,0,0,.25);
 }
-
-.llm-story-content h2 {
-    text-align: left;
-    margin-top: 0;
-    color: #8b0000;
-}
-
-.llm-story-content p {
-    font-size: 1.1rem;
-}
-
+.llm-story-content h2 {text-align: left;margin-top: 0;color: #8b0000;}
+.llm-story-content p {font-size: 1.1rem;}
 .ttl-download-box {
     text-align: center;
     max-width: 850px;
     margin: 60px auto;
     padding: 35px;
-
     background: rgba(255,255,255,0.78);
     border-radius: 18px;
     box-shadow: 0 3px 14px rgba(0,0,0,.18);
@@ -858,20 +831,17 @@ p a:hover {color: #8b0000;}
 }
 .ttl-download-box h2 {text-align: center;}
 .ttl-download-box a:hover {color: #8d3333;text-decoration: underline;}
+.ttl-download-box a {display: block;width: fit-content;margin: 12px auto;}
 
 .future-work-timeline {
     margin-top: 60px;
     padding: 35px;
-
     background: rgba(255,255,255,0.65);
     border-radius: 18px;
     box-shadow: 0 3px 12px rgba(0,0,0,.14);
 }
 
-.future-work-timeline h2 {
-    text-align: left;
-}
-
+.future-work-timeline h2 {text-align: left;}
 .timeline-list {
     position: relative;
     list-style: none;
@@ -901,11 +871,9 @@ p a:hover {color: #8b0000;}
     position: absolute;
     left: -34px;
     top: 9px;
-
     width: 15px;
     height: 15px;
     border-radius: 50%;
-
     background: white;
     border: 3px solid #a13535;
 }
