@@ -1,1 +1,28 @@
-# roma-semantica
+# Roma-semantica
+**Roma Semantica** è un progetto di Knowledge Graph finalizzato all'arricchimento semantico dei quartieri, rioni e zone urbane di Roma attraverso 
+un'estensione dell'ontologia di DBpedia.
+
+## 🎯 Obiettivo
+
+L'obiettivo del progetto è integrare le informazioni già presenti in DBpedia con nuove relazioni semantiche in grado di rappresentare aspetti identitari, 
+trasformazioni urbane e percezioni delle diverse aree della città.
+
+## 🔍 Metodologia
+
+Le principali fasi del lavoro sono state:
+
+- Esplorazione dell'ontologia DBpedia e delle risorse relative a Roma.
+- Interrogazione dell'endpoint tramite query SPARQL.
+- Proposta di un'estensione ontologica.
+- Produzione di nuove triple RDF in formato Turtle.
+- Confronto dei risultati ottenuti con diversi Large Language Models.
+- Validazione e discussione dei risultati.
+
+## 👥 Autrici
+
+Progetto realizzato nell'ambito del corso **Metodologie e Tecniche della Simulazione** dell'Università di Bologna.
+
+- Angelica Ponchio
+- Ginevra Severino
+- Sara Scopel
+- Caterina Ghiani
