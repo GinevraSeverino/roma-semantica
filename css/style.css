@@ -873,10 +873,8 @@ p a:hover {color: #8b0000;}
     box-shadow: 0 3px 14px rgba(0,0,0,.18);
     border-top: 6px solid #a13535;
 }
-
-.ttl-download-box h2 {
-    text-align: center;
-}
+.ttl-download-box h2 {text-align: center;}
+.ttl-download-box a:hover {color: #8d3333;text-decoration: underline;}
 
 .future-work-timeline {
     margin-top: 60px;
