@@ -6,7 +6,7 @@
 
 L'obiettivo del progetto è integrare le informazioni già presenti in DBpedia con nuove relazioni semantiche in grado di rappresentare aspetti identitari, trasformazioni urbane e percezioni delle diverse aree della città.
 
-## 🔍 Metodologia
+## Metodologia
 
 Le principali fasi del lavoro sono state:
 
@@ -17,7 +17,7 @@ Le principali fasi del lavoro sono state:
 - Confronto dei risultati ottenuti con diversi Large Language Models.
 - Validazione e discussione dei risultati.
 
-## 🛠️ Tecnologie utilizzate
+## Tecnologie utilizzate
 
 - RDF / Turtle
 - SPARQL
@@ -27,7 +27,7 @@ Le principali fasi del lavoro sono state:
 - GitHub Pages
 
 
-## 👥 Gruppo di lavoro
+## Gruppo di lavoro
 
 Progetto realizzato nell'ambito del corso **Metodologie e Tecniche della Simulazione** dell'Università di Bologna.
 
