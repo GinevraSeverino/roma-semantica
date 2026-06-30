@@ -785,34 +785,17 @@ p a:hover {color: #8b0000;}
 }
 
 /* RESULTS PAGE */
-
-.results-page {
-    max-width: 1150px;
-}
-
-.results-hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.results-intro {
-    max-width: 950px;
-    margin: 25px auto;
-}
-
-.llm-story {
-    margin: 50px 0;
-}
-
+.results-page {max-width: 1150px;}
+.results-hero {text-align: justify; margin-bottom: 50px;}
+.results-intro {max-width: 950px; margin: 25px auto;}
+.llm-story {margin: 50px 0;}
 .llm-story-card {
     display: grid;
     grid-template-columns: 120px 1fr;
     gap: 30px;
     align-items: start;
-
     margin-bottom: 45px;
     padding: 30px;
-
     background: rgba(255,255,255,0.68);
     border-radius: 18px;
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
