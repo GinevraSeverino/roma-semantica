@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:ruo="http://example.org/rome-urban-ontology/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Testaccio">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/WorkingClassCulturalIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/PostIndustrialRegeneration"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/EUR,_Rome">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/RationalistBusinessIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/ModernistPlannedDevelopment"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/San_Lorenzo_(Rome)">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/StudentBohemianIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/NightlifeAndStudentification"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Ardeatino">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/ResidentialHistoricalMemoryIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/SuburbanResidentialExpansion"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Nomentano">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/ResidentialInstitutionalIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/UrbanExpansionConsolidation"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Trevi_(rione_of_Rome)">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/MonumentalTouristIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/CommercialTouristTransformation"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/San_Basilio_(Rome)">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/PeripheralPopularIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/PublicHousingUrbanization"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Low</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Parioli">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/UpperClassResidentialIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/EliteResidentialConsolidation"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Trastevere">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/HistoricPopularIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/Touristification"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+  <ruo:RomanUrbanArea rdf:about="http://dbpedia.org/resource/Prati">
+    <ruo:hasDominantUrbanIdentity>
+      <ruo:DominantUrbanIdentity rdf:about="http://example.org/rome-urban-ontology/ResidentialAdministrativeIdentity"/>
+    </ruo:hasDominantUrbanIdentity>
+    <ruo:hasUrbanTransformation>
+      <ruo:UrbanTransformation rdf:about="http://example.org/rome-urban-ontology/MiddleClassUrbanDevelopment"/>
+    </ruo:hasUrbanTransformation>
+    <ruo:hasPerceivedSafety rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</ruo:hasPerceivedSafety>
+  </ruo:RomanUrbanArea>
+</rdf:RDF>
